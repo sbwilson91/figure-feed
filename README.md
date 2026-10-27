@@ -22,10 +22,18 @@ address https://sbwilson91.github.io/figure-feed on the phone, then:
 2. Tap **Install app**. On some phones it is called **Add to Home screen**. Chrome often
    offers this itself, as a banner at the bottom of the page.
 
-Figure Feed then has its own icon and opens full screen with no browser bar. It loads
-the latest papers each time it opens. Without a connection the app still opens, but
-figures and new papers need the internet. Saved papers stay on your phone only: there
-is no account and nothing syncs between devices.
+Figure Feed then has its own icon and opens full screen with no browser bar. It updates
+itself: each time it opens, and when it comes back to the front after half an hour or
+more, it loads the latest papers and the latest version of the app. There is nothing to
+reinstall. Without a connection the app still opens, but figures and new papers need the
+internet. Saved papers stay on your phone only: there is no account and nothing syncs
+between devices.
+
+### Looks
+
+The header button switches between three colour looks from the Plexus palette:
+**Technical** (the default), **Dark** and **Light**. The choice is remembered on that
+phone.
 
 ## Journals
 

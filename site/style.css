@@ -1,46 +1,37 @@
-:root {
-  --bg: #f1f5f9;
-  --card: #ffffff;
-  --line: #e2e8f0;
-  --ink: #0f172a;
-  --text: #334155;
-  --muted: #64748b;
-  --accent: #7c3aed;
-  --keep: #047857;
-  --keep-bg: #ecfdf5;
-  --keep-line: #a7f3d0;
-  --chip: #ffffff;
-  --top: rgba(241, 245, 249, .92);
+/* The three looks from the Plexus palette. Technical is the default; the reader picks
+   one with the header switch, stored per device, applied as data-look on <html>. */
+:root, :root[data-look="technical"] {
+  --bg: #220f09; --card: #2b130b; --line: #4a1e10;
+  --ink: #fbe9e1; --text: #ffd2c2; --muted: #d9a08a;
+  --accent: #F0997B; --badge: #D85A30;
+  --keep: #F0997B; --keep-bg: #3a1a0f; --keep-line: #5e2614;
+  --chip: #2b130b; --top: rgba(34, 15, 9, .94); --band: #2b130b; --top-ink: #F0997B;
+  --logo-a: #D85A30; --logo-b: #F0997B;
+  --toast: #fbe9e1; --toast-ink: #2b130b; --toast-act: #993C1D;
+  --ui-font: ui-monospace, "SF Mono", Menlo, "Roboto Mono", Consolas, monospace;
+  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0b1120;
-    --card: #111827;
-    --line: #1f2937;
-    --ink: #f1f5f9;
-    --text: #cbd5e1;
-    --muted: #94a3b8;
-    --accent: #a78bfa;
-    --keep: #6ee7b7;
-    --keep-bg: #052e22;
-    --keep-line: #065f46;
-    --chip: #111827;
-      --top: rgba(11, 17, 32, .92);
-  }
+:root[data-look="dark"] {
+  --bg: #140e0c; --card: #241815; --line: #36231c;
+  --ink: #faeee8; --text: #e6d2ca; --muted: #cdb0a6;
+  --accent: #F0997B; --badge: #D85A30;
+  --keep: #F0997B; --keep-bg: #2f201b; --keep-line: #4a2c22;
+  --chip: #241815; --top: rgba(20, 14, 12, .94); --band: #1a1210; --top-ink: #F0997B;
+  --logo-a: #D85A30; --logo-b: #F0997B;
+  --toast: #faeee8; --toast-ink: #1a1210; --toast-act: #993C1D;
+  --ui-font: inherit;
+  color-scheme: dark;
 }
-:root[data-theme="dark"] {
-  --bg: #0b1120;
-  --card: #111827;
-  --line: #1f2937;
-  --ink: #f1f5f9;
-  --text: #cbd5e1;
-  --muted: #94a3b8;
-  --accent: #a78bfa;
-  --keep: #6ee7b7;
-  --keep-bg: #052e22;
-  --keep-line: #065f46;
-  --chip: #111827;
-    --top: rgba(11, 17, 32, .92);
+:root[data-look="light"] {
+  --bg: #fbf0eb; --card: #ffffff; --line: #f0d2c6;
+  --ink: #2a140d; --text: #4a2a1f; --muted: #7a4f41;
+  --accent: #993C1D; --badge: #D85A30;
+  --keep: #993C1D; --keep-bg: #fbf0eb; --keep-line: #f0d2c6;
+  --chip: #ffffff; --top: rgba(251, 240, 235, .94); --band: #993C1D; --top-ink: #fde7de;
+  --logo-a: #fde7de; --logo-b: #F0997B;
+  --toast: #2a140d; --toast-ink: #fde7de; --toast-act: #F0997B;
+  --ui-font: inherit;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -59,21 +50,25 @@ button { font: inherit; color: inherit; cursor: pointer; }
   background: var(--top);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
-  padding: env(safe-area-inset-top) 0 0;
+  padding: 0;
 }
 .bar, .tabs, .filters { max-width: 600px; margin: 0 auto; padding: 0 16px; }
-.bar { display: flex; align-items: baseline; justify-content: space-between; padding-top: 10px; }
-.brand { margin: 0; font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; }
-.mark { width: 14px; height: 14px; border-radius: 4px; background: linear-gradient(135deg, #7c3aed, #0ea5e9); display: inline-block; }
-.stamp { font-size: 11px; color: var(--muted); }
+/* The brand bar is a full-width band: brown in the light look, like the Plexus top bar. */
+.bar { display: flex; align-items: center; padding-top: calc(10px + env(safe-area-inset-top)); padding-bottom: 10px;
+  background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); }
+.brand { margin: 0; font-size: 18px; font-weight: 700; color: var(--top-ink); font-family: var(--ui-font); letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; }
+.mark { width: 26px; height: auto; display: block; }
+.stamp { font-size: 11px; color: var(--top-ink); opacity: .75; margin-left: auto; }
+.look { border: 1px solid currentColor; background: none; color: var(--top-ink); border-radius: 999px;
+  padding: 2px 9px; font: 600 11px var(--ui-font); margin-left: 10px; opacity: .9; }
 
 .tabs { display: flex; gap: 4px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .tabs button {
   border: 0; background: none; padding: 7px 10px; border-radius: 8px;
-  color: var(--muted); font-weight: 600; white-space: nowrap;
+  color: var(--muted); font-weight: 600; white-space: nowrap; font-family: var(--ui-font);
 }
-.tabs button[aria-selected="true"] { color: var(--ink); background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+.tabs button[aria-selected="true"] { color: var(--accent); background: var(--card); box-shadow: 0 0 0 1px var(--line); }
 .tabs .n { font-weight: 500; color: var(--muted); margin-left: 4px; font-size: 12px; }
 
 .filters { display: flex; align-items: center; gap: 10px; padding-top: 8px; padding-bottom: 8px; }
@@ -89,7 +84,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .toggle { font-size: 12px; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 4px; }
 
 .sc { max-width: 600px; margin: 0 auto; padding: 12px 16px 40px; }
-.week-head { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 18px 2px 8px; }
+.week-head { font-family: var(--ui-font); font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 18px 2px 8px; }
 .week-head:first-child { margin-top: 4px; }
 .empty { color: var(--muted); text-align: center; padding: 40px 0; }
 
@@ -111,7 +106,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .fig img { display: block; width: 100%; max-height: 62vh; object-fit: contain; background: #fff; }
 .fig-tag {
   position: absolute; left: 8px; bottom: 8px; right: 8px; width: fit-content; max-width: calc(100% - 16px);
-  background: rgba(15, 23, 42, .72); color: #fff; font-size: 11px; line-height: 1.35;
+  background: rgba(43, 19, 11, .78); color: #fde7de; font-size: 11px; line-height: 1.35;
   padding: 3px 8px; border-radius: 999px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
@@ -152,12 +147,12 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .toast {
   position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); transform: translateX(-50%);
-  background: #0f172a; color: #fff; border-radius: 10px; padding: 8px 8px 8px 14px;
+  background: var(--toast); color: var(--toast-ink); border-radius: 10px; padding: 8px 8px 8px 14px;
   display: flex; gap: 12px; align-items: center; font-size: 13px; z-index: 10;
   box-shadow: 0 6px 20px rgba(0, 0, 0, .25); max-width: calc(100% - 32px);
 }
 .toast[hidden] { display: none; }
-.toast button { background: none; border: 0; color: #c4b5fd; font-weight: 700; padding: 4px 8px; }
+.toast button { background: none; border: 0; color: var(--toast-act); font-weight: 700; padding: 4px 8px; }
 
 .foot { max-width: 600px; margin: 0 auto; padding: 0 16px 40px; font-size: 11px; color: var(--muted); }
 .foot a { color: inherit; }

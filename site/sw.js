@@ -1,6 +1,6 @@
 // The app shell works offline; the feed is fetched fresh when there is a network and
 // served from cache when there is not. Figures stay on their publishers' servers.
-const SHELL = "ff-shell-v1";
+const SHELL = "ff-shell-v2";
 const DATA = "ff-data";
 const FILES = ["./", "index.html", "style.css", "app.js", "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png"];
 

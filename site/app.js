@@ -76,9 +76,9 @@
         ${credit}
       </div>
       <div class="acts">
-        <button class="pass" data-act="pass">Pass</button>
+        <button class="pass" data-act="pass">Ignore</button>
         <a class="open" href="${esc(p.link)}" target="_blank" rel="noopener">Open</a>
-        <button class="keep" data-act="keep" aria-pressed="${isKept}">${isKept ? "Kept" : "Keep"}</button>
+        <button class="keep" data-act="keep" aria-pressed="${isKept}">${isKept ? "Stored" : "Store"}</button>
       </div>
     </article>`;
   }
@@ -114,7 +114,7 @@
         + list(papers, { group: false, hidePassed: false, emptyText: "No new figures yet. They arrive two to five weeks after a paper does." });
     } else if (tab === "saved") {
       const papers = Object.values(kept).sort((a, b) => (b.week || "").localeCompare(a.week || ""));
-      main.innerHTML = list(papers, { hidePassed: false, emptyText: "Keep a paper (or swipe it right) and it stays here." });
+      main.innerHTML = list(papers, { hidePassed: false, emptyText: "Store a paper (or swipe it right) and it stays here." });
     } else if (tab === "earlier") {
       renderEarlier();
     }
@@ -150,7 +150,7 @@
     $("#figsOnly").checked = figsOnly;
   }
 
-  // ── Keep / Pass / Undo ──────────────────────────────────────────────────
+  // ── Store / Ignore / Undo ────────────────────────────────────────────────
   let undo = null, toastTimer = null;
   function toast(msg, undoFn) {
     undo = undoFn;
@@ -181,7 +181,7 @@
     const leaves = tab === "week";
     const finish = () => render();
     if (leaves) { card.classList.add("gone", what); setTimeout(finish, 240); } else finish();
-    toast(what === "keep" ? "Saved" : "Passed", () => {
+    toast(what === "keep" ? "Stored" : "Ignored", () => {
       if (before.k) kept[doi] = before.k; else delete kept[doi];
       if (before.s) passed[doi] = before.s; else delete passed[doi];
       store.set("kept", kept); store.set("passed", passed); render();
@@ -207,6 +207,21 @@
     const tag = t.closest(".fig-tag");
     if (tag) { tag.classList.toggle("open"); return; }
   });
+  // Looks: technical (default), dark, light — the Plexus palette.
+  const LOOKS = ["technical", "dark", "light"];
+  const BARS = { technical: "#2b130b", dark: "#1a1210", light: "#993C1D" };
+  let look = store.get("look", "technical");
+  function applyLook() {
+    if (!LOOKS.includes(look)) look = "technical";
+    document.documentElement.dataset.look = look;
+    $("#look").textContent = look[0].toUpperCase() + look.slice(1);
+    document.querySelector('meta[name="theme-color"]').content = BARS[look];
+  }
+  applyLook();
+  $("#look").addEventListener("click", () => {
+    look = LOOKS[(LOOKS.indexOf(look) + 1) % LOOKS.length]; store.set("look", look); applyLook();
+  });
+
   $("#figsOnly").addEventListener("change", (e) => { figsOnly = e.target.checked; store.set("figsOnly", figsOnly); render(); });
   $("#undo").addEventListener("click", () => { if (undo) undo(); undo = null; $("#toast").hidden = true; });
 
@@ -281,6 +296,18 @@
       renderChips(); render();
     })
     .catch(() => { main.innerHTML = `<p class="empty">Couldn't load the feed. Check your connection and reload.</p>`; });
+
+  // A phone keeps an installed app open in the background for days. When it comes back
+  // to the front, check (at most every 30 minutes) whether a newer feed has been built,
+  // and reload if so; the reload also picks up any new version of the app itself.
+  let lastCheck = Date.now();
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState !== "visible" || !feed || Date.now() - lastCheck < 30 * 60e3) return;
+    lastCheck = Date.now();
+    fetch("data/feed.json", { cache: "no-cache" }).then((r) => r.json())
+      .then((data) => { if (data.generated !== feed.generated) location.reload(); })
+      .catch(() => {});
+  });
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));

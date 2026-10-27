@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Figure Feed</title>
 <meta name="description" content="New research from the major journals, one figure-led card at a time.">
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#2b130b">
+<script>try { var l = localStorage.getItem("ff:look"); if (l) document.documentElement.dataset.look = JSON.parse(l); } catch (e) {}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -14,8 +15,18 @@
 <body>
 <header class="top">
   <div class="bar">
-    <h1 class="brand"><span class="mark" aria-hidden="true"></span>Figure Feed</h1>
+    <h1 class="brand"><svg class="mark" viewBox="2 6 60 52" aria-hidden="true">
+      <rect x="4" y="8" width="56" height="48" rx="8" fill="none" stroke="var(--logo-a)" stroke-width="3"/>
+      <g fill="none" stroke="var(--logo-b)" stroke-width="2.2" stroke-linecap="round">
+        <path d="M4 22 C10 22 10 18 16 18 L40 18 C46 18 48 14 54 12 C57 11 60 10.5 60 10.5"/>
+        <path d="M4 42 C10 42 10 46 16 46 L40 46 C46 46 48 50 54 52 C57 53 60 53.5 60 53.5"/>
+      </g>
+      <circle cx="32" cy="32" r="4.5" fill="var(--logo-a)"/>
+      <g fill="var(--logo-b)"><circle cx="32" cy="24" r="3.4"/><circle cx="39" cy="28" r="3.4"/><circle cx="39" cy="36" r="3.4"/>
+        <circle cx="32" cy="40" r="3.4"/><circle cx="25" cy="36" r="3.4"/><circle cx="25" cy="28" r="3.4"/></g>
+    </svg>Figure Feed</h1>
     <span class="stamp" id="stamp"></span>
+    <button class="look" id="look" aria-label="Change colour look">Technical</button>
   </div>
   <nav class="tabs" role="tablist">
     <button role="tab" data-tab="week" aria-selected="true">This week</button>

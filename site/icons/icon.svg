@@ -1,9 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
-  <rect width="512" height="512" rx="112" fill="#0f172a"/>
-  <rect x="96" y="112" width="320" height="200" rx="28" fill="url(#g)"/>
-  <polyline points="128,276 196,214 248,252 312,170 384,236" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="96" y="344" width="320" height="24" rx="12" fill="#e2e8f0"/>
-  <rect x="96" y="388" width="208" height="20" rx="10" fill="#64748b"/>
+  <rect width="512" height="512" rx="112" fill="#2b130b"/>
+  <!-- The Plexus Foundry mark: chip outline with channels and organoid rosette -->
+  <g transform="translate(64 64) scale(6)">
+    <rect x="4" y="8" width="56" height="48" rx="8" fill="none" stroke="#D85A30" stroke-width="2"/>
+    <g fill="none" stroke="#F0997B" stroke-width="1.5" stroke-linecap="round">
+      <path d="M4 22 C10 22 10 18 16 18 L40 18 C46 18 48 14 54 12 C57 11 60 10.5 60 10.5"/>
+      <path d="M4 29 C10 29 10 25 16 25 L40 25 C46 25 48 21 54 19 C57 18 60 17.5 60 17.5"/>
+      <path d="M4 35 C10 35 10 39 16 39 L40 39 C46 39 48 43 54 45 C57 46 60 46.5 60 46.5"/>
+      <path d="M4 42 C10 42 10 46 16 46 L40 46 C46 46 48 50 54 52 C57 53 60 53.5 60 53.5"/>
+    </g>
+    <circle cx="32" cy="32" r="4" fill="#D85A30"/>
+    <g fill="#F0997B" opacity="0.85">
+      <circle cx="32" cy="24" r="3.2"/><circle cx="39" cy="28" r="3.2"/><circle cx="39" cy="36" r="3.2"/>
+      <circle cx="32" cy="40" r="3.2"/><circle cx="25" cy="36" r="3.2"/><circle cx="25" cy="28" r="3.2"/>
+    </g>
+  </g>
 </svg>
