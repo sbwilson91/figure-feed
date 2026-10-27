@@ -55,6 +55,8 @@
   let tab = store.get("tab", "week");
   let journals = new Set(store.get("journals", []));
   let figsOnly = store.get("figsOnly", false);
+  // The search lasts for this visit only, so a forgotten one never hides new papers.
+  let terms = [];
 
   let feed = null;
   let colours = {};
@@ -74,9 +76,26 @@
   const weekLabel = (iso) => "Week of " + new Date(iso + "T00:00:00Z").toLocaleDateString(undefined,
     { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
+  // A search is words or "quoted phrases"; a paper matches when its title, summary or
+  // journal holds every one of them, in any case.
+  function parseQuery(q) {
+    return (q.match(/"[^"]+"|\S+/g) || []).map((t) => t.replace(/"/g, "").toLowerCase()).filter(Boolean);
+  }
+  const matches = (p) => {
+    const text = [p.title, p.summary, p.journal].join(" ").toLowerCase();
+    return terms.every((t) => text.includes(t));
+  };
+  // Escapes text and marks the searched words in it.
+  function hl(s) {
+    if (!terms.length || !s) return esc(s);
+    const re = new RegExp("(" + terms.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi");
+    return String(s).split(re).map((part, i) => (i % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join("");
+  }
+
   function visible(p) {
     if (journals.size && !journals.has(p.journal)) return false;
     if (figsOnly && p.figure_kind === "none") return false;
+    if (terms.length && !matches(p)) return false;
     return true;
   }
 
@@ -111,8 +130,8 @@
       <div class="body">
         <div class="meta"><span class="dot" style="background:${esc(colours[p.journal] || "#334155")}"></span>
           ${fresh}<span>${esc(p.journal)}</span>${p.published ? `<span>· ${fmtDate(p.published)}</span>` : ""}</div>
-        <h2 class="title"><a href="${link}" target="_blank" rel="noopener">${esc(p.title)}</a></h2>
-        ${p.summary ? `<p class="summary">${esc(p.summary)}</p>` : ""}
+        <h2 class="title"><a href="${link}" target="_blank" rel="noopener">${hl(p.title)}</a></h2>
+        ${p.summary ? `<p class="summary">${hl(p.summary)}</p>` : ""}
         ${credit}
       </div>
       <div class="acts">
@@ -125,6 +144,7 @@
 
   function list(papers, { group = true, hidePassed = true, emptyText = "Nothing here yet." } = {}) {
     const shown = papers.filter((p) => visible(p) && !(hidePassed && passed[p.doi]));
+    if (!shown.length && terms.length) return `<p class="empty">No papers here match “${esc($("#q").value.trim())}”.</p>`;
     if (!shown.length) return `<p class="empty">${esc(emptyText)}</p>`;
     let html = "", week = null;
     for (const p of shown) {
@@ -179,9 +199,11 @@
       return;
     }
     const counts = {};
-    feed.papers.forEach((p) => { counts[p.week] = (counts[p.week] || 0) + 1; });
+    feed.papers.forEach((p) => { if (!terms.length || visible(p)) counts[p.week] = (counts[p.week] || 0) + 1; });
+    const noun = terms.length ? " matches" : " papers";
     const items = feed.weeks.slice(1).map((w) =>
-      `<li><button data-week="${esc(w)}">${weekLabel(w)}<span class="n">${counts[w] ? counts[w] + " papers" : "archive"}</span></button></li>`).join("");
+      `<li><button data-week="${esc(w)}">${weekLabel(w)}<span class="n">${counts[w] ? counts[w] + noun
+        : terms.length && !feed.archived.includes(w) ? "no matches" : "archive"}</span></button></li>`).join("");
     main.innerHTML = items ? `<ul class="weeks">${items}</ul>` : `<p class="empty">Earlier weeks appear here as the feed grows.</p>`;
   }
 
@@ -340,13 +362,41 @@
   function applyLook() {
     if (!LOOKS.includes(look)) look = "technical";
     document.documentElement.dataset.look = look;
-    $("#look").textContent = look[0].toUpperCase() + look.slice(1);
+    document.querySelectorAll(".looks button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.look === look)));
     document.querySelector('meta[name="theme-color"]').content = BARS[look];
   }
   applyLook();
-  $("#look").addEventListener("click", () => {
-    look = LOOKS[(LOOKS.indexOf(look) + 1) % LOOKS.length]; store.set("look", look); applyLook();
+
+  // ── Menu: search and colour ──────────────────────────────────────────────
+  const menu = $("#menu"), menuBtn = $("#menuBtn");
+  function showMenu(open) {
+    // Sits just under the brand bar, which clips anything inside it to its own height.
+    if (open) menu.style.top = ($(".bar").getBoundingClientRect().bottom - $(".top").getBoundingClientRect().top - 4) + "px";
+    menu.hidden = !open; menuBtn.setAttribute("aria-expanded", String(open)); }
+  menuBtn.addEventListener("click", () => showMenu(menu.hidden));
+  document.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest(".menu, .menu-btn")) showMenu(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") showMenu(false); });
+  $(".looks").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-look]");
+    if (b) { look = b.dataset.look; store.set("look", look); applyLook(); }
   });
+  // Hiding the search box also clears the search, so nothing is filtered out of sight.
+  $("#searchToggle").addEventListener("click", () => {
+    const search = $("#search"), q = $("#q");
+    search.hidden = !search.hidden;
+    $("#searchToggle").textContent = search.hidden ? "Search" : "Hide search";
+    showMenu(false);
+    if (search.hidden) {
+      if (q.value) { q.value = ""; terms = []; render(); }
+    } else q.focus();
+  });
+
+  let qTimer = null;
+  $("#q").addEventListener("input", (e) => {
+    clearTimeout(qTimer);
+    qTimer = setTimeout(() => { terms = parseQuery(e.target.value); render(); window.scrollTo(0, 0); }, 150);
+  });
+  $("#q").addEventListener("keydown", (e) => { if (e.key === "Enter") e.target.blur(); });   // closes the phone keyboard
 
   $("#figsOnly").addEventListener("change", (e) => { figsOnly = e.target.checked; store.set("figsOnly", figsOnly); render(); });
   $("#undo").addEventListener("click", () => { if (undo) undo(); undo = null; $("#toast").hidden = true; });

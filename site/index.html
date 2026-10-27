@@ -30,7 +30,18 @@
       </g>
     </svg>Figure Feed</h1>
     <span class="stamp" id="stamp"></span>
-    <button class="look" id="look" aria-label="Change colour look">Technical</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-haspopup="true" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="menu" id="menu" hidden>
+    <button class="menu-item" id="searchToggle">Search</button>
+    <div class="menu-label">Colour</div>
+    <div class="looks">
+      <button data-look="technical">Technical</button>
+      <button data-look="dark">Dark</button>
+      <button data-look="light">Light</button>
+    </div>
   </div>
   <nav class="tabs" role="tablist">
     <button role="tab" data-tab="week" aria-selected="true">This week</button>
@@ -41,6 +52,10 @@
   <div class="filters">
     <div class="chips" id="chips"></div>
     <label class="toggle"><input type="checkbox" id="figsOnly"> Figures only</label>
+  </div>
+  <div class="search" id="search" hidden>
+    <input type="search" id="q" placeholder="Search titles and summaries" aria-label="Search papers"
+           autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
   </div>
 </header>
 

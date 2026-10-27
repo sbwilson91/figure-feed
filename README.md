@@ -10,14 +10,16 @@ Conceptualisation and fine tuning performed by me (Sean Wilson), majority of cod
 
 ## Features
 
-- Three colour modes adjustable in top right corner
+- Menu in the top right corner: three colour modes, and the search box
 - Papers without loadable figures appear as text at end
 - Can ignore a paper to remove from feed, store a paper to come back to later, open the paper at its source
 - Memory for where you last scrolled to
 - Back up and restore stored papers as a file (Saved tab)
 - Swipe on figures to show all available in paper
 - Filter by journal
+- Search by keyword (Menu → Search): titles and summaries matching every word (or "quoted phrase") stay, with the words highlighted
 - Previous 6 weeks stored in Earlier tab
+- Search for topics of interest (eg. "kidney", "CRISPR screen")
 
 ## Install on your phone
 
@@ -44,7 +46,7 @@ back in.
 
 ### Looks
 
-The header button switches between three colour looks from the Plexus palette:
+The menu (☰, top right) has three colour looks from the Plexus palette under **Colour**:
 **Technical** (the default), **Dark** and **Light**. The choice is remembered on that
 phone.
 
@@ -88,4 +90,3 @@ odd opinion piece can slip through.
 The sentence under each title comes from the PubMed abstract: the conclusions section if
 the abstract has one, otherwise the "Here we show…" sentence. Abstracts are the
 publishers' text, so they are fetched for each run and never saved in this repository.
-
