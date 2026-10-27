@@ -26,6 +26,10 @@
   let colours = {};
   let shorts = {};
   let openWeek = null;
+  // Where the reader was: the paper at the top of the screen, so the place survives a
+  // feed update adding or dropping cards above it. The pixel offset is the fallback.
+  let place = store.get("place", null);
+  if (place && place.tab === tab && tab === "earlier") openWeek = place.week || null;
   const weekCache = {};
 
   // ── Helpers ─────────────────────────────────────────────────────────────
@@ -114,7 +118,9 @@
         + list(papers, { group: false, hidePassed: false, emptyText: "No new figures yet. They arrive two to five weeks after a paper does." });
     } else if (tab === "saved") {
       const papers = Object.values(kept).sort((a, b) => (b.week || "").localeCompare(a.week || ""));
-      main.innerHTML = list(papers, { hidePassed: false, emptyText: "Store a paper (or swipe it right) and it stays here." });
+      main.innerHTML = `<div class="backup"><span>Saved papers live in this app only.</span>`
+        + `<button data-backup>Back up</button><button data-restore>Restore</button></div>`
+        + list(papers, { hidePassed: false, emptyText: "Store a paper (or swipe it right) and it stays here." });
     } else if (tab === "earlier") {
       renderEarlier();
     }
@@ -130,6 +136,7 @@
           catch (e) { weekCache[openWeek] = []; }
         }
         papers = weekCache[openWeek];
+        setTimeout(restorePlace);
       }
       main.innerHTML = `<button class="back" data-back>← All weeks</button>`
         + `<h3 class="week-head">${weekLabel(openWeek)}</h3>` + list(papers, { group: false, hidePassed: false });
@@ -155,6 +162,7 @@
   function toast(msg, undoFn) {
     undo = undoFn;
     $("#toastMsg").textContent = msg;
+    $("#undo").hidden = !undoFn;
     $("#toast").hidden = false;
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { $("#toast").hidden = true; undo = null; }, 5000);
@@ -188,6 +196,85 @@
     });
   }
 
+  // ── Reading place ───────────────────────────────────────────────────────
+  const headerH = () => $(".top").getBoundingClientRect().height;
+  function savePlace() {
+    if (!feed || place) return;                       // not until the last place is applied
+    const top = headerH();
+    const card = [...main.querySelectorAll(".card")].find((c) => c.getBoundingClientRect().bottom > top + 1);
+    store.set("place", { tab, week: openWeek, y: Math.round(window.scrollY),
+      doi: card ? card.dataset.doi : null, off: card ? Math.round(card.getBoundingClientRect().top - top) : 0 });
+  }
+  let anchorUntil = 0, anchor = null;
+  function applyAnchor() {
+    if (!anchor) return;
+    const card = anchor.doi && main.querySelector(`.card[data-doi="${CSS.escape(anchor.doi)}"]`);
+    if (card) window.scrollTo(0, window.scrollY + card.getBoundingClientRect().top - headerH() - anchor.off);
+    else window.scrollTo(0, anchor.y);
+  }
+  function restorePlace() {
+    if (!place) return;
+    if (place.tab !== tab || (place.week || null) !== openWeek) { place = null; return; }
+    if (tab === "earlier" && feed.archived.includes(openWeek) && !weekCache[openWeek]) return;   // still loading
+    anchor = place; place = null;
+    anchorUntil = Date.now() + 3000;                  // figures above may still be loading
+    applyAnchor();
+  }
+  const letGo = () => { anchor = null; };
+  ["touchstart", "wheel", "keydown"].forEach((ev) => window.addEventListener(ev, letGo, { passive: true }));
+  let placeTimer = null;
+  window.addEventListener("scroll", () => { clearTimeout(placeTimer); placeTimer = setTimeout(savePlace, 400); }, { passive: true });
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") savePlace(); });
+  window.addEventListener("pagehide", savePlace);
+
+  // ── Back up / restore ────────────────────────────────────────────────────
+  // Saved papers live in this browser's storage, which goes when the app is removed.
+  // A backup is a JSON file the reader keeps (Files, Drive, email); Restore merges it back.
+  async function backup() {
+    const data = { app: "figure-feed", version: 1, exported: new Date().toISOString(), kept, passed };
+    const name = `figure-feed-saved-${new Date().toISOString().slice(0, 10)}.json`;
+    const file = new File([JSON.stringify(data)], name, { type: "application/json" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try { await navigator.share({ files: [file], title: "Figure Feed: saved papers" }); return; }
+      catch (e) { if (e.name === "AbortError") return; }
+    }
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(file); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 10000);
+  }
+
+  function restore(file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      let data;
+      try { data = JSON.parse(reader.result); } catch (e) { data = null; }
+      if (!data || data.app !== "figure-feed" || typeof data.kept !== "object" || !data.kept) {
+        toast("Not a Figure Feed backup"); return;
+      }
+      const before = { k: { ...kept }, s: { ...passed } };
+      let n = 0;
+      for (const [doi, p] of Object.entries(data.kept)) {
+        if (p && p.doi === doi && p.title && !kept[doi]) { kept[doi] = p; delete passed[doi]; n++; }
+      }
+      for (const [doi, d] of Object.entries(data.passed || {})) {
+        if (!kept[doi] && !passed[doi] && typeof d === "string") passed[doi] = d;
+      }
+      store.set("kept", kept); store.set("passed", passed); render();
+      toast(n ? `Restored ${n} paper${n === 1 ? "" : "s"}` : "Nothing new in that backup", () => {
+        for (const k of Object.keys(kept)) delete kept[k];
+        for (const k of Object.keys(passed)) delete passed[k];
+        Object.assign(kept, before.k); Object.assign(passed, before.s);
+        store.set("kept", kept); store.set("passed", passed); render();
+      });
+    };
+    reader.readAsText(file);
+  }
+  const picker = document.createElement("input");
+  picker.type = "file"; picker.accept = ".json,application/json"; picker.hidden = true;
+  picker.addEventListener("change", () => { if (picker.files[0]) restore(picker.files[0]); picker.value = ""; });
+  document.body.appendChild(picker);
+
   // ── Events ──────────────────────────────────────────────────────────────
   document.addEventListener("click", (e) => {
     const t = e.target;
@@ -204,6 +291,8 @@
     const wk = t.closest("[data-week]");
     if (wk) { openWeek = wk.dataset.week; render(); window.scrollTo(0, 0); return; }
     if (t.closest("[data-back]")) { openWeek = null; render(); return; }
+    if (t.closest("[data-backup]")) { backup(); return; }
+    if (t.closest("[data-restore]")) { picker.click(); return; }
     const tag = t.closest(".fig-tag");
     if (tag) { tag.classList.toggle("open"); return; }
   });
@@ -255,6 +344,7 @@
     if (e.target.tagName !== "IMG") return;
     const strip = e.target.closest(".figs");
     if (strip) fitStrip(strip);
+    if (anchor && Date.now() < anchorUntil) applyAnchor();
   }, true);
   let fitTimer = null;
   main.addEventListener("scroll", (e) => {
@@ -293,7 +383,9 @@
       const figTab = $('[data-tab="figs"]');
       if (nFigs) figTab.innerHTML = `New figures<span class="n">${nFigs}</span>`;
       $("#stamp").textContent = "Updated " + new Date(data.generated).toLocaleDateString(undefined, { day: "numeric", month: "short" });
+      if (openWeek && !data.weeks.includes(openWeek)) openWeek = null;   // aged out
       renderChips(); render();
+      requestAnimationFrame(restorePlace);
     })
     .catch(() => { main.innerHTML = `<p class="empty">Couldn't load the feed. Check your connection and reload.</p>`; });
 
