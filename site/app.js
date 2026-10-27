@@ -1,0 +1,288 @@
+// Figure Feed: reads data/feed.json, shows one card per paper, remembers what the
+// reader kept or passed in this browser only.
+(function () {
+  "use strict";
+
+  const $ = (s, el) => (el || document).querySelector(s);
+  const main = $("#main");
+
+  // ── Per-browser memory ──────────────────────────────────────────────────
+  const store = {
+    get(key, fallback) {
+      try { const v = localStorage.getItem("ff:" + key); return v ? JSON.parse(v) : fallback; }
+      catch (e) { return fallback; }
+    },
+    set(key, value) {
+      try { localStorage.setItem("ff:" + key, JSON.stringify(value)); } catch (e) { /* private mode */ }
+    },
+  };
+  const kept = store.get("kept", {});        // doi -> paper (so Saved works for archived weeks)
+  const passed = store.get("passed", {});    // doi -> date passed
+  let tab = store.get("tab", "week");
+  let journals = new Set(store.get("journals", []));
+  let figsOnly = store.get("figsOnly", false);
+
+  let feed = null;
+  let colours = {};
+  let shorts = {};
+  let openWeek = null;
+  const weekCache = {};
+
+  // ── Helpers ─────────────────────────────────────────────────────────────
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmtDate = (iso) => iso ? new Date(iso + "T00:00:00Z").toLocaleDateString(undefined,
+    { day: "numeric", month: "short", timeZone: "UTC" }) : "";
+  const weekLabel = (iso) => "Week of " + new Date(iso + "T00:00:00Z").toLocaleDateString(undefined,
+    { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+
+  function visible(p) {
+    if (journals.size && !journals.has(p.journal)) return false;
+    if (figsOnly && p.figure_kind === "none") return false;
+    return true;
+  }
+
+  // ── Cards ───────────────────────────────────────────────────────────────
+  function figuresHtml(p) {
+    if (!p.figures.length) {
+      return `<div class="band" style="background:${esc(colours[p.journal] || "#334155")}"></div>`;
+    }
+    const n = p.figures.length;
+    const slides = p.figures.map((f, i) => {
+      const tag = p.figure_kind === "preview" ? "Preview"
+        : `${esc(f.label)}${n > 1 ? ` · ${i + 1}/${n}` : ""}${f.caption ? " — " + esc(f.caption) : ""}`;
+      return `<figure class="fig" style="margin:0">
+        <img src="${esc(f.url)}" alt="${esc(f.label + (f.caption ? ": " + f.caption : ""))}"
+             loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        <figcaption class="fig-tag">${tag}</figcaption></figure>`;
+    }).join("");
+    return `<div class="figs">${slides}</div>`;
+  }
+
+  function cardHtml(p) {
+    const isKept = !!kept[p.doi];
+    const cls = p.figure_kind === "none" ? "text-only" : p.figure_kind === "preview" ? "preview" : "";
+    const credit = p.figure_kind === "full" && p.licence
+      ? `<div class="credit">Figures: <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.journal)}</a>, ${esc(p.licence)}</div>`
+      : "";
+    const fresh = p.figures_added && tab === "figs" ? `<span class="new">figures added ${fmtDate(p.figures_added)}</span> ·` : "";
+    return `<article class="card ${cls}" data-doi="${esc(p.doi)}">
+      ${figuresHtml(p)}
+      <div class="body">
+        <div class="meta"><span class="dot" style="background:${esc(colours[p.journal] || "#334155")}"></span>
+          ${fresh}<span>${esc(p.journal)}</span>${p.published ? `<span>· ${fmtDate(p.published)}</span>` : ""}</div>
+        <h2 class="title"><a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a></h2>
+        ${p.summary ? `<p class="summary">${esc(p.summary)}</p>` : ""}
+        ${credit}
+      </div>
+      <div class="acts">
+        <button class="pass" data-act="pass">Pass</button>
+        <a class="open" href="${esc(p.link)}" target="_blank" rel="noopener">Open</a>
+        <button class="keep" data-act="keep" aria-pressed="${isKept}">${isKept ? "Kept" : "Keep"}</button>
+      </div>
+    </article>`;
+  }
+
+  function list(papers, { group = true, hidePassed = true, emptyText = "Nothing here yet." } = {}) {
+    const shown = papers.filter((p) => visible(p) && !(hidePassed && passed[p.doi]));
+    if (!shown.length) return `<p class="empty">${esc(emptyText)}</p>`;
+    let html = "", week = null;
+    for (const p of shown) {
+      if (group && p.week !== week) { week = p.week; html += `<h3 class="week-head">${weekLabel(week)}</h3>`; }
+      html += cardHtml(p);
+    }
+    return html;
+  }
+
+  // ── Views ───────────────────────────────────────────────────────────────
+  function render() {
+    document.querySelectorAll(".tabs button").forEach((b) =>
+      b.setAttribute("aria-selected", String(b.dataset.tab === tab)));
+    const savedTab = $('[data-tab="saved"]');
+    const nKept = Object.keys(kept).length;
+    savedTab.innerHTML = "Saved" + (nKept ? `<span class="n">${nKept}</span>` : "");
+    if (!feed) return;
+
+    if (tab === "week") {
+      const latest = feed.weeks[0];
+      const papers = feed.papers.filter((p) => p.week === latest);
+      main.innerHTML = list(papers, { emptyText: "You've been through this week. New papers arrive daily." });
+    } else if (tab === "figs") {
+      const papers = feed.papers.filter((p) => p.figures_added)
+        .sort((a, b) => (b.figures_added || "").localeCompare(a.figures_added || ""));
+      main.innerHTML = `<p class="empty" style="padding:4px 0 10px;text-align:left">Earlier papers whose open-access figures have just come through PubMed Central.</p>`
+        + list(papers, { group: false, hidePassed: false, emptyText: "No new figures yet. They arrive two to five weeks after a paper does." });
+    } else if (tab === "saved") {
+      const papers = Object.values(kept).sort((a, b) => (b.week || "").localeCompare(a.week || ""));
+      main.innerHTML = list(papers, { hidePassed: false, emptyText: "Keep a paper (or swipe it right) and it stays here." });
+    } else if (tab === "earlier") {
+      renderEarlier();
+    }
+  }
+
+  async function renderEarlier() {
+    if (openWeek) {
+      let papers = feed.papers.filter((p) => p.week === openWeek);
+      if (feed.archived.includes(openWeek)) {
+        if (!weekCache[openWeek]) {
+          main.innerHTML = `<p class="empty">Loading…</p>`;
+          try { weekCache[openWeek] = await (await fetch(`data/weeks/${openWeek}.json`)).json(); }
+          catch (e) { weekCache[openWeek] = []; }
+        }
+        papers = weekCache[openWeek];
+      }
+      main.innerHTML = `<button class="back" data-back>← All weeks</button>`
+        + `<h3 class="week-head">${weekLabel(openWeek)}</h3>` + list(papers, { group: false, hidePassed: false });
+      return;
+    }
+    const counts = {};
+    feed.papers.forEach((p) => { counts[p.week] = (counts[p.week] || 0) + 1; });
+    const items = feed.weeks.slice(1).map((w) =>
+      `<li><button data-week="${esc(w)}">${weekLabel(w)}<span class="n">${counts[w] ? counts[w] + " papers" : "archive"}</span></button></li>`).join("");
+    main.innerHTML = items ? `<ul class="weeks">${items}</ul>` : `<p class="empty">Earlier weeks appear here as the feed grows.</p>`;
+  }
+
+  function renderChips() {
+    const chips = $("#chips");
+    chips.innerHTML = `<button class="chip" data-j="" aria-pressed="${journals.size === 0}">All</button>` +
+      feed.journals.map((j) => `<button class="chip" data-j="${esc(j.name)}" aria-pressed="${journals.has(j.name)}">
+        <span class="dot" style="background:${esc(j.colour)}"></span>${esc(j.short)}</button>`).join("");
+    $("#figsOnly").checked = figsOnly;
+  }
+
+  // ── Keep / Pass / Undo ──────────────────────────────────────────────────
+  let undo = null, toastTimer = null;
+  function toast(msg, undoFn) {
+    undo = undoFn;
+    $("#toastMsg").textContent = msg;
+    $("#toast").hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { $("#toast").hidden = true; undo = null; }, 5000);
+  }
+
+  function findPaper(doi) {
+    return feed.papers.find((p) => p.doi === doi) || kept[doi]
+      || Object.values(weekCache).flat().find((p) => p.doi === doi);
+  }
+
+  function act(card, what) {
+    const doi = card.dataset.doi;
+    const p = findPaper(doi);
+    if (!p) return;
+    if (what === "keep" && kept[doi] && tab !== "week") {     // un-keep in place
+      delete kept[doi]; store.set("kept", kept);
+      render(); toast("Removed from Saved", () => { kept[doi] = p; store.set("kept", kept); render(); });
+      return;
+    }
+    const before = { k: kept[doi], s: passed[doi] };
+    if (what === "keep") { kept[doi] = p; delete passed[doi]; }
+    else { passed[doi] = new Date().toISOString().slice(0, 10); delete kept[doi]; }
+    store.set("kept", kept); store.set("passed", passed);
+    const leaves = tab === "week";
+    const finish = () => render();
+    if (leaves) { card.classList.add("gone", what); setTimeout(finish, 240); } else finish();
+    toast(what === "keep" ? "Saved" : "Passed", () => {
+      if (before.k) kept[doi] = before.k; else delete kept[doi];
+      if (before.s) passed[doi] = before.s; else delete passed[doi];
+      store.set("kept", kept); store.set("passed", passed); render();
+    });
+  }
+
+  // ── Events ──────────────────────────────────────────────────────────────
+  document.addEventListener("click", (e) => {
+    const t = e.target;
+    const tabBtn = t.closest(".tabs button");
+    if (tabBtn) { tab = tabBtn.dataset.tab; openWeek = null; store.set("tab", tab); render(); window.scrollTo(0, 0); return; }
+    const chip = t.closest(".chip");
+    if (chip) {
+      const j = chip.dataset.j;
+      if (!j) journals.clear(); else if (journals.has(j)) journals.delete(j); else journals.add(j);
+      store.set("journals", [...journals]); renderChips(); render(); return;
+    }
+    const actBtn = t.closest("[data-act]");
+    if (actBtn) { act(actBtn.closest(".card"), actBtn.dataset.act); return; }
+    const wk = t.closest("[data-week]");
+    if (wk) { openWeek = wk.dataset.week; render(); window.scrollTo(0, 0); return; }
+    if (t.closest("[data-back]")) { openWeek = null; render(); return; }
+    const tag = t.closest(".fig-tag");
+    if (tag) { tag.classList.toggle("open"); return; }
+  });
+  $("#figsOnly").addEventListener("change", (e) => { figsOnly = e.target.checked; store.set("figsOnly", figsOnly); render(); });
+  $("#undo").addEventListener("click", () => { if (undo) undo(); undo = null; $("#toast").hidden = true; });
+
+  // Swipe the text of a card: right keeps, left passes. The figure strip scrolls instead.
+  let sx = 0, sy = 0, swCard = null;
+  main.addEventListener("touchstart", (e) => {
+    const body = e.target.closest(".body");
+    swCard = body ? body.closest(".card") : null;
+    if (swCard) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }
+  }, { passive: true });
+  main.addEventListener("touchmove", (e) => {
+    if (!swCard) return;
+    const dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
+    if (Math.abs(dx) > Math.abs(dy)) swCard.style.transform = `translateX(${dx * 0.6}px)`;
+  }, { passive: true });
+  main.addEventListener("touchend", (e) => {
+    if (!swCard) return;
+    const card = swCard; swCard = null;
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    card.style.transform = "";
+    if (Math.abs(dx) > 80 && Math.abs(dx) > 2 * Math.abs(dy)) act(card, dx > 0 ? "keep" : "pass");
+  });
+
+  // A strip is as tall as the figure on screen, not its tallest figure.
+  function fitStrip(strip) {
+    const i = Math.round(strip.scrollLeft / (strip.clientWidth || 1));
+    const img = strip.children[i] && strip.children[i].querySelector("img");
+    if (img && img.complete && img.naturalWidth) strip.style.height = img.offsetHeight + "px";
+  }
+  main.addEventListener("load", (e) => {
+    if (e.target.tagName !== "IMG") return;
+    const strip = e.target.closest(".figs");
+    if (strip) fitStrip(strip);
+  }, true);
+  let fitTimer = null;
+  main.addEventListener("scroll", (e) => {
+    const strip = e.target.classList && e.target.classList.contains("figs") ? e.target : null;
+    if (!strip) return;
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(() => fitStrip(strip), 80);
+  }, true);
+
+  // Broken figure links: drop the slide; a card with none left becomes a text card.
+  main.addEventListener("error", (e) => {
+    if (e.target.tagName !== "IMG") return;
+    const strip = e.target.closest(".figs");
+    e.target.closest(".fig").remove();
+    if (strip && strip.children.length) fitStrip(strip);
+    if (strip && !strip.children.length) {
+      const card = strip.closest(".card");
+      const p = findPaper(card.dataset.doi);
+      strip.outerHTML = `<div class="band" style="background:${esc(colours[p && p.journal] || "#334155")}"></div>`;
+      card.classList.add("text-only");
+    }
+  }, true);
+
+  // ── Load ────────────────────────────────────────────────────────────────
+  // Passed papers are forgotten after six months, like the feed itself.
+  const cutoff = new Date(Date.now() - 183 * 864e5).toISOString().slice(0, 10);
+  for (const d in passed) if (passed[d] < cutoff) delete passed[d];
+  store.set("passed", passed);
+
+  fetch("data/feed.json", { cache: "no-cache" })
+    .then((r) => r.json())
+    .then((data) => {
+      feed = data;
+      data.journals.forEach((j) => { colours[j.name] = j.colour; shorts[j.name] = j.short; });
+      const nFigs = data.papers.filter((p) => p.figures_added).length;
+      const figTab = $('[data-tab="figs"]');
+      if (nFigs) figTab.innerHTML = `New figures<span class="n">${nFigs}</span>`;
+      $("#stamp").textContent = "Updated " + new Date(data.generated).toLocaleDateString(undefined, { day: "numeric", month: "short" });
+      renderChips(); render();
+    })
+    .catch(() => { main.innerHTML = `<p class="empty">Couldn't load the feed. Check your connection and reload.</p>`; });
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  }
+})();

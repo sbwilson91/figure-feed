@@ -1,0 +1,227 @@
+"""Offline tests: every network call goes through a fake `fetch`."""
+
+import json
+import unittest
+from datetime import date
+
+from feed import abstracts, build, figures, sources, summary
+
+CONFIG = {"never_titles": ["Correction:", "Author Correction"]}
+
+SCIENCE_RSS = """<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/">
+ <item rdf:about="https://www.science.org/doi/10.1126/science.adx1">
+  <title>A &lt;i&gt;new&lt;/i&gt; kidney</title>
+  <link>https://www.science.org/doi/10.1126/science.adx1</link>
+  <dc:identifier>doi:10.1126/science.ADX1</dc:identifier>
+  <dc:date>2026-10-23T00:00:00Z</dc:date>
+  <dc:type>Research Article</dc:type>
+ </item>
+ <item rdf:about="x">
+  <title>Why kidneys matter</title>
+  <link>https://www.science.org/doi/10.1126/science.adx2</link>
+  <dc:identifier>doi:10.1126/science.adx2</dc:identifier>
+  <dc:type>Perspective</dc:type>
+ </item>
+ <item rdf:about="y">
+  <title>Correction: an earlier paper</title>
+  <link>https://www.science.org/doi/10.1126/science.adx3</link>
+  <dc:type>Research Article</dc:type>
+ </item>
+</rdf:RDF>"""
+
+SCIENCE = {"name": "Science", "type_from": "field", "field": "type",
+           "research": ["Research Article"], "commentary": ["Perspective"]}
+NEJM = {"name": "NEJM", "type_from": "doi", "research": ["/NEJMoa"]}
+
+EFETCH = """<PubmedArticleSet><PubmedArticle><MedlineCitation><PMID>123</PMID><Article>
+<Abstract><AbstractText Label="BACKGROUND">Kidneys fail.</AbstractText>
+<AbstractText Label="CONCLUSIONS">Drug X halved the decline in kidney function. More text.</AbstractText>
+</Abstract></Article></MedlineCitation>
+<PubmedData><ArticleIdList><ArticleId IdType="doi">10.1056/NEJMoa1</ArticleId></ArticleIdList></PubmedData>
+</PubmedArticle></PubmedArticleSet>"""
+
+PMC_XML = """<article xmlns:xlink="http://www.w3.org/1999/xlink"><body>
+<fig id="f1"><label>Fig. 1</label><caption><title>Organoids grow.</title><p>Long text.</p></caption>
+ <graphic xlink:href="41586_2026_1_Fig1_HTML"/></fig>
+<fig id="f2"><label>Figure 2</label><caption><p>Nephrons form in vitro. Then more.</p></caption>
+ <graphic xlink:href="gr2.webp"/></fig>
+<fig id="f3"><label>Fig. 3</label><graphic xlink:href="missing.webp"/></fig>
+</body></article>"""
+
+
+def fake(routes):
+    """A fetch that answers from {url-substring: (status, ctype, body)}."""
+    calls = []
+
+    def fetch(url, timeout=30, method="GET"):
+        calls.append(url)
+        for key, resp in routes.items():
+            if key in url:
+                status, ctype, body = resp
+                return status, ctype, body.encode() if isinstance(body, str) else body
+        return 404, "", b""
+    fetch.calls = calls
+    return fetch
+
+
+class Sources(unittest.TestCase):
+    def test_field_rule(self):
+        items = sources.parse_feed(SCIENCE_RSS, SCIENCE, CONFIG)
+        by = {i.doi: i for i in items}
+        self.assertEqual(by["10.1126/science.adx1"].kind, sources.RESEARCH)
+        self.assertEqual(by["10.1126/science.adx1"].title, "A new kidney")
+        self.assertEqual(by["10.1126/science.adx1"].published, date(2026, 10, 23))
+        self.assertEqual(by["10.1126/science.adx2"].kind, sources.COMMENTARY)
+        self.assertEqual(by["10.1126/science.adx3"].kind, sources.OTHER)
+
+    def test_doi_rule(self):
+        rss = SCIENCE_RSS.replace("10.1126/science.ADX1", "10.1056/NEJMoa2601")
+        items = sources.parse_feed(rss, NEJM, CONFIG)
+        self.assertEqual(items[0].kind, sources.RESEARCH)
+        self.assertEqual(items[1].kind, sources.OTHER)
+
+    def test_page_type(self):
+        cfg = {"research": ["Article"], "commentary": ["News & Views"]}
+        page = '<meta name="citation_article_type" content="News &amp; Views">'
+        self.assertEqual(sources.kind_from_page(page, cfg), ("News & Views", sources.COMMENTARY))
+        self.assertEqual(sources.kind_from_page("", cfg), (None, sources.OTHER))
+
+    def test_crossref(self):
+        payload = {"message": {"items": [
+            {"DOI": "10.1093/Bioinformatics/btag1", "title": ["Fast <i>aligner</i>"],
+             "published-online": {"date-parts": [[2026, 10, 20]]}, "type": "journal-article"},
+            {"DOI": "10.1093/x", "title": ["Correction: y"]}]}}
+        items = sources.parse_crossref(payload, {"name": "Bioinformatics"}, CONFIG)
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0].doi, "10.1093/bioinformatics/btag1")
+        self.assertEqual(items[0].title, "Fast aligner")
+
+
+class Abstracts(unittest.TestCase):
+    def test_parse(self):
+        rec = abstracts.parse_efetch(EFETCH)["10.1056/nejmoa1"]
+        self.assertEqual(rec["pmid"], "123")
+        self.assertTrue(rec["abstract"].startswith("BACKGROUND: Kidneys fail."))
+
+    def test_lookup_many(self):
+        fetch = fake({"esearch": (200, "json", json.dumps({"esearchresult": {"idlist": ["123"]}})),
+                      "efetch": (200, "xml", EFETCH)})
+        found = abstracts.lookup_many(fetch, ["10.1056/nejmoa1", "10.1/other"])
+        self.assertEqual(list(found), ["10.1056/nejmoa1"])
+
+
+class Summary(unittest.TestCase):
+    def test_conclusions_first(self):
+        abstract = abstracts.parse_efetch(EFETCH)["10.1056/nejmoa1"]["abstract"]
+        self.assertEqual(summary.extractive(abstract), "Drug X halved the decline in kidney function.")
+
+    def test_cue_sentence(self):
+        text = ("Kidneys are complex. Here we show that organoids form nephrons, e.g. in mice. "
+                "This matters.")
+        self.assertEqual(summary.extractive(text),
+                         "Here we show that organoids form nephrons, e.g. in mice.")
+
+    def test_trim(self):
+        out = summary.extractive("Word " * 200 + ".")
+        self.assertLessEqual(len(out), summary.MAX_CHARS + 1)
+        self.assertTrue(out.endswith("…"))
+
+    def test_none(self):
+        self.assertIsNone(summary.extractive(None))
+
+
+class Figures(unittest.TestCase):
+    def test_springer_url(self):
+        self.assertTrue(figures.springer_figure_url("10.1038/s41586-026-11053-2", 3).endswith(
+            "/41586_2026_11053_Fig3_HTML.png"))
+        self.assertIsNone(figures.springer_figure_url("10.1126/science.adx1", 1))
+
+    def test_springer_probe_stops(self):
+        fetch = fake({"Fig1_": (200, "image/png", ""), "Fig2_": (200, "image/png", "")})
+        self.assertEqual(len(figures.springer(fetch, "10.1038/s41586-026-11053-2")), 2)
+
+    def test_licences(self):
+        msg = {"license": [{"URL": "https://www.elsevier.com/tdm", "content-version": "tdm"},
+                           {"URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/", "content-version": "vor"}]}
+        url = figures.cc_licence(msg)
+        self.assertEqual(figures.licence_name(url), "CC BY-NC-ND 4.0")
+        self.assertIsNone(figures.cc_licence({"license": [{"URL": "https://creativecommons.org/licenses/by/4.0/",
+                                                           "content-version": "am"}]}))
+
+    def test_pmc_xml(self):
+        figs = figures.parse_pmc_figures(PMC_XML, {"41586_2026_1_Fig1_HTML.webp", "gr2.webp"})
+        self.assertEqual([f["name"] for f in figs], ["41586_2026_1_Fig1_HTML.webp", "gr2.webp"])
+        self.assertEqual(figs[0]["label"], "Fig. 1")
+        self.assertEqual(figs[0]["caption"], "Organoids grow.")
+        self.assertEqual(figs[1]["caption"], "Nephrons form in vitro.")
+
+    def listing(self, *names):
+        return "<ListBucketResult>" + "".join(f"<Key>PMC9.1/{n}</Key>" for n in names) + "</ListBucketResult>"
+
+    def test_pmc_open_access(self):
+        fetch = fake({"prefix=PMC9.": (200, "xml", self.listing("PMC9.1.json", "PMC9.1.xml", "gr2.webp")),
+                      "PMC9.1.json": (200, "json", json.dumps({"license_code": "CC BY", "is_pmc_openaccess": True})),
+                      "PMC9.1.xml": (200, "xml", PMC_XML)})
+        code, figs = figures.pmc(fetch, "PMC9")
+        self.assertEqual(code, "CC BY")
+        self.assertEqual(figs[0]["url"], "https://pmc-oa-opendata.s3.amazonaws.com/PMC9.1/gr2.webp")
+
+    def test_pmc_author_manuscript_refused(self):
+        fetch = fake({"prefix=PMC9.": (200, "xml", self.listing("PMC9.1.json", "PMC9.1.xml")),
+                      "PMC9.1.json": (200, "json", json.dumps({"license_code": "TDM", "is_pmc_openaccess": False}))})
+        self.assertEqual(figures.pmc(fetch, "PMC9"), (None, []))
+
+    def test_og_image(self):
+        page = '<meta content="/img/fig1.png" property="og:image">'
+        self.assertEqual(figures.og_image(page, "https://www.nature.com/articles/x"),
+                         "https://www.nature.com/img/fig1.png")
+        self.assertIsNone(figures.og_image('<meta property="og:image" content="https://x.org/logo.png">', "https://x.org"))
+
+
+def paper(doi, first_seen, **kw):
+    p = {"doi": doi, "journal": "Nature", "title": "T", "link": "https://doi.org/" + doi,
+         "published": first_seen, "first_seen": first_seen, "article_type": None,
+         "abstract": None, "pmid": None, "summary": None, "summary_source": None,
+         "licence": None, "licence_checked": None, "pmcid": None, "figures": [],
+         "figure_source": None, "figures_added": None, "preview": None, "preview_tried": True}
+    p.update(kw)
+    return p
+
+
+class Build(unittest.TestCase):
+    def test_backfill_marks_figures_added(self):
+        today = date(2026, 10, 28)                       # a Wednesday
+        old = paper("10.1/old", "2026-10-07")
+        new = paper("10.1/new", "2026-10-27")
+        fetch = fake({
+            "idconv": (200, "json", json.dumps({"records": [
+                {"doi": "10.1/old", "pmcid": "PMC9"}, {"doi": "10.1/new", "pmcid": "PMC9"}]})),
+            "prefix=PMC9.": (200, "xml", Figures.listing(None, "PMC9.1.json", "PMC9.1.xml", "gr2.webp")),
+            "PMC9.1.json": (200, "json", json.dumps({"license_code": "CC BY", "is_pmc_openaccess": True})),
+            "PMC9.1.xml": (200, "xml", PMC_XML)})
+        self.assertEqual(build.fill_figures(fetch, [old, new], today), 2)
+        self.assertEqual(old["figures_added"], "2026-10-28")
+        self.assertIsNone(new["figures_added"])          # same week: just has figures
+        self.assertEqual(old["licence"], "https://creativecommons.org/licenses/by/4.0/")
+
+    def test_public_and_prune(self):
+        today = date(2026, 10, 28)
+        state = {"papers": {"a": paper("a", "2026-10-27", preview="https://x/p.png"),
+                            "b": paper("b", "2026-01-05")},
+                 "not_research": {"c": "2026-06-01", "d": "2026-10-20"}}
+        build.prune(state, today)
+        self.assertEqual(list(state["papers"]), ["a"])
+        self.assertEqual(list(state["not_research"]), ["d"])
+        row = build.public(state["papers"]["a"])
+        self.assertEqual((row["week"], row["figure_kind"], row["licence"]), ("2026-10-26", "preview", None))
+        self.assertNotIn("abstract", row)
+
+    def test_code_to_url(self):
+        self.assertEqual(build.code_to_url("CC BY-NC-ND"), "https://creativecommons.org/licenses/by-nc-nd/4.0/")
+        self.assertIsNone(build.code_to_url("TDM"))
+
+
+if __name__ == "__main__":
+    unittest.main()

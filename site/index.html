@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Figure Feed</title>
+<meta name="description" content="New research from the major journals, one figure-led card at a time.">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <h1 class="brand"><span class="mark" aria-hidden="true"></span>Figure Feed</h1>
+    <span class="stamp" id="stamp"></span>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="week" aria-selected="true">This week</button>
+    <button role="tab" data-tab="figs">New figures</button>
+    <button role="tab" data-tab="saved">Saved</button>
+    <button role="tab" data-tab="earlier">Earlier</button>
+  </nav>
+  <div class="filters">
+    <div class="chips" id="chips"></div>
+    <label class="toggle"><input type="checkbox" id="figsOnly"> Figures only</label>
+  </div>
+</header>
+
+<main class="sc" id="main">
+  <p class="empty" id="loading">Loading…</p>
+</main>
+
+<div class="toast" id="toast" hidden><span id="toastMsg"></span><button id="undo">Undo</button></div>
+
+<footer class="foot">
+  Papers from the journals' own feeds; summaries from PubMed abstracts. Full figures are
+  shown only for papers published under a Creative Commons licence and link to their source.
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

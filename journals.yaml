@@ -1,0 +1,97 @@
+# The journals in the pool, and how each says what kind of article an item is.
+#
+#   type_from: field   a field of the RSS item names the type ("section", "type")
+#   type_from: doi     a DOI fragment marks research (NEJM: /NEJMoa)
+#   type_from: page    the feed says nothing; the article page's citation_article_type does
+#   type_from: all     everything the source lists is research
+#
+# `source: crossref` reads the journal's new works from Crossref by ISSN instead of RSS,
+# for journals whose feed holds too few items to see a full week.
+#
+# Only `research` items become cards. Anything unrecognised is left out, never guessed.
+
+never_titles: [Author Correction, Publisher Correction, Correction, Retraction, Erratum,
+               Expression of Concern]
+
+journals:
+  - name: Nature
+    short: Nature
+    colour: "#c8102e"
+    rss: https://www.nature.com/nature.rss
+    type_from: page
+    research: [Article, Letter, Resource, Analysis]
+
+  - name: Science
+    short: Science
+    colour: "#9b1b30"
+    rss: https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science
+    type_from: field
+    field: type
+    research: [Research Article, Report, Research Resource]
+
+  - name: Cell
+    short: Cell
+    colour: "#00629b"
+    rss: https://www.cell.com/cell/inpress.rss
+    type_from: field
+    field: section
+    research: [Article, Resource, Short article, Report]
+
+  - name: Cell Stem Cell
+    short: Cell Stem Cell
+    colour: "#0a7c8c"
+    rss: https://www.cell.com/cell-stem-cell/inpress.rss
+    type_from: field
+    field: section
+    research: [Article, Resource, Short article, Report, Clinical and Translational Report]
+
+  - name: Stem Cell Reports
+    short: Stem Cell Rep.
+    colour: "#3b7d3b"
+    rss: https://www.cell.com/stem-cell-reports/inpress.rss
+    type_from: field
+    field: section
+    research: [Article, Resource, Report]
+
+  - name: Nature Biotechnology
+    short: Nat. Biotech.
+    colour: "#6a3d9a"
+    rss: https://www.nature.com/nbt.rss
+    type_from: page
+    research: [Article, Letter, Resource, Analysis, Brief Communication]
+
+  - name: Nature Methods
+    short: Nat. Methods
+    colour: "#b15928"
+    rss: https://www.nature.com/nmeth.rss
+    type_from: page
+    research: [Article, Letter, Resource, Analysis, Brief Communication]
+
+  - name: Nature Materials
+    short: Nat. Materials
+    colour: "#1f78b4"
+    rss: https://www.nature.com/nmat.rss
+    type_from: page
+    research: [Article, Letter, Resource, Analysis]
+
+  - name: Bioinformatics
+    short: Bioinformatics
+    colour: "#33658a"
+    source: crossref
+    issn: 1367-4811
+    type_from: all
+
+  - name: New England Journal of Medicine
+    short: NEJM
+    colour: "#8c1d18"
+    rss: https://www.nejm.org/action/showFeed?type=etoc&feed=rss&jc=nejm
+    type_from: doi
+    research: ["/NEJMoa"]
+
+  - name: The Lancet
+    short: Lancet
+    colour: "#00468b"
+    rss: https://www.thelancet.com/rssfeed/lancet_current.xml
+    type_from: field
+    field: section
+    research: [Articles]
