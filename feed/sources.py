@@ -24,6 +24,7 @@ from xml.etree import ElementTree as ET
 from . import net
 
 RESEARCH, COMMENTARY, OTHER = "research", "commentary", "other"
+PUBMED = "pubmed"     # a backfilled item whose type PubMed decides
 
 _DC = "http://purl.org/dc/elements/1.1/"
 _TAG = re.compile(r"<[^>]+>")
@@ -153,33 +154,70 @@ def kind_from_page(page_html: str, journal_cfg: dict) -> tuple[Optional[str], st
 
 # ── Crossref, for journals whose RSS is too short ────────────────────────────
 
-def parse_crossref(payload: dict, journal_cfg: dict, config: dict) -> list[Item]:
+def _crossref_date(w: dict) -> Optional[date]:
+    """The online date if Crossref has a full one, else the day the DOI was registered.
+    Elsevier records only the issue month, and registration is the day it went online."""
+    for key in ("published-online", "published", "created"):
+        parts = (w.get(key) or {}).get("date-parts") or [[]]
+        if len(parts[0]) == 3:
+            try:
+                return date(*parts[0])
+            except (TypeError, ValueError):
+                pass
+    return None
+
+
+def parse_crossref(payload: dict, journal_cfg: dict, config: dict, backfill: bool = False) -> list[Item]:
+    """Crossref works as items. The daily source (`type_from: all`) takes every work as
+    research; a backfill applies the journal's own rule where Crossref can carry it."""
+    rule = journal_cfg["type_from"] if backfill else "all"
     out = []
     for w in payload.get("message", {}).get("items", []):
         doi = (w.get("DOI") or "").lower()
         title = clean((w.get("title") or [""])[0])
-        if not doi or not title or is_never(title, config):
+        if not doi or not title:
             continue
-        parts = (w.get("published-online") or w.get("published") or {}).get("date-parts") or [[]]
-        try:
-            pub = date(*parts[0][:3]) if len(parts[0]) == 3 else None
-        except (TypeError, ValueError):
-            pub = None
+        if is_never(title, config):
+            kind = OTHER
+        elif rule == "all":
+            kind = RESEARCH
+        elif rule == "doi":
+            hit = lambda key: any(x.lower() in doi for x in journal_cfg.get(key, []))
+            kind = RESEARCH if hit("research") else COMMENTARY if hit("commentary") else OTHER
+        elif rule == "page":
+            kind = None
+        else:
+            kind = PUBMED
         out.append(Item(journal=journal_cfg["name"], doi=doi, title=title,
-                        link=w.get("URL") or f"https://doi.org/{doi}", published=pub,
-                        article_type=w.get("type"), kind=RESEARCH))
+                        link=w.get("URL") or f"https://doi.org/{doi}", published=_crossref_date(w),
+                        article_type=None if backfill else w.get("type"), kind=kind))
     return out
 
 
 def crossref_items(fetch, journal_cfg: dict, config: dict, today: date,
-                   days: int = 14) -> list[Item]:
+                   days: int = 14, backfill: bool = False) -> list[Item]:
+    """The journal's works of the last `days` days, every page of them. The daily source
+    filters by online date; a backfill by registration date, which every publisher sets
+    (Elsevier, Science and the Lancet give no online date)."""
     since = (today - timedelta(days=days)).isoformat()
-    url = (f"https://api.crossref.org/journals/{journal_cfg['issn']}/works?rows=200"
-           f"&filter=from-online-pub-date:{since},until-online-pub-date:{today.isoformat()},"
-           f"type:journal-article&select=DOI,title,URL,published-online,published,type"
-           f"&{net.crossref_params()}")
-    body = net.text(fetch, url)
-    return parse_crossref(json.loads(body), journal_cfg, config) if body else []
+    field = "created-date" if backfill else "online-pub-date"
+    base = (f"https://api.crossref.org/journals/{journal_cfg['issn']}/works?rows=200"
+            f"&filter=from-{field}:{since},until-{field}:{today.isoformat()},type:journal-article"
+            f"&select=DOI,title,URL,published-online,published,created,type")
+    if net.crossref_params():                      # empty without CONTACT_EMAIL; "&&" is a 400
+        base += "&" + net.crossref_params()
+    out, cursor = [], "*"
+    for _ in range(20):                                   # 4,000 works: far beyond a month
+        body = net.text(fetch, f"{base}&cursor={quote(cursor)}")
+        if not body:
+            break
+        payload = json.loads(body)
+        items = parse_crossref(payload, journal_cfg, config, backfill)
+        out.extend(items)
+        cursor = payload.get("message", {}).get("next-cursor")
+        if not cursor or len(payload.get("message", {}).get("items", [])) < 200:
+            break
+    return out
 
 
 def items_for(fetch, journal_cfg: dict, config: dict, today: date) -> list[Item]:

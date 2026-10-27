@@ -8,13 +8,19 @@
 # `source: crossref` reads the journal's new works from Crossref by ISSN instead of RSS,
 # for journals whose feed holds too few items to see a full week.
 #
+# `issn` also lets `--backfill` read past weeks from Crossref. A feed's type labels are
+# not in Crossref, so for `type_from: field` journals the backfill decides from PubMed's
+# publication types instead (see `abstracts.is_research`).
+#
 # Only `research` items become cards. Anything unrecognised is left out, never guessed.
 
 never_titles: [Author Correction, Publisher Correction, Correction, Retraction, Erratum,
-               Expression of Concern]
+               Expression of Concern, In Science Journals, In Other Journals,
+               This Week in Science, Editors' Choice]
 
 journals:
   - name: Nature
+    issn: "1476-4687"
     short: Nature
     colour: "#c8102e"
     rss: https://www.nature.com/nature.rss
@@ -22,6 +28,7 @@ journals:
     research: [Article, Letter, Resource, Analysis]
 
   - name: Science
+    issn: "1095-9203"
     short: Science
     colour: "#9b1b30"
     rss: https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science
@@ -30,6 +37,7 @@ journals:
     research: [Research Article, Report, Research Resource]
 
   - name: Cell
+    issn: "0092-8674"
     short: Cell
     colour: "#00629b"
     rss: https://www.cell.com/cell/inpress.rss
@@ -38,6 +46,7 @@ journals:
     research: [Article, Resource, Short article, Report]
 
   - name: Cell Stem Cell
+    issn: "1934-5909"
     short: Cell Stem Cell
     colour: "#0a7c8c"
     rss: https://www.cell.com/cell-stem-cell/inpress.rss
@@ -46,6 +55,7 @@ journals:
     research: [Article, Resource, Short article, Report, Clinical and Translational Report]
 
   - name: Stem Cell Reports
+    issn: "2213-6711"
     short: Stem Cell Rep.
     colour: "#3b7d3b"
     rss: https://www.cell.com/stem-cell-reports/inpress.rss
@@ -54,6 +64,7 @@ journals:
     research: [Article, Resource, Report]
 
   - name: Nature Biotechnology
+    issn: "1546-1696"
     short: Nat. Biotech.
     colour: "#6a3d9a"
     rss: https://www.nature.com/nbt.rss
@@ -61,6 +72,7 @@ journals:
     research: [Article, Letter, Resource, Analysis, Brief Communication]
 
   - name: Nature Methods
+    issn: "1548-7105"
     short: Nat. Methods
     colour: "#b15928"
     rss: https://www.nature.com/nmeth.rss
@@ -68,6 +80,7 @@ journals:
     research: [Article, Letter, Resource, Analysis, Brief Communication]
 
   - name: Nature Materials
+    issn: "1476-4660"
     short: Nat. Materials
     colour: "#1f78b4"
     rss: https://www.nature.com/nmat.rss
@@ -78,10 +91,11 @@ journals:
     short: Bioinformatics
     colour: "#33658a"
     source: crossref
-    issn: 1367-4811
+    issn: "1367-4811"
     type_from: all
 
   - name: New England Journal of Medicine
+    issn: "1533-4406"
     short: NEJM
     colour: "#8c1d18"
     rss: https://www.nejm.org/action/showFeed?type=etoc&feed=rss&jc=nejm
@@ -89,6 +103,7 @@ journals:
     research: ["/NEJMoa"]
 
   - name: The Lancet
+    issn: "0140-6736"
     short: Lancet
     colour: "#00468b"
     rss: https://www.thelancet.com/rssfeed/lancet_current.xml

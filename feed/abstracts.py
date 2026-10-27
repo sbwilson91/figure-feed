@@ -22,8 +22,28 @@ EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 BATCH = 40
 
 
+# PubMed publication types that mark an item as something other than a research paper.
+NOT_RESEARCH = {"news", "letter", "comment", "editorial", "review", "systematic review",
+                "published erratum", "retraction notice", "retraction of publication",
+                "case reports", "interview", "biography", "portrait", "introductory journal article",
+                "practice guideline", "guideline", "expression of concern", "lecture", "congress"}
+
+
+MIN_WORDS = 90   # research abstracts in these journals run 96 words and up
+
+
+def is_research(rec: dict) -> bool:
+    """For a backfill: a research paper has a full abstract and no non-research
+    publication type. PubMed types previews, Perspectives and Policy Forums as plain
+    journal articles, but their abstracts are a teaser of 10 to 85 words. Checked
+    against the feeds' own labels: every research paper passes, no opinion piece does."""
+    types = {t.lower() for t in rec.get("types", [])}
+    words = len((rec.get("abstract") or "").split())
+    return words >= MIN_WORDS and not (types & NOT_RESEARCH)
+
+
 def parse_efetch(xml) -> dict[str, dict]:
-    """{doi: {"pmid", "abstract"}} for every PubmedArticle that has a DOI.
+    """{doi: {"pmid", "abstract", "types"}} for every PubmedArticle that has a DOI.
 
     Labelled sections (BACKGROUND, METHODS, ...) are joined as "LABEL: text", in order.
     """
@@ -50,7 +70,8 @@ def parse_efetch(xml) -> dict[str, dict]:
             label = node.get("Label")
             parts.append(f"{label}: {text}" if label else text)
         pmid = art.findtext("MedlineCitation/PMID")
-        out[doi] = {"pmid": pmid, "abstract": "\n\n".join(parts) or None}
+        types = [t.text.strip() for t in art.iter("PublicationType") if t.text]
+        out[doi] = {"pmid": pmid, "abstract": "\n\n".join(parts) or None, "types": types}
     return out
 
 

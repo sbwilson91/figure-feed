@@ -14,6 +14,7 @@ Conceptualisation and fine tuning performed by me (Sean Wilson), majority of cod
 - Papers without loadable figures appear as text at end
 - Can ignore a paper to remove from feed, store a paper to come back to later, open the paper at its source
 - Memory for where you last scrolled to
+- Back up and restore stored papers as a file (Saved tab)
 - Swipe on figures to show all available in paper
 - Filter by journal
 - Previous 6 weeks stored in Earlier tab
@@ -37,7 +38,9 @@ itself: each time it opens, and when it comes back to the front after half an ho
 more, it loads the latest papers and the latest version of the app. There is nothing to
 reinstall. Without a connection the app still opens, but figures and new papers need the
 internet. Saved papers stay on your phone only: there is no account and nothing syncs
-between devices.
+between devices. Removing the app removes them too, so the Saved tab has **Back up**,
+which saves them to a file (Files, Drive, email), and **Restore**, which reads that file
+back in.
 
 ### Looks
 
@@ -71,8 +74,18 @@ store copies. As such, papers locked behind a paywall remain so, and isn't that 
 For six weeks, each run checks again for abstracts and PMC figures. When figures turn up
 for a paper from an earlier week, the paper appears in the **New figures** tab.
 
+## Filling past weeks
+
+The journals' feeds only hold their latest items. To fill earlier weeks, for a new copy
+of the app say, run `python -m feed.build --backfill 30`: it lists the last 30 days of
+each journal from Crossref and files each paper under the week it went online. Crossref
+has no article sections, so for Science, Cell, Cell Stem Cell, Stem Cell Reports and the
+Lancet the backfill goes by PubMed's publication types and a full-length abstract; the
+odd opinion piece can slip through.
+
 ## Summaries
 
 The sentence under each title comes from the PubMed abstract: the conclusions section if
-the abstract has one, otherwise the "Here we show…" sentence.
+the abstract has one, otherwise the "Here we show…" sentence. Abstracts are the
+publishers' text, so they are fetched for each run and never saved in this repository.
 

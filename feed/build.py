@@ -4,9 +4,11 @@ missing, and write the site's data.
 
     python -m feed.build              # the daily run
     python -m feed.build --no-network-figures   # skip figure routes (quick local test)
+    python -m feed.build --backfill 30          # also fill the last 30 days
 
-State lives in `state/papers.json` (every paper of the last 26 weeks, with its abstract
-and bookkeeping). The site reads `site/data/feed.json` (the last six weeks) and
+State lives in `state/papers.json` (every paper of the last 26 weeks and its bookkeeping).
+Abstracts are the publishers' text, and the repository is public, so they are never
+saved: each run fetches them from PubMed for the papers that still need a summary. The site reads `site/data/feed.json` (the last six weeks) and
 `site/data/weeks/<monday>.json` (older weeks). Both are committed by the Action.
 
 Papers are grouped by the week they were first seen, so a week's edition never changes
@@ -67,39 +69,101 @@ def save_json(path: Path, data, compact: bool = False) -> None:
 
 # ── Steps ────────────────────────────────────────────────────────────────────
 
+def _new_paper(it: sources.Item, first_seen: date, page: str | None) -> dict:
+    return {
+        "doi": it.doi, "journal": it.journal, "title": it.title, "link": it.link,
+        "published": it.published.isoformat() if it.published else None,
+        "first_seen": first_seen.isoformat(), "article_type": it.article_type,
+        "abstract": None, "pmid": None, "summary": None, "summary_source": None,
+        "licence": None, "licence_checked": None, "pmcid": None,
+        "figures": [], "figure_source": None, "figures_added": None,
+        "preview": figures.og_image(page, it.link) if page else None,
+        "preview_tried": page is not None,
+    }
+
+
+def _take(fetch, it: sources.Item, jcfg: dict, state: dict, today: date,
+          first_seen: date) -> bool:
+    """Add one listed item if it is a new research paper. Non-research DOIs are
+    remembered, so a Nature page is read once."""
+    papers, other = state["papers"], state["not_research"]
+    if it.doi in papers or it.doi in other:
+        return False
+    if it.kind in (sources.COMMENTARY, sources.OTHER):
+        other[it.doi] = today.isoformat()
+        return False
+    page = None
+    if it.kind is None:                           # Nature family: the page says
+        page = net.text(fetch, it.link)
+        if page is None:
+            return False                          # try again next run
+        it.article_type, it.kind = sources.kind_from_page(page, jcfg)
+        if it.kind != sources.RESEARCH:
+            other[it.doi] = today.isoformat()
+            return False
+    papers[it.doi] = _new_paper(it, first_seen, page)
+    return True
+
+
 def poll(fetch, config: dict, state: dict, today: date) -> int:
     """Add every new research paper the sources list. Returns how many were added."""
-    papers, other = state["papers"], state["not_research"]
     added = 0
     for jcfg in config["journals"]:
         items = sources.items_for(fetch, jcfg, config, today)
         log.info("%-32s %3d items", jcfg["name"], len(items))
-        for it in items:
-            if it.doi in papers or it.doi in other or it.kind in (sources.COMMENTARY, sources.OTHER):
-                if it.kind in (sources.COMMENTARY, sources.OTHER) and it.doi not in other:
-                    other[it.doi] = today.isoformat()
-                continue
-            page = None
-            if it.kind is None:                       # Nature family: the page says
-                page = net.text(fetch, it.link)
-                if page is None:
-                    continue                          # try again next run
-                it.article_type, it.kind = sources.kind_from_page(page, jcfg)
-                if it.kind != sources.RESEARCH:
-                    other[it.doi] = today.isoformat()
-                    continue
-            papers[it.doi] = {
-                "doi": it.doi, "journal": it.journal, "title": it.title, "link": it.link,
-                "published": it.published.isoformat() if it.published else None,
-                "first_seen": today.isoformat(), "article_type": it.article_type,
-                "abstract": None, "pmid": None, "summary": None, "summary_source": None,
-                "licence": None, "licence_checked": None, "pmcid": None,
-                "figures": [], "figure_source": None, "figures_added": None,
-                "preview": figures.og_image(page, it.link) if page else None,
-                "preview_tried": page is not None,
-            }
-            added += 1
+        added += sum(_take(fetch, it, jcfg, state, today, today) for it in items)
     return added
+
+
+def _dated(it_published: date | None, today: date, since: date) -> date:
+    """When the daily run would have first seen a paper: the day it went online."""
+    if it_published is None:
+        return today
+    return min(max(it_published, since), today)
+
+
+def backfill(fetch, config: dict, state: dict, today: date, days: int) -> set[str]:
+    """Fill the last `days` days as if the daily run had been going all along: every
+    research paper the journals put online in that time, filed under the week it went
+    online. Papers already held are re-filed the same way. Returns the DOIs filed, so
+    figures found for them now are not shown again as "New figures".
+
+    The feeds only hold the latest items, so the backfill lists works from Crossref by
+    ISSN. Crossref carries no section, so `type_from: field` journals are typed by
+    PubMed's publication types (`abstracts.is_research`); papers PubMed has not indexed
+    yet are left for the daily run to meet in the feed."""
+    since = today - timedelta(days=days)
+    papers, other = state["papers"], state["not_research"]
+    filed: set[str] = set()
+    for p in papers.values():
+        pub = date.fromisoformat(p["published"]) if p["published"] else None
+        if pub and pub >= since and p["first_seen"] >= since.isoformat():
+            p["first_seen"] = _dated(pub, today, since).isoformat()
+            filed.add(p["doi"])
+
+    for jcfg in config["journals"]:
+        if not jcfg.get("issn"):
+            continue
+        items = sources.crossref_items(fetch, jcfg, config, today, days=days, backfill=True)
+        ask = [it for it in items if it.kind == sources.PUBMED
+               and it.doi not in papers and it.doi not in other]
+        records = abstracts.lookup_many(fetch, [it.doi for it in ask]) if ask else {}
+        added = unknown = 0
+        for it in items:
+            if it.kind == sources.PUBMED:
+                if it.doi in papers or it.doi in other:
+                    continue
+                rec = records.get(it.doi)
+                if rec is None:
+                    unknown += 1
+                    continue
+                it.kind = sources.RESEARCH if abstracts.is_research(rec) else sources.OTHER
+            if _take(fetch, it, jcfg, state, today, _dated(it.published, today, since)):
+                filed.add(it.doi)
+                added += 1
+        log.info("%-32s %3d works, %3d added%s", jcfg["name"], len(items), added,
+                 f", {unknown} not in PubMed yet" if unknown else "")
+    return filed
 
 
 def active(state: dict, today: date) -> list[dict]:
@@ -107,8 +171,11 @@ def active(state: dict, today: date) -> list[dict]:
     return [p for p in state["papers"].values() if p["first_seen"] >= cutoff]
 
 
-def fill_abstracts(fetch, papers: list[dict]) -> int:
-    need = [p for p in papers if not p["abstract"]]
+def fill_abstracts(fetch, papers: list[dict], upgrade: bool = False) -> int:
+    """Abstracts, held for this run only, for the papers that still need a summary (and,
+    with `upgrade`, those whose summary Claude has not written yet)."""
+    need = [p for p in papers if not p["abstract"]
+            and (not p["summary"] or (upgrade and p["summary_source"] != "claude"))]
     found = abstracts.lookup_many(fetch, [p["doi"] for p in need]) if need else {}
     n = 0
     for p in need:
@@ -142,8 +209,10 @@ def fill_previews(fetch, papers: list[dict]) -> None:
             p["preview"] = figures.og_image(page, p["link"])
 
 
-def fill_figures(fetch, papers: list[dict], today: date) -> int:
-    """Full figures where the licence allows. Returns how many papers gained them."""
+def fill_figures(fetch, papers: list[dict], today: date, filed: set[str] = frozenset()) -> int:
+    """Full figures where the licence allows. Returns how many papers gained them.
+    A paper from an earlier week is marked `figures_added`, unless the backfill filed it
+    in this run: it was never shown without them."""
     this_week = monday(today).isoformat()
     gained = 0
 
@@ -152,7 +221,7 @@ def fill_figures(fetch, papers: list[dict], today: date) -> int:
         p["figures"], p["figure_source"] = figs, source
         if licence:
             p["licence"] = licence
-        if p["first_seen"] < this_week:
+        if p["first_seen"] < this_week and p["doi"] not in filed:
             p["figures_added"] = today.isoformat()
         gained += 1
 
@@ -188,8 +257,7 @@ def code_to_url(code: str | None) -> str | None:
     return f"https://creativecommons.org/licenses/{kind}/4.0/"
 
 
-def fill_summaries(papers: list[dict]) -> int:
-    client = summary.claude_client()
+def fill_summaries(papers: list[dict], client=None) -> int:
     n = 0
     for p in papers:
         if not p["abstract"]:
@@ -203,6 +271,12 @@ def fill_summaries(papers: list[dict]) -> int:
         if not p["summary"]:
             p["summary"], p["summary_source"] = summary.extractive(p["abstract"]), "abstract"
     return n
+
+
+def forget_abstracts(state: dict) -> None:
+    """Abstracts never reach the committed state; the summary is what is kept."""
+    for p in state["papers"].values():
+        p["abstract"] = None
 
 
 def prune(state: dict, today: date) -> None:
@@ -265,23 +339,31 @@ def main(argv=None) -> int:
     ap.add_argument("--today", help="pretend it is this date (YYYY-MM-DD)")
     ap.add_argument("--no-network-figures", action="store_true",
                     help="skip licence, preview and figure lookups")
+    ap.add_argument("--backfill", type=int, metavar="DAYS",
+                    help="also list the last DAYS days from Crossref and file each paper "
+                         "under the week it went online")
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(message)s", stream=sys.stdout)
 
     today = date.fromisoformat(args.today) if args.today else datetime.now(timezone.utc).date()
     config, state = load_config(), load_state()
     fetch = net.fetch
+    n_before = len(state["papers"])
 
-    added = poll(fetch, config, state, today)
+    poll(fetch, config, state, today)
+    filed = backfill(fetch, config, state, today, args.backfill) if args.backfill else set()
+    added = len(state["papers"]) - n_before
     papers = active(state, today)
-    n_abs = fill_abstracts(fetch, papers)
+    client = summary.claude_client()
+    n_abs = fill_abstracts(fetch, papers, upgrade=client is not None)
     gained = 0
     if not args.no_network_figures:
         fill_licences(fetch, papers, today)
         fill_previews(fetch, papers)
-        gained = fill_figures(fetch, papers, today)
-    n_claude = fill_summaries(papers)
+        gained = fill_figures(fetch, papers, today, filed)
+    n_claude = fill_summaries(papers, client)
     prune(state, today)
+    forget_abstracts(state)
     save_json(STATE, state)
     feed = write_site(config, state, today)
 

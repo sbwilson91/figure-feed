@@ -94,9 +94,40 @@ class Sources(unittest.TestCase):
              "published-online": {"date-parts": [[2026, 10, 20]]}, "type": "journal-article"},
             {"DOI": "10.1093/x", "title": ["Correction: y"]}]}}
         items = sources.parse_crossref(payload, {"name": "Bioinformatics"}, CONFIG)
-        self.assertEqual(len(items), 1)
+        self.assertEqual([i.kind for i in items], [sources.RESEARCH, sources.OTHER])
         self.assertEqual(items[0].doi, "10.1093/bioinformatics/btag1")
         self.assertEqual(items[0].title, "Fast aligner")
+
+    def test_crossref_backfill_kinds(self):
+        def work(doi, title, **dates):
+            return {"DOI": doi, "title": [title], "type": "journal-article", **dates}
+        payload = {"message": {"items": [
+            work("10.1056/NEJMoa9", "Trial", **{"published": {"date-parts": [[2026, 10]]},
+                                               "created": {"date-parts": [[2026, 10, 8]]}}),
+            work("10.1056/NEJMp9", "View", created={"date-parts": [[2026, 10, 8]]}),
+            work("10.1056/NEJMc9", "Correction: Trial"),
+        ]}}
+        by = {i.doi: i for i in sources.parse_crossref(payload, NEJM, CONFIG, backfill=True)}
+        self.assertEqual(by["10.1056/nejmoa9"].kind, sources.RESEARCH)
+        self.assertEqual(by["10.1056/nejmoa9"].published, date(2026, 10, 8))   # month-only: registration day
+        self.assertEqual(by["10.1056/nejmp9"].kind, sources.OTHER)
+        self.assertEqual(by["10.1056/nejmc9"].kind, sources.OTHER)
+        field = sources.parse_crossref(payload, SCIENCE, CONFIG, backfill=True)
+        self.assertEqual([i.kind for i in field], [sources.PUBMED, sources.PUBMED, sources.OTHER])
+        page = sources.parse_crossref(payload, {"name": "Nature", "type_from": "page"}, CONFIG, backfill=True)
+        self.assertIsNone(page[0].kind)
+
+    def test_crossref_pages(self):
+        first = {"message": {"next-cursor": "c2", "items": [
+            {"DOI": f"10.1/{n}", "title": ["t"]} for n in range(200)]}}
+        second = {"message": {"next-cursor": "c3", "items": [{"DOI": "10.1/last", "title": ["t"]}]}}
+        fetch = fake({"cursor=c2": (200, "json", json.dumps(second)),
+                      "cursor=%2A": (200, "json", json.dumps(first))})
+        cfg = {"name": "Bioinformatics", "issn": "1367-4811", "type_from": "all"}
+        items = sources.crossref_items(fetch, cfg, CONFIG, date(2026, 10, 27), days=30, backfill=True)
+        self.assertEqual(len(items), 201)
+        self.assertEqual(len(fetch.calls), 2)                    # a short page ends it
+        self.assertIn("from-created-date:2026-09-27", fetch.calls[0])
 
 
 class Abstracts(unittest.TestCase):
@@ -104,6 +135,18 @@ class Abstracts(unittest.TestCase):
         rec = abstracts.parse_efetch(EFETCH)["10.1056/nejmoa1"]
         self.assertEqual(rec["pmid"], "123")
         self.assertTrue(rec["abstract"].startswith("BACKGROUND: Kidneys fail."))
+        self.assertEqual(rec["types"], [])
+
+    def test_is_research(self):
+        full = " ".join(["word"] * 120)
+        self.assertTrue(abstracts.is_research({"abstract": full, "types": ["Journal Article"]}))
+        self.assertTrue(abstracts.is_research(
+            {"abstract": full, "types": ["Journal Article", "Randomized Controlled Trial"]}))
+        self.assertFalse(abstracts.is_research({"abstract": full, "types": ["Journal Article", "Review"]}))
+        self.assertFalse(abstracts.is_research({"abstract": full, "types": ["News"]}))
+        self.assertFalse(abstracts.is_research(            # a Perspective's teaser
+            {"abstract": "Does the postmenopausal ovary still matter? Yes.", "types": ["Journal Article"]}))
+        self.assertFalse(abstracts.is_research({"abstract": None, "types": ["Journal Article"]}))
 
     def test_lookup_many(self):
         fetch = fake({"esearch": (200, "json", json.dumps({"esearchresult": {"idlist": ["123"]}})),
@@ -206,6 +249,54 @@ class Build(unittest.TestCase):
         self.assertIsNone(new["figures_added"])          # same week: just has figures
         self.assertEqual(old["licence"], "https://creativecommons.org/licenses/by/4.0/")
 
+    def test_backfill_figures_not_new(self):
+        today = date(2026, 10, 28)
+        old = paper("10.1/old", "2026-10-07")
+        fetch = fake({
+            "idconv": (200, "json", json.dumps({"records": [{"doi": "10.1/old", "pmcid": "PMC9"}]})),
+            "prefix=PMC9.": (200, "xml", Figures.listing(None, "PMC9.1.json", "PMC9.1.xml", "gr2.webp")),
+            "PMC9.1.json": (200, "json", json.dumps({"license_code": "CC BY", "is_pmc_openaccess": True})),
+            "PMC9.1.xml": (200, "xml", PMC_XML)})
+        self.assertEqual(build.fill_figures(fetch, [old], today, {"10.1/old"}), 1)
+        self.assertTrue(old["figures"])
+        self.assertIsNone(old["figures_added"])          # filed this run: never shown bare
+
+    def test_backfill(self):
+        today = date(2026, 10, 28)
+        science = dict(SCIENCE, issn="1095-9203")
+        bioinf = {"name": "Bioinformatics", "issn": "1367-4811", "type_from": "all"}
+        config = dict(CONFIG, journals=[science, bioinf, {"name": "No ISSN", "type_from": "field"}])
+
+        def work(doi, created):
+            return {"DOI": doi, "title": ["T " + doi], "created": {"date-parts": [created]}}
+        sci = {"message": {"items": [work("10.1126/r", [2026, 10, 2]), work("10.1126/rev", [2026, 10, 2]),
+                                     work("10.1126/new", [2026, 10, 27]), work("10.1126/held", [2026, 10, 5])]}}
+        bio = {"message": {"items": [work("10.1093/b", [2026, 9, 1])]}}
+        efetch = "<PubmedArticleSet>" + "".join(
+            f"<PubmedArticle><MedlineCitation><PMID>{i}</PMID><Article>"
+            f"<Abstract><AbstractText>{' '.join(['Text.'] * 100)}</AbstractText></Abstract>"
+            f"<PublicationTypeList><PublicationType>Journal Article</PublicationType>{extra}</PublicationTypeList>"
+            f"</Article></MedlineCitation><PubmedData><ArticleIdList>"
+            f'<ArticleId IdType="doi">{doi}</ArticleId></ArticleIdList></PubmedData></PubmedArticle>'
+            for i, (doi, extra) in enumerate([("10.1126/r", ""), ("10.1126/rev", "<PublicationType>Review</PublicationType>")])
+        ) + "</PubmedArticleSet>"
+        fetch = fake({"journals/1095-9203": (200, "json", json.dumps(sci)),
+                      "journals/1367-4811": (200, "json", json.dumps(bio)),
+                      "esearch": (200, "json", json.dumps({"esearchresult": {"idlist": ["0", "1"]}})),
+                      "efetch": (200, "xml", efetch)})
+        state = {"papers": {"10.1126/held": paper("10.1126/held", "2026-10-28", published="2026-10-05")},
+                 "not_research": {}}
+        filed = build.backfill(fetch, config, state, today, 30)
+        papers = state["papers"]
+        self.assertEqual(papers["10.1126/r"]["first_seen"], "2026-10-02")
+        self.assertEqual(papers["10.1126/held"]["first_seen"], "2026-10-05")   # re-filed
+        self.assertEqual(papers["10.1093/b"]["first_seen"], "2026-09-28")      # clamped to the window
+        self.assertIn("10.1126/rev", state["not_research"])
+        self.assertNotIn("10.1126/new", papers)                                # not in PubMed yet:
+        self.assertNotIn("10.1126/new", state["not_research"])                 # left for the feed
+        self.assertEqual(filed, {"10.1126/r", "10.1126/held", "10.1093/b"})
+        self.assertFalse(any("No ISSN" in u for u in fetch.calls))
+
     def test_public_and_prune(self):
         today = date(2026, 10, 28)
         state = {"papers": {"a": paper("a", "2026-10-27", preview="https://x/p.png"),
@@ -217,6 +308,20 @@ class Build(unittest.TestCase):
         row = build.public(state["papers"]["a"])
         self.assertEqual((row["week"], row["figure_kind"], row["licence"]), ("2026-10-26", "preview", None))
         self.assertNotIn("abstract", row)
+
+    def test_abstracts_only_for_summaries(self):
+        done = paper("10.1/done", "2026-10-27", summary="Said.", summary_source="abstract")
+        todo = paper("10.1056/nejmoa1", "2026-10-27")
+        fetch = fake({"esearch": (200, "json", json.dumps({"esearchresult": {"idlist": ["123"]}})),
+                      "efetch": (200, "xml", EFETCH)})
+        self.assertEqual(build.fill_abstracts(fetch, [done, todo]), 1)
+        self.assertNotIn("done", fetch.calls[0])                        # has a summary: not asked
+        build.fill_summaries([done, todo])
+        self.assertTrue(todo["summary"].startswith("Drug X halved"))
+        state = {"papers": {p["doi"]: p for p in (done, todo)}, "not_research": {}}
+        build.forget_abstracts(state)
+        self.assertIsNone(todo["abstract"])
+        self.assertEqual(todo["summary_source"], "abstract")
 
     def test_code_to_url(self):
         self.assertEqual(build.code_to_url("CC BY-NC-ND"), "https://creativecommons.org/licenses/by-nc-nd/4.0/")
