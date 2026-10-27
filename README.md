@@ -8,6 +8,16 @@ The idea is to build a scrollable-app style format to browse the latest publicat
 
 Conceptualisation and fine tuning performed by me (Sean Wilson), majority of code base written by Claude.
 
+## Features
+
+- Three colour modes adjustable in top right corner
+- Papers without loadable figures appear as text at end
+- Can ignore a paper to remove from feed, store a paper to come back to later, open the paper at its source
+- Memory for where you last scrolled to
+- Swipe on figures to show all available in paper
+- Filter by journal
+- Previous 6 weeks stored in Earlier tab
+
 ## Install on your phone
 
 Figure Feed installs from its website, so it isn't in an app store. Open the site's
