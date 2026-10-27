@@ -6,7 +6,7 @@
 
 The idea is to build a scrollable-app style format to browse the latest publications from major journals. The focus is to show the figures and title, with a link to the paper if you want to read it further based on the snapshot presented on the app. It is implemented as a GitHub Action and rebuilds daily.
 
-Conceptualisation and fine tuning performed by my (Sean Wilson), majority of code base written by Claude.
+Conceptualisation and fine tuning performed by me (Sean Wilson), majority of code base written by Claude.
 
 ## Install on your phone
 
