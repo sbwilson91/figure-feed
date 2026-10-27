@@ -1,2 +1,1 @@
 pyyaml>=6
-anthropic>=2.3   # only used when the ANTHROPIC_API_KEY secret is set

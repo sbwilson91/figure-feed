@@ -39,8 +39,6 @@ jobs:
         env:
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SUMMARY_MODEL: ${{ vars.SUMMARY_MODEL }}
         run: python -m feed.build
 
       - name: Commit data

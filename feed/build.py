@@ -21,7 +21,6 @@ the site shows it again under "New figures".
 import argparse
 import json
 import logging
-import os
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -38,7 +37,6 @@ ACTIVE_DAYS = 42        # keep looking for abstracts and figures this long
 KEEP_WEEKS = 26         # drop papers first seen longer ago than this
 FEED_WEEKS = 6          # weeks in feed.json; older weeks go to weeks/<monday>.json
 OTHER_MEMORY_DAYS = 60  # remember non-research DOIs this long, so pages are read once
-SUMMARY_LIMIT = int(os.environ.get("SUMMARY_LIMIT", "200"))
 
 log = logging.getLogger("feed")
 
@@ -171,11 +169,9 @@ def active(state: dict, today: date) -> list[dict]:
     return [p for p in state["papers"].values() if p["first_seen"] >= cutoff]
 
 
-def fill_abstracts(fetch, papers: list[dict], upgrade: bool = False) -> int:
-    """Abstracts, held for this run only, for the papers that still need a summary (and,
-    with `upgrade`, those whose summary Claude has not written yet)."""
-    need = [p for p in papers if not p["abstract"]
-            and (not p["summary"] or (upgrade and p["summary_source"] != "claude"))]
+def fill_abstracts(fetch, papers: list[dict]) -> int:
+    """Abstracts, held for this run only, for the papers that still need a summary."""
+    need = [p for p in papers if not p["abstract"] and not p["summary"]]
     found = abstracts.lookup_many(fetch, [p["doi"] for p in need]) if need else {}
     n = 0
     for p in need:
@@ -257,20 +253,10 @@ def code_to_url(code: str | None) -> str | None:
     return f"https://creativecommons.org/licenses/{kind}/4.0/"
 
 
-def fill_summaries(papers: list[dict], client=None) -> int:
-    n = 0
+def fill_summaries(papers: list[dict]) -> None:
     for p in papers:
-        if not p["abstract"]:
-            continue
-        if client and p["summary_source"] != "claude" and n < SUMMARY_LIMIT:
-            text = summary.claude(client, p["title"], p["abstract"])
-            n += 1
-            if text:
-                p["summary"], p["summary_source"] = text, "claude"
-                continue
-        if not p["summary"]:
+        if p["abstract"] and not p["summary"]:
             p["summary"], p["summary_source"] = summary.extractive(p["abstract"]), "abstract"
-    return n
 
 
 def forget_abstracts(state: dict) -> None:
@@ -359,22 +345,20 @@ def main(argv=None) -> int:
     filed = backfill(fetch, config, state, today, args.backfill) if args.backfill else set()
     added = len(state["papers"]) - n_before
     papers = active(state, today)
-    client = summary.claude_client()
-    n_abs = fill_abstracts(fetch, papers, upgrade=client is not None)
+    n_abs = fill_abstracts(fetch, papers)
     gained = 0
     if not args.no_network_figures:
         fill_licences(fetch, papers, today)
         fill_previews(fetch, papers)
         gained = fill_figures(fetch, papers, today, filed)
-    n_claude = fill_summaries(papers, client)
+    fill_summaries(papers)
     prune(state, today)
     forget_abstracts(state)
     save_json(STATE, state)
     feed = write_site(config, state, today)
 
     shown = feed["papers"]
-    log.info("new papers %d · abstracts found %d · gained figures %d · Claude summaries %d",
-             added, n_abs, gained, n_claude)
+    log.info("new papers %d · abstracts found %d · gained figures %d", added, n_abs, gained)
     log.info("feed: %d papers in %d weeks — full figures %d, preview %d, text %d",
              len(shown), len(feed["weeks"]) - len(feed["archived"]),
              sum(p["figure_kind"] == "full" for p in shown),
