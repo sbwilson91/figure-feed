@@ -87,8 +87,10 @@ add an `ANTHROPIC_API_KEY` secret.
 1. Create a GitHub repository and push this folder to it.
 2. **Settings → Pages → Source: GitHub Actions.**
 3. **Settings → Secrets and variables → Actions**:
-   - Variable `CONTACT_EMAIL` (recommended): sent to Crossref and NCBI as a courtesy
-     contact. Both services ask for one.
+   - Secret `CONTACT_EMAIL` (recommended): sent to Crossref and NCBI as a courtesy
+     contact. Both services ask for one. It is a secret rather than a variable
+     because a public repository's Actions logs are public, and only secrets are
+     masked in them. It is used only by the build and never appears on the site.
    - Secret `NCBI_API_KEY` (optional): faster PubMed lookups.
    - Secret `ANTHROPIC_API_KEY` and variable `SUMMARY_MODEL` (optional, see above).
 4. **Actions → Update feed → Run workflow** to run the first build. After that it runs

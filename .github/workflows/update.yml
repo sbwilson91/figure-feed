@@ -37,7 +37,7 @@ jobs:
       - name: Build the feed
         if: github.event_name != 'push'
         env:
-          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SUMMARY_MODEL: ${{ vars.SUMMARY_MODEL }}
