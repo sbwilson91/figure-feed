@@ -4,7 +4,7 @@ import json
 import unittest
 from datetime import date
 
-from feed import abstracts, build, figures, sources, summary
+from feed import abstracts, build, figures, net, sources, summary
 
 CONFIG = {"never_titles": ["Correction:", "Author Correction"]}
 
@@ -326,6 +326,69 @@ class Build(unittest.TestCase):
     def test_code_to_url(self):
         self.assertEqual(build.code_to_url("CC BY-NC-ND"), "https://creativecommons.org/licenses/by-nc-nd/4.0/")
         self.assertIsNone(build.code_to_url("TDM"))
+
+
+class LinkSchemes(unittest.TestCase):
+    """Links and images reach the page as `href` and `src`: only https gets through."""
+
+    def test_https_url(self):
+        self.assertEqual(net.https_url("https://x.org/a"), "https://x.org/a")
+        self.assertEqual(net.https_url("http://dx.doi.org/10.1/a"), "https://dx.doi.org/10.1/a")
+        for bad in ("javascript:alert(1)", "JaVaScRiPt:alert(1)", " javascript:x", "data:text/html,x",
+                    "file:///etc/passwd", "ftp://x.org/a", "//x.org/a", "https://", "", None):
+            self.assertIsNone(net.https_url(bad), bad)
+
+    def test_fetch_refuses_other_schemes(self):
+        for url in ("file:///etc/hostname", "ftp://x.org/a", "data:,x"):
+            with self.assertRaises(OSError):
+                net.fetch(url)
+        self.assertIsNone(net.text(net.fetch, "file:///etc/hostname"))
+
+    def test_feed_link_falls_back_to_doi(self):
+        xml = ("<rss><channel><item><title>T</title><link>javascript:alert(1)</link>"
+               "<guid>10.1038/s41586-026-00001-1</guid></item></channel></rss>")
+        it = sources.parse_feed(xml, {"name": "X", "type_from": "all"}, CONFIG)[0]
+        self.assertEqual(it.link, "https://doi.org/10.1038/s41586-026-00001-1")
+
+    def test_crossref_link(self):
+        payload = {"message": {"items": [
+            {"DOI": "10.1/A", "title": ["One"], "URL": "javascript:alert(1)"},
+            {"DOI": "10.1/b", "title": ["Two"], "URL": "http://dx.doi.org/10.1/b"}]}}
+        a, b = sources.parse_crossref(payload, {"name": "J"}, CONFIG)
+        self.assertEqual(a.link, "https://doi.org/10.1/a")
+        self.assertEqual(b.link, "https://dx.doi.org/10.1/b")
+
+    def test_og_image_https_only(self):
+        page = '<meta property="og:image" content="%s">'
+        self.assertIsNone(figures.og_image(page % "javascript:alert(1)", "https://x.org/a"))
+        self.assertIsNone(figures.og_image(page % "data:image/png;base64,AAAA", "https://x.org/a"))
+        self.assertEqual(figures.og_image(page % "http://x.org/f1.png", "https://x.org/a"),
+                         "https://x.org/f1.png")
+        self.assertEqual(figures.og_image(page % "/img/f1.png", "https://x.org/a"),
+                         "https://x.org/img/f1.png")
+
+    def test_public_rechecks_saved_state(self):
+        p = build._new_paper(sources.Item("J", "10.1/a", "T", "https://x.org/a", date(2026, 10, 20),
+                                          None, sources.RESEARCH), date(2026, 10, 20), None)
+        p.update(link="javascript:alert(1)", preview="data:image/png;base64,AAAA",
+                 figures=[{"url": "javascript:x", "label": "Figure 1", "caption": None}])
+        row = build.public(p)
+        self.assertEqual(row["link"], "https://doi.org/10.1/a")
+        self.assertEqual((row["figures"], row["figure_kind"]), ([], "none"))
+
+
+class Page(unittest.TestCase):
+    def test_csp_hash_matches_inline_script(self):
+        """The CSP allows the inline look script by its hash; an edit to one needs the other."""
+        import base64, hashlib, re
+        from pathlib import Path
+        page = (Path(__file__).resolve().parent.parent / "site" / "index.html").read_text()
+        scripts = re.findall(r"<script>(.*?)</script>", page, re.S)
+        csp = re.search(r'http-equiv="Content-Security-Policy" content="([^"]+)"', page).group(1)
+        self.assertNotIn("'unsafe-inline'", csp.split("script-src", 1)[1].split(";", 1)[0])
+        for body in scripts:
+            h = base64.b64encode(hashlib.sha256(body.encode()).digest()).decode()
+            self.assertIn(f"'sha256-{h}'", csp)
 
 
 if __name__ == "__main__":

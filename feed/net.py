@@ -4,7 +4,8 @@ paces requests per host (NCBI allows three a second without a key), and retries
 once on a 429 or 5xx.
 
 `fetch(url) -> (status, content_type, body)`; it raises OSError when the request does
-not complete. The rest of the package takes `fetch` as an argument, so the tests run
+not complete, or when the URL (or a redirect) is anything but http or https: urllib
+would otherwise read `file://` and `ftp://` too, and page links come from the feeds. The rest of the package takes `fetch` as an argument, so the tests run
 with no network.
 """
 
@@ -12,7 +13,7 @@ import os
 import time
 import urllib.error
 import urllib.request
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, urlunsplit
 
 CONTACT = os.environ.get("CONTACT_EMAIL", "").strip()
 USER_AGENT = "figure-feed/1.0 (static research digest" + (f"; mailto:{CONTACT}" if CONTACT else "") + ")"
@@ -22,6 +23,32 @@ _GAP = {"eutils.ncbi.nlm.nih.gov": 0.12 if NCBI_KEY else 0.36,
         "www.ncbi.nlm.nih.gov": 0.36, "pmc.ncbi.nlm.nih.gov": 0.36,
         "api.crossref.org": 0.1}
 _last: dict[str, float] = {}
+_SCHEMES = ("http", "https")
+
+
+def https_url(url: str | None) -> str | None:
+    """`url` as an https URL with a host, or None. Plain http is upgraded; any other
+    scheme (javascript:, data:, file:, ...) is refused. Every link and image the page
+    shows passes through here, since the page puts them in `href` and `src`."""
+    try:
+        parts = urlsplit((url or "").strip())
+    except ValueError:
+        return None
+    if parts.scheme.lower() not in _SCHEMES or not parts.hostname:
+        return None
+    return urlunsplit(("https",) + tuple(parts)[1:])
+
+
+class _Redirects(urllib.request.HTTPRedirectHandler):
+    """Follows redirects to http and https only (urllib also allows ftp)."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if urlsplit(newurl).scheme.lower() not in _SCHEMES:
+            raise urllib.error.URLError(f"redirect to {newurl!r} refused")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+_opener = urllib.request.build_opener(_Redirects)
 
 
 def ncbi_params() -> str:
@@ -47,13 +74,16 @@ def _pace(host: str) -> None:
 
 
 def fetch(url: str, timeout: float = 30, method: str = "GET") -> tuple[int, str, bytes]:
-    host = urlsplit(url).hostname or ""
+    parts = urlsplit(url)
+    if parts.scheme.lower() not in _SCHEMES:
+        raise OSError(f"{url[:80]!r}: only http and https are fetched")
+    host = parts.hostname or ""
     for attempt in (0, 1):
         _pace(host)
         req = urllib.request.Request(url, method=method, headers={
             "User-Agent": USER_AGENT, "Accept": "*/*"})
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as r:
+            with _opener.open(req, timeout=timeout) as r:
                 return r.status, r.headers.get("Content-Type", ""), r.read()
         except urllib.error.HTTPError as e:
             if attempt == 0 and (e.code == 429 or e.code >= 500):

@@ -113,7 +113,7 @@ def parse_feed(xml, journal_cfg: dict, config: dict) -> list[Item]:
         if not title or not doi:
             continue
         pub = _date(fields.get("publicationDate") or fields.get("date") or fields.get("pubDate"))
-        link = (fields.get("link") or fields.get("url") or f"https://doi.org/{doi}").strip()
+        link = net.https_url(fields.get("link") or fields.get("url")) or doi_url(doi)
 
         label, kind = None, None
         if is_never(title, config):
@@ -189,7 +189,7 @@ def parse_crossref(payload: dict, journal_cfg: dict, config: dict, backfill: boo
         else:
             kind = PUBMED
         out.append(Item(journal=journal_cfg["name"], doi=doi, title=title,
-                        link=w.get("URL") or f"https://doi.org/{doi}", published=_crossref_date(w),
+                        link=net.https_url(w.get("URL")) or doi_url(doi), published=_crossref_date(w),
                         article_type=None if backfill else w.get("type"), kind=kind))
     return out
 

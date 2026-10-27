@@ -289,15 +289,20 @@ def prune(state: dict, today: date) -> None:
 # ── The site's data ──────────────────────────────────────────────────────────
 
 def public(p: dict) -> dict:
-    """What the page needs of one paper. Abstracts stay out: the summary and a link do."""
-    if p["figures"]:
-        figs, kind = p["figures"], "full"
-    elif p.get("preview"):
-        figs, kind = [{"url": p["preview"], "label": "Preview", "caption": None}], "preview"
+    """What the page needs of one paper. Abstracts stay out: the summary and a link do.
+    Links and images are checked again here, so state saved before the check still
+    publishes only https."""
+    full = [f for f in p["figures"] if net.https_url(f["url"]) == f["url"]]
+    preview = net.https_url(p.get("preview"))
+    if full:
+        figs, kind = full, "full"
+    elif preview:
+        figs, kind = [{"url": preview, "label": "Preview", "caption": None}], "preview"
     else:
         figs, kind = [], "none"
     return {
-        "doi": p["doi"], "journal": p["journal"], "title": p["title"], "link": p["link"],
+        "doi": p["doi"], "journal": p["journal"], "title": p["title"],
+        "link": net.https_url(p["link"]) or sources.doi_url(p["doi"]),
         "published": p["published"], "week": monday(date.fromisoformat(p["first_seen"])).isoformat(),
         "summary": p["summary"], "figures": figs, "figure_kind": kind,
         "licence": figures.licence_name(p["licence"]) if kind == "full" else None,

@@ -201,6 +201,6 @@ def og_image(page_html: str, base_url: str) -> str | None:
     m = _OG_IMAGE.search(page_html or "")
     if not m:
         return None
-    url = quote(urljoin(base_url, html.unescape(m.group(1) or m.group(2)).strip()),
-                safe=":/?&=%#~+,;@!$'()*")
-    return None if _LOGO.search(url) else url
+    url = net.https_url(quote(urljoin(base_url, html.unescape(m.group(1) or m.group(2)).strip()),
+                              safe=":/?&=%#~+,;@!$'()*"))
+    return None if not url or _LOGO.search(url) else url

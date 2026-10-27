@@ -16,8 +16,42 @@
       try { localStorage.setItem("ff:" + key, JSON.stringify(value)); } catch (e) { /* private mode */ }
     },
   };
-  const kept = store.get("kept", {});        // doi -> paper (so Saved works for archived weeks)
-  const passed = store.get("passed", {});    // doi -> date passed
+  // Links and images go into href and src, so only https URLs are used; anything else
+  // (javascript:, data:) is dropped. A paper from storage or a backup file is rebuilt
+  // from the fields the page reads, each of the type it expects.
+  const safeUrl = (u) => {
+    try { const url = new URL(String(u)); return url.protocol === "https:" && url.hostname ? url.href : null; }
+    catch (e) { return null; }
+  };
+  const doiUrl = (doi) => "https://doi.org/" + encodeURI(doi);
+  const str = (v) => (typeof v === "string" ? v : null);
+  const isoDate = (v) => (typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v) ? v : null);
+  function cleanPaper(p) {
+    if (!p || typeof p !== "object" || !str(p.doi) || !str(p.title)) return null;
+    const figures = (Array.isArray(p.figures) ? p.figures : [])
+      .filter((f) => f && safeUrl(f.url))
+      .map((f) => ({ url: safeUrl(f.url), label: str(f.label) || "Figure", caption: str(f.caption) }));
+    return {
+      doi: p.doi, journal: str(p.journal) || "", title: p.title,
+      link: safeUrl(p.link) || doiUrl(p.doi), published: isoDate(p.published), week: isoDate(p.week),
+      summary: str(p.summary), figures,
+      figure_kind: !figures.length ? "none" : p.figure_kind === "preview" ? "preview" : "full",
+      licence: str(p.licence), figures_added: isoDate(p.figures_added),
+    };
+  }
+  function cleanKept(obj) {
+    const out = {};
+    if (!obj || typeof obj !== "object") return out;
+    for (const [doi, p] of Object.entries(obj)) {
+      const c = cleanPaper(p);
+      if (c && c.doi === doi) out[doi] = c;
+    }
+    return out;
+  }
+
+  const kept = cleanKept(store.get("kept", {}));   // doi -> paper (so Saved works for archived weeks)
+  const passed = {};                               // doi -> date passed
+  for (const [doi, d] of Object.entries(store.get("passed", {}) || {})) if (isoDate(d)) passed[doi] = d;
   let tab = store.get("tab", "week");
   let journals = new Set(store.get("journals", []));
   let figsOnly = store.get("figsOnly", false);
@@ -48,15 +82,16 @@
 
   // ── Cards ───────────────────────────────────────────────────────────────
   function figuresHtml(p) {
-    if (!p.figures.length) {
+    const figures = (p.figures || []).filter((f) => safeUrl(f.url));
+    if (!figures.length) {
       return `<div class="band" style="background:${esc(colours[p.journal] || "#334155")}"></div>`;
     }
-    const n = p.figures.length;
-    const slides = p.figures.map((f, i) => {
+    const n = figures.length;
+    const slides = figures.map((f, i) => {
       const tag = p.figure_kind === "preview" ? "Preview"
         : `${esc(f.label)}${n > 1 ? ` · ${i + 1}/${n}` : ""}${f.caption ? " — " + esc(f.caption) : ""}`;
       return `<figure class="fig" style="margin:0">
-        <img src="${esc(f.url)}" alt="${esc(f.label + (f.caption ? ": " + f.caption : ""))}"
+        <img src="${esc(safeUrl(f.url))}" alt="${esc(f.label + (f.caption ? ": " + f.caption : ""))}"
              loading="lazy" decoding="async" referrerpolicy="no-referrer">
         <figcaption class="fig-tag">${tag}</figcaption></figure>`;
     }).join("");
@@ -65,9 +100,10 @@
 
   function cardHtml(p) {
     const isKept = !!kept[p.doi];
+    const link = esc(safeUrl(p.link) || doiUrl(p.doi));
     const cls = p.figure_kind === "none" ? "text-only" : p.figure_kind === "preview" ? "preview" : "";
     const credit = p.figure_kind === "full" && p.licence
-      ? `<div class="credit">Figures: <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.journal)}</a>, ${esc(p.licence)}</div>`
+      ? `<div class="credit">Figures: <a href="${link}" target="_blank" rel="noopener">${esc(p.journal)}</a>, ${esc(p.licence)}</div>`
       : "";
     const fresh = p.figures_added && tab === "figs" ? `<span class="new">figures added ${fmtDate(p.figures_added)}</span> ·` : "";
     return `<article class="card ${cls}" data-doi="${esc(p.doi)}">
@@ -75,13 +111,13 @@
       <div class="body">
         <div class="meta"><span class="dot" style="background:${esc(colours[p.journal] || "#334155")}"></span>
           ${fresh}<span>${esc(p.journal)}</span>${p.published ? `<span>· ${fmtDate(p.published)}</span>` : ""}</div>
-        <h2 class="title"><a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a></h2>
+        <h2 class="title"><a href="${link}" target="_blank" rel="noopener">${esc(p.title)}</a></h2>
         ${p.summary ? `<p class="summary">${esc(p.summary)}</p>` : ""}
         ${credit}
       </div>
       <div class="acts">
         <button class="pass" data-act="pass">Ignore</button>
-        <a class="open" href="${esc(p.link)}" target="_blank" rel="noopener">Open</a>
+        <a class="open" href="${link}" target="_blank" rel="noopener">Open</a>
         <button class="keep" data-act="keep" aria-pressed="${isKept}">${isKept ? "Stored" : "Store"}</button>
       </div>
     </article>`;
@@ -183,7 +219,7 @@
       return;
     }
     const before = { k: kept[doi], s: passed[doi] };
-    if (what === "keep") { kept[doi] = p; delete passed[doi]; }
+    if (what === "keep") { kept[doi] = cleanPaper(p) || p; delete passed[doi]; }
     else { passed[doi] = new Date().toISOString().slice(0, 10); delete kept[doi]; }
     store.set("kept", kept); store.set("passed", passed);
     const leaves = tab === "week";
@@ -254,11 +290,12 @@
       }
       const before = { k: { ...kept }, s: { ...passed } };
       let n = 0;
-      for (const [doi, p] of Object.entries(data.kept)) {
-        if (p && p.doi === doi && p.title && !kept[doi]) { kept[doi] = p; delete passed[doi]; n++; }
+      for (const [doi, p] of Object.entries(cleanKept(data.kept))) {
+        if (!kept[doi]) { kept[doi] = p; delete passed[doi]; n++; }
       }
-      for (const [doi, d] of Object.entries(data.passed || {})) {
-        if (!kept[doi] && !passed[doi] && typeof d === "string") passed[doi] = d;
+      const restored = data.passed && typeof data.passed === "object" ? data.passed : {};
+      for (const [doi, d] of Object.entries(restored)) {
+        if (!kept[doi] && !passed[doi] && isoDate(d)) passed[doi] = d;
       }
       store.set("kept", kept); store.set("passed", passed); render();
       toast(n ? `Restored ${n} paper${n === 1 ? "" : "s"}` : "Nothing new in that backup", () => {

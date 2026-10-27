@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Figure Feed</title>
 <meta name="description" content="New research from the major journals, one figure-led card at a time.">
+<!-- Only this site's own code runs; figures load from any https host. The hash is the
+     inline look script below: change that script and the hash must change with it. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-GzsJHBwAf031rO0NhtirWdX3VDfTrnWhnl/1Rw9sgzc='; style-src 'self' 'unsafe-inline'; img-src 'self' https:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="theme-color" content="#2b130b">
 <script>try { var l = localStorage.getItem("ff:look"); if (l) document.documentElement.dataset.look = JSON.parse(l); } catch (e) {}</script>
 <link rel="manifest" href="manifest.webmanifest">
