@@ -1,8 +1,8 @@
 // The app shell works offline; the feed is fetched fresh when there is a network and
 // served from cache when there is not. Figures stay on their publishers' servers.
-const SHELL = "ff-shell-v2";
+const SHELL = "ff-shell-v3";
 const DATA = "ff-data";
-const FILES = ["./", "index.html", "style.css", "app.js", "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png"];
+const FILES = ["./", "index.html", "style.css", "app.js", "manifest.webmanifest", "icons/ff.svg", "icons/ff-192.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));

@@ -57,10 +57,17 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .bar { display: flex; align-items: center; padding-top: calc(10px + env(safe-area-inset-top)); padding-bottom: 10px;
   background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); }
 .brand { margin: 0; font-size: 18px; font-weight: 700; color: var(--top-ink); font-family: var(--ui-font); letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; }
-.mark { width: 26px; height: auto; display: block; }
+.mark { width: 30px; height: auto; display: block; }
 .stamp { font-size: 11px; color: var(--top-ink); opacity: .75; margin-left: auto; }
 .look { border: 1px solid currentColor; background: none; color: var(--top-ink); border-radius: 999px;
   padding: 2px 9px; font: 600 11px var(--ui-font); margin-left: 10px; opacity: .9; }
+
+/* Monospace runs wide, so the technical look sets its header text a size smaller. */
+:root[data-look="technical"] .brand { font-size: 15px; letter-spacing: -.02em; }
+:root[data-look="technical"] .stamp { font-size: 10px; }
+:root[data-look="technical"] .look { font-size: 10px; padding: 2px 7px; }
+:root[data-look="technical"] .tabs button { font-size: 12.5px; padding: 7px 8px; }
+:root[data-look="technical"] .week-head { font-size: 11px; }
 
 .tabs { display: flex; gap: 4px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
