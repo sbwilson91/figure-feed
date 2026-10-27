@@ -2,6 +2,8 @@
 
 # Figure Feed
 
+**Live site:** [sbwilson91.github.io/figure-feed](https://sbwilson91.github.io/figure-feed/)
+
 The idea is to build a scrollable-app style format to browse the latest publications from major journals. The focus is to show the figures and title, with a link to the paper if you want to read it further based on the snapshot presented on the app. It is implemented as a GitHub Action and rebuilds daily.
 
 Conceptualisation and fine tuning performed by my (Sean Wilson), majority of code base written by Claude.
@@ -9,7 +11,7 @@ Conceptualisation and fine tuning performed by my (Sean Wilson), majority of cod
 ## Install on your phone
 
 Figure Feed installs from its website, so it isn't in an app store. Open the site's
-address [**sbwilson91.github.io/figure-feed**] on the phone, then:
+address https://sbwilson91.github.io/figure-feed on the phone, then:
 
 **iPhone (Safari)**
 1. Tap the **Share** button (the square with an arrow).
