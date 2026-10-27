@@ -9,7 +9,7 @@ Conceptualisation and fine tuning performed by my (Sean Wilson), majority of cod
 ## Install on your phone
 
 Figure Feed installs from its website, so it isn't in an app store. Open the site's
-address (for example `https://<account>.github.io/figure-feed/`) on the phone, then:
+address **sbwilson91.github.io/figure-feed** on the phone, then:
 
 **iPhone (Safari)**
 1. Tap the **Share** button (the square with an arrow).
