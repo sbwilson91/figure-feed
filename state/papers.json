@@ -365,8 +365,11 @@
   "10.1038/d41586-026-03376-6": "2026-10-27",
   "10.1038/d41586-026-03383-7": "2026-10-27",
   "10.1038/d41586-026-03384-6": "2026-10-27",
+  "10.1038/d41586-026-03385-5": "2026-10-28",
+  "10.1038/d41586-026-03388-2": "2026-10-28",
   "10.1038/d41586-026-03389-1": "2026-10-27",
   "10.1038/d41586-026-03390-8": "2026-10-27",
+  "10.1038/d41586-026-03391-7": "2026-10-28",
   "10.1038/d41586-026-03392-6": "2026-10-27",
   "10.1038/d41586-026-03393-5": "2026-10-27",
   "10.1038/d41586-026-03394-4": "2026-10-27",
@@ -374,6 +377,7 @@
   "10.1038/d41586-026-03396-2": "2026-10-27",
   "10.1038/d41586-026-03398-0": "2026-10-27",
   "10.1038/d41586-026-03400-9": "2026-10-27",
+  "10.1038/d41586-026-03402-7": "2026-10-28",
   "10.1038/d41586-026-03403-6": "2026-10-27",
   "10.1038/d41586-026-03404-5": "2026-10-27",
   "10.1038/d41586-026-03405-4": "2026-10-27",
@@ -386,8 +390,11 @@
   "10.1038/d41586-026-03418-z": "2026-10-27",
   "10.1038/d41586-026-03438-9": "2026-10-27",
   "10.1038/d41586-026-03440-1": "2026-10-27",
+  "10.1038/d41586-026-03445-w": "2026-10-28",
   "10.1038/d41586-026-03446-9": "2026-10-27",
   "10.1038/d41586-026-03447-8": "2026-10-27",
+  "10.1038/d41586-026-03449-6": "2026-10-28",
+  "10.1038/d41586-026-03461-w": "2026-10-28",
   "10.1038/d41586-026-03463-8": "2026-10-27",
   "10.1038/s41563-026-02760-x": "2026-10-27",
   "10.1038/s41563-026-02761-w": "2026-10-27",
@@ -440,6 +447,7 @@
   "10.1038/s41587-026-03365-0": "2026-10-27",
   "10.1038/s41587-026-03369-w": "2026-10-27",
   "10.1038/s41592-026-03242-3": "2026-10-27",
+  "10.1038/s41592-026-03251-2": "2026-10-28",
   "10.1038/s41592-026-03257-w": "2026-10-27",
   "10.1038/s41592-026-03258-9": "2026-10-27",
   "10.1038/s41592-026-03259-8": "2026-10-27",
@@ -451,6 +459,9 @@
   "10.1038/s41592-026-03268-7": "2026-10-27",
   "10.1038/s41592-026-03273-w": "2026-10-27",
   "10.1038/s41592-026-03276-7": "2026-10-27",
+  "10.1038/s41592-026-03284-7": "2026-10-28",
+  "10.1038/s41592-026-03290-9": "2026-10-28",
+  "10.1038/s41592-026-03305-5": "2026-10-28",
   "10.1056/nejmc2516395": "2026-10-27",
   "10.1056/nejmc2603650": "2026-10-27",
   "10.1056/nejmc2604891": "2026-10-27",
@@ -2447,12 +2458,12 @@
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01209-2?rss=yes",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "42945956",
    "preview": null,
    "preview_tried": true,
    "published": "2026-10-27",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Here, we performed deep whole-genome sequencing of 3,367 diverse elite maize inbred lines, uncovering 75.3 million variants, of which 79.2% were rare.",
+   "summary_source": "abstract",
    "title": "Deep sequencing of 3,367 maize genomes uncovers substantial contribution of rare variants to agronomic traits"
   },
   "10.1016/j.stem.2026.09.005": {
@@ -3454,12 +3465,12 @@
    "licence_checked": "2026-10-27",
    "link": "https://www.nature.com/articles/s41563-026-02775-4",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "42946763",
    "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41563-026-02775-4/MediaObjects/41563_2026_2775_Fig1_HTML.png",
    "preview_tried": true,
    "published": "2026-10-27",
-   "summary": null,
-   "summary_source": null,
+   "summary": "We identify two distinct classes of blisters: unidirectional, driven by electrostatic forces on surface charges, and bidirectional, arising from osmotic pressure due to concentration polarization.",
+   "summary_source": "abstract",
    "title": "Direct imaging elucidates ionic memory in two-dimensional nanochannels"
   },
   "10.1038/s41563-026-02778-1": {
@@ -3527,12 +3538,12 @@
    "licence_checked": "2026-10-27",
    "link": "https://www.nature.com/articles/s41563-026-02780-7",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "42946764",
    "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41563-026-02780-7/MediaObjects/41563_2026_2780_Fig1_HTML.png",
    "preview_tried": true,
    "published": "2026-10-27",
-   "summary": null,
-   "summary_source": null,
+   "summary": "These results establish a viable design principle that utilizes interfacial-electrostatics-induced photocarrier spatial separation and asymmetric-barriers-modulated carrier transport to realize in-sensor computing.",
+   "summary_source": "abstract",
    "title": "III-nitride-based in-sensor computing enabled by interfacial polarization effects"
   },
   "10.1038/s41586-026-10733-y": {
@@ -10119,15 +10130,21 @@
    "abstract": null,
    "article_type": null,
    "doi": "10.1093/bioinformatics/btag742",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Architecture of MediNet server-client.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13711237.1/btag742f1.webp"
+    }
+   ],
+   "figures_added": "2026-10-28",
    "first_seen": "2026-10-06",
    "journal": "Bioinformatics",
    "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag742",
-   "pmcid": null,
+   "pmcid": "PMC13711237",
    "pmid": "42836690",
    "preview": null,
    "preview_tried": true,
@@ -10759,15 +10776,31 @@
    "abstract": null,
    "article_type": null,
    "doi": "10.1093/bioinformatics/btag762",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Output from the FunFOLD5 protocol.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13711230.1/btag762f1.webp"
+    },
+    {
+     "caption": "FunFOLD5 ligand-binding prediction accuracy across ligand types (RMSD versus LDDTpli) across the CASP15 and CASP16 benchmark (69 ligand instances).",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13711230.1/btag762f2.webp"
+    },
+    {
+     "caption": "Improved binding-site prediction for T1158v4 using the local targeted protocol.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13711230.1/btag762f3.webp"
+    }
+   ],
+   "figures_added": "2026-10-28",
    "first_seen": "2026-10-10",
    "journal": "Bioinformatics",
    "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag762",
-   "pmcid": null,
+   "pmcid": "PMC13711230",
    "pmid": "42860052",
    "preview": null,
    "preview_tried": true,
@@ -10780,15 +10813,51 @@
    "abstract": null,
    "article_type": null,
    "doi": "10.1093/bioinformatics/btag763",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of CMGL.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712188.1/btag763f1.webp"
+    },
+    {
+     "caption": "Small-sample generalization curves across the four cancer subtype classification tasks.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712188.1/btag763f2.webp"
+    },
+    {
+     "caption": "Ablation heatmap of Accuracy, Macro-F1, and Macro-AUC across the four benchmark tasks.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712188.1/btag763f3.webp"
+    },
+    {
+     "caption": "BRCA hyperparameter sensitivity across the Stage 1 (λedl, annealing step) and Stage 2 (λcls, λcon) grids.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712188.1/btag763f4.webp"
+    },
+    {
+     "caption": "Representative GO enrichment plots for the two most proliferation-associated BRCA classes (Class 2, Basal-like; Class 4, Luminal B).",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712188.1/btag763f5.webp"
+    },
+    {
+     "caption": "KIRC Kaplan–Meier curves under the BRCA-transferred embedding space.",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712188.1/btag763f6.webp"
+    },
+    {
+     "caption": "t-SNE visualization of KIRC embeddings under the BRCA-transferred representation and KMeans clustering solutions (K=2,3,4).",
+     "label": "Figure 7",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712188.1/btag763f7.webp"
+    }
+   ],
+   "figures_added": "2026-10-28",
    "first_seen": "2026-10-12",
    "journal": "Bioinformatics",
    "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag763",
-   "pmcid": null,
+   "pmcid": "PMC13712188",
    "pmid": "42865021",
    "preview": null,
    "preview_tried": true,
@@ -11100,15 +11169,36 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag778",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Graphical Abstract",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712190.1/btag778f4.webp"
+    },
+    {
+     "caption": "Example of residues added by smoothing classifier (GREEN: Pro8, Phe56, Ile58, Val166) of a predicted pocket (BLUE).",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712190.1/btag778f1.webp"
+    },
+    {
+     "caption": "Example of residues added by smoothing classifier (GREEN: Thr1042, Thr1067) of a predicted pocket (BLUE).",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712190.1/btag778f2.webp"
+    },
+    {
+     "caption": "How to select an optimal clustering method.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13712190.1/btag778f3.webp"
+    }
+   ],
+   "figures_added": "2026-10-28",
    "first_seen": "2026-10-16",
    "journal": "Bioinformatics",
    "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag778",
-   "pmcid": null,
+   "pmcid": "PMC13712190",
    "pmid": "42886502",
    "preview": null,
    "preview_tried": true,
@@ -11121,15 +11211,21 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag779",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Deepweed workflow overview.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13713196.1/btag779f1.webp"
+    }
+   ],
+   "figures_added": "2026-10-28",
    "first_seen": "2026-10-16",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag779",
-   "pmcid": null,
+   "pmcid": "PMC13713196",
    "pmid": "42886503",
    "preview": null,
    "preview_tried": true,
