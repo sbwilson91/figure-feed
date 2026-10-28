@@ -90,3 +90,14 @@ odd opinion piece can slip through.
 The sentence under each title comes from the PubMed abstract: the conclusions section if
 the abstract has one, otherwise the "Here we show…" sentence. Abstracts are the
 publishers' text, so they are fetched for each run and never saved in this repository.
+
+## Dependencies
+
+The direct dependencies are listed in `requirements.in`. `requirements.txt` pins every
+package, dependencies of dependencies included, with hashes, and the Action installs it
+with `pip install --require-hashes`. After changing `requirements.in`, regenerate it with
+
+    pip-compile --generate-hashes --strip-extras --no-header -o requirements.txt requirements.in
+
+(`pip install pip-tools` provides `pip-compile`). Dependabot opens pull requests for new
+versions of these packages and of the workflow's actions.

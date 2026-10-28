@@ -2,3 +2,17 @@ __pycache__/
 *.pyc
 .venv/
 .cache/
+
+# Personal shell, git and editor config
+.bash_profile
+.bashrc
+.profile
+.zprofile
+.zshrc
+.gitconfig
+.gitmodules
+.ripgreprc
+.mcp.json
+.claude/
+.idea
+.vscode
