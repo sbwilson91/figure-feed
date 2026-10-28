@@ -353,7 +353,7 @@
     if (t.closest("[data-backup]")) { backup(); return; }
     if (t.closest("[data-restore]")) { picker.click(); return; }
     const tag = t.closest(".fig-tag");
-    if (tag) { tag.classList.toggle("open"); return; }
+    if (tag) { tag.classList.toggle("open"); fitStrip(tag.closest(".figs")); return; }
   });
   // Looks: technical (default), dark, light — the Plexus palette.
   const LOOKS = ["technical", "dark", "light"];
@@ -421,11 +421,11 @@
     if (Math.abs(dx) > 80 && Math.abs(dx) > 2 * Math.abs(dy)) act(card, dx > 0 ? "keep" : "pass");
   });
 
-  // A strip is as tall as the figure on screen, not its tallest figure.
+  // A strip is as tall as the figure on screen (image + caption), not its tallest figure.
   function fitStrip(strip) {
     const i = Math.round(strip.scrollLeft / (strip.clientWidth || 1));
-    const img = strip.children[i] && strip.children[i].querySelector("img");
-    if (img && img.complete && img.naturalWidth) strip.style.height = img.offsetHeight + "px";
+    const fig = strip.children[i], img = fig && fig.querySelector("img");
+    if (img && img.complete && img.naturalWidth) strip.style.height = fig.offsetHeight + "px";
   }
   main.addEventListener("load", (e) => {
     if (e.target.tagName !== "IMG") return;

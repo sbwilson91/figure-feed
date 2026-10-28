@@ -131,15 +131,14 @@ mark { background: none; color: var(--accent); font-weight: 700; }
   background: #fff; scrollbar-width: none;
 }
 .figs::-webkit-scrollbar { display: none; }
-.fig { flex: 0 0 100%; scroll-snap-align: start; position: relative; }
+.fig { flex: 0 0 100%; scroll-snap-align: start; }
 .fig img { display: block; width: 100%; max-height: 62vh; object-fit: contain; background: #fff; }
 .fig-tag {
-  position: absolute; left: 8px; bottom: 8px; right: 8px; width: fit-content; max-width: calc(100% - 16px);
-  background: rgba(43, 19, 11, .78); color: #fde7de; font-size: 11px; line-height: 1.35;
-  padding: 3px 8px; border-radius: 999px;
+  background: rgba(43, 19, 11, .92); color: #fde7de; font-size: 11px; line-height: 1.35;
+  padding: 4px 10px; cursor: pointer;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.fig-tag.open { white-space: normal; border-radius: 8px; }
+.fig-tag.open { white-space: normal; }
 .preview .fig img { max-height: 40vh; object-fit: cover; }
 
 .band { height: 6px; }
