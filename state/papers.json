@@ -394,6 +394,7 @@
   "10.1038/d41586-026-03359-7": "2026-10-27",
   "10.1038/d41586-026-03360-0": "2026-10-27",
   "10.1038/d41586-026-03363-x": "2026-10-27",
+  "10.1038/d41586-026-03368-6": "2026-10-31",
   "10.1038/d41586-026-03371-x": "2026-10-27",
   "10.1038/d41586-026-03374-8": "2026-10-27",
   "10.1038/d41586-026-03375-7": "2026-10-27",
@@ -432,6 +433,7 @@
   "10.1038/d41586-026-03446-9": "2026-10-27",
   "10.1038/d41586-026-03447-8": "2026-10-27",
   "10.1038/d41586-026-03449-6": "2026-10-28",
+  "10.1038/d41586-026-03455-8": "2026-10-31",
   "10.1038/d41586-026-03461-w": "2026-10-28",
   "10.1038/d41586-026-03463-8": "2026-10-27",
   "10.1038/d41586-026-03476-3": "2026-10-29",
@@ -440,7 +442,12 @@
   "10.1038/d41586-026-03484-3": "2026-10-29",
   "10.1038/d41586-026-03486-1": "2026-10-29",
   "10.1038/d41586-026-03488-z": "2026-10-29",
+  "10.1038/d41586-026-03502-4": "2026-10-31",
+  "10.1038/d41586-026-03512-2": "2026-10-31",
   "10.1038/d41586-026-03531-z": "2026-10-29",
+  "10.1038/d41586-026-03543-9": "2026-10-31",
+  "10.1038/d41586-026-03548-4": "2026-10-31",
+  "10.1038/d41586-026-03553-7": "2026-10-31",
   "10.1038/s41563-026-02715-2": "2026-10-30",
   "10.1038/s41563-026-02758-5": "2026-10-30",
   "10.1038/s41563-026-02760-x": "2026-10-27",
@@ -500,6 +507,7 @@
   "10.1038/s41586-026-11302-z": "2026-10-27",
   "10.1038/s41586-026-11303-y": "2026-10-27",
   "10.1038/s41586-026-11335-4": "2026-10-29",
+  "10.1038/s41586-026-11337-2": "2026-10-31",
   "10.1038/s41586-026-11348-z": "2026-10-29",
   "10.1038/s41587-026-03297-9": "2026-10-27",
   "10.1038/s41587-026-03317-8": "2026-10-27",
@@ -539,11 +547,13 @@
   "10.1038/s41592-026-03267-8": "2026-10-27",
   "10.1038/s41592-026-03268-7": "2026-10-27",
   "10.1038/s41592-026-03270-z": "2026-10-29",
+  "10.1038/s41592-026-03271-y": "2026-10-31",
   "10.1038/s41592-026-03273-w": "2026-10-27",
   "10.1038/s41592-026-03275-8": "2026-10-30",
   "10.1038/s41592-026-03276-7": "2026-10-27",
   "10.1038/s41592-026-03278-5": "2026-10-29",
   "10.1038/s41592-026-03284-7": "2026-10-28",
+  "10.1038/s41592-026-03285-6": "2026-10-31",
   "10.1038/s41592-026-03289-2": "2026-10-30",
   "10.1038/s41592-026-03290-9": "2026-10-28",
   "10.1038/s41592-026-03305-5": "2026-10-28",
@@ -2099,7 +2109,7 @@
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1016/j.cell.2026.09.033",
-   "pmcid": null,
+   "pmcid": "PMC13722029",
    "pmid": "42880233",
    "preview": null,
    "preview_tried": true,
@@ -2322,15 +2332,51 @@
    "abstract": null,
    "article_type": "Resource",
    "doi": "10.1016/j.cell.2026.09.050",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Embryonic-scale cell fate mapping of mouse development with PEtracer.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722109.1/nihms-2214476-f0002.webp"
+    },
+    {
+     "caption": "Whole-embryo joint cell state and lineage atlas of early mouse embryogenesis.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722109.1/nihms-2214476-f0003.webp"
+    },
+    {
+     "caption": "Cell fate bias, pool size, and fate restriction timing by germ layer and cell type.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722109.1/nihms-2214476-f0004.webp"
+    },
+    {
+     "caption": "Cell fate specification dynamics in the developing notochord, heart fields, and neural crest.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722109.1/nihms-2214476-f0005.webp"
+    },
+    {
+     "caption": "Gene regulatory programs underlying cell fate specification.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722109.1/nihms-2214476-f0006.webp"
+    },
+    {
+     "caption": "Spatial patterning and bias in the neural ectoderm.",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722109.1/nihms-2214476-f0007.webp"
+    },
+    {
+     "caption": "Midbrain-hindbrain boundary and the dynamics of axial elongation.",
+     "label": "Figure 7",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722109.1/nihms-2214476-f0008.webp"
+    }
+   ],
+   "figures_added": "2026-10-31",
    "first_seen": "2026-10-08",
    "journal": "Cell",
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01196-7?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13722109",
    "pmid": "42849436",
    "preview": null,
    "preview_tried": true,
@@ -2695,6 +2741,27 @@
    "summary": "Together, these findings reveal how a developmental regulator couples organ specification with organ-specific metabolic programs to synchronize floral rewards and signals at anthesis.",
    "summary_source": "abstract",
    "title": "Genetic coupling of floral rewards and signals underlies pollinator attraction"
+  },
+  "10.1016/j.cell.2026.10.009": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1016/j.cell.2026.10.009",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-10-31",
+   "journal": "Cell",
+   "licence": null,
+   "licence_checked": "2026-10-31",
+   "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01220-1?rss=yes",
+   "pmcid": null,
+   "pmid": "42962658",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-10-30",
+   "summary": "Here, we map the age-dependent structural landscape of Orb2 amyloid, a synaptic translation regulator required for long-term memory, across the adult lifespan of Drosophila melanogaster.",
+   "summary_source": "abstract",
+   "title": "Age-dependent structural evolution of a functional amyloid contributes to memory impairment in Drosophila"
   },
   "10.1016/j.stem.2026.09.005": {
    "abstract": null,
@@ -4197,7 +4264,7 @@
    "licence": null,
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1038/s41586-026-11064-8",
-   "pmcid": null,
+   "pmcid": "PMC13722527",
    "pmid": "42816613",
    "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11064-8/MediaObjects/41586_2026_11064_Fig1_HTML.png",
    "preview_tried": true,
@@ -10795,15 +10862,46 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag749",
-   "figure_source": null,
-   "figures": [],
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Comparisons of the LLM models based on patterns of correctness and incorrectness.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722031.1/btag749f1.webp"
+    },
+    {
+     "caption": "Performance of the LLM models across different categories of bioinformatics tasks.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722031.1/btag749f2.webp"
+    },
+    {
+     "caption": "Performance of LLMs at different benchmarks of human performance.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722031.1/btag749f3.webp"
+    },
+    {
+     "caption": "Performance across model generations.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722031.1/btag749f4.webp"
+    },
+    {
+     "caption": "Summary of human and LLM performance on the Rosalind Bioinformatics Stronghold dataset.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722031.1/btag749f5.webp"
+    },
+    {
+     "caption": "Performance of RAG models across biological categories of questions.",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722031.1/btag749f6.webp"
+    }
+   ],
    "figures_added": null,
    "first_seen": "2026-10-30",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-30",
    "link": "https://doi.org/10.1093/bioinformatics/btag749",
-   "pmcid": null,
+   "pmcid": "PMC13722031",
    "pmid": "42958757",
    "preview": null,
    "preview_tried": true,
@@ -10895,15 +10993,36 @@
    "abstract": null,
    "article_type": null,
    "doi": "10.1093/bioinformatics/btag752",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Schematic overview of LoGicAl.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722280.1/btag752f1.webp"
+    },
+    {
+     "caption": "Accuracy of ancestry-specific allele frequency estimation methods across uncertainty scenarios and allele frequency bins.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722280.1/btag752f2.webp"
+    },
+    {
+     "caption": "Accuracy of ancestry-specific allele frequency estimation methods across uncertainty scenarios and levels of ancestral population differentiation.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722280.1/btag752f3.webp"
+    },
+    {
+     "caption": "Accuracy of ancestry-specific allele frequency estimation methods across discordance rates.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722280.1/btag752f4.webp"
+    }
+   ],
+   "figures_added": "2026-10-31",
    "first_seen": "2026-10-10",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag752",
-   "pmcid": null,
+   "pmcid": "PMC13722280",
    "pmid": "42858232",
    "preview": null,
    "preview_tried": true,
@@ -11628,15 +11747,46 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag772",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of scChronos.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722282.1/btag772f1.webp"
+    },
+    {
+     "caption": "(A) Per-target-time OT distances on HVG1000 recovery and forecasting tasks across four datasets.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722282.1/btag772f2.webp"
+    },
+    {
+     "caption": "Manifold-level evaluation of recovery predictions.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722282.1/btag772f3.webp"
+    },
+    {
+     "caption": "Trajectory-topology evaluation in the forecasting task.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722282.1/btag772f4.webp"
+    },
+    {
+     "caption": "(A) Cell-type composition of all ECED kidney cells and selected cluster-representative cells.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722282.1/btag772f5.webp"
+    },
+    {
+     "caption": "Biological program preservation in ECED Kidney future-state forecasting.",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722282.1/btag772f6.webp"
+    }
+   ],
+   "figures_added": "2026-10-31",
    "first_seen": "2026-10-14",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag772",
-   "pmcid": null,
+   "pmcid": "PMC13722282",
    "pmid": "42872475",
    "preview": null,
    "preview_tried": true,
@@ -11855,15 +12005,46 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag782",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Schematic overview of the DNAharvester analysis workflow.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721121.1/btag782f1.webp"
+    },
+    {
+     "caption": "Characteristics and mapping evaluation of the simulated sample datasets.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721121.1/btag782f2.webp"
+    },
+    {
+     "caption": "Precision and recall rate of different mapping strategies available in DNAharvester.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721121.1/btag782f3.webp"
+    },
+    {
+     "caption": "Performance comparison of different mapping tools available in DNAharvester.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721121.1/btag782f4.webp"
+    },
+    {
+     "caption": "Genetic sex determination using DNAharvester.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721121.1/btag782f5.webp"
+    },
+    {
+     "caption": "Computational resource requirements of DNAharvester.",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721121.1/btag782f6.webp"
+    }
+   ],
+   "figures_added": "2026-10-31",
    "first_seen": "2026-10-16",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag782",
-   "pmcid": null,
+   "pmcid": "PMC13721121",
    "pmid": "42886518",
    "preview": null,
    "preview_tried": true,
@@ -11918,15 +12099,31 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag785",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of DNA-BFN.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721123.1/btag785f1.webp"
+    },
+    {
+     "caption": "(a) Benchmarking of regulatory sequence generation models across eight datasets using three metrics: GC-content distribution similarity (GC), 6-mer frequency consistency (k-mer), and sequence ED.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721123.1/btag785f2.webp"
+    },
+    {
+     "caption": "(a) Mean distribution of functional features in melanocyte cells (H-500) for sequences generated by six models and for natural sequences.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721123.1/btag785f3.webp"
+    }
+   ],
+   "figures_added": "2026-10-31",
    "first_seen": "2026-10-19",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag785",
-   "pmcid": null,
+   "pmcid": "PMC13721123",
    "pmid": "42895817",
    "preview": null,
    "preview_tried": true,
@@ -12014,15 +12211,31 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag789",
-   "figure_source": null,
-   "figures": [],
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of the SSAlign workflow.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722286.1/btag789f1.webp"
+    },
+    {
+     "caption": "Comparative performance of structural alignment methods on the AFDB50 dataset.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722286.1/btag789f2.webp"
+    },
+    {
+     "caption": "Comparison of SSAlign and Foldseek across protein lengths in the AFDB50 benchmark.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722286.1/btag789f3.webp"
+    }
+   ],
    "figures_added": null,
    "first_seen": "2026-10-26",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag789",
-   "pmcid": null,
+   "pmcid": "PMC13722286",
    "pmid": "42929763",
    "preview": null,
    "preview_tried": true,
@@ -12198,6 +12411,27 @@
    "summary": "We propose MV-S2M, a multi-view state-space modeling framework that integrates molecular attributes to enhance relational reasoning, enabling zero-shot CMI prediction.",
    "summary_source": "abstract",
    "title": "Multi-View State-Space Modeling for Zero-Shot circRNA-miRNA Interaction Prediction"
+  },
+  "10.1093/bioinformatics/btag798": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag798",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-10-31",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-10-31",
+   "link": "https://doi.org/10.1093/bioinformatics/btag798",
+   "pmcid": null,
+   "pmid": "42960881",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-10-30",
+   "summary": "Here, we present SiSaNA (Single-Sample Network Analysis), a workflow that removes the need of prior programming experience and allows for single-sample regulatory network reconstruction and analysis, all via a command line interface.",
+   "summary_source": "abstract",
+   "title": "SiSaNA: A Python-based command line interface for Single-Sample Network Analysis"
   },
   "10.1093/bioinformatics/btag799": {
    "abstract": null,
