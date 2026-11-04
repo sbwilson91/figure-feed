@@ -25,6 +25,7 @@
   "10.1016/j.stem.2026.09.015": "2026-10-27",
   "10.1016/j.stem.2026.10.003": "2026-10-29",
   "10.1016/j.stem.2026.10.008": "2026-10-27",
+  "10.1016/j.stem.2026.10.010": "2026-11-04",
   "10.1016/j.stemcr.2026.103110": "2026-10-27",
   "10.1016/j.stemcr.2026.103116": "2026-10-27",
   "10.1016/j.stemcr.2026.103122": "2026-10-27",
@@ -348,6 +349,7 @@
   "10.1038/d41586-026-03266-x": "2026-10-27",
   "10.1038/d41586-026-03275-w": "2026-10-27",
   "10.1038/d41586-026-03276-9": "2026-10-27",
+  "10.1038/d41586-026-03277-8": "2026-11-04",
   "10.1038/d41586-026-03282-x": "2026-10-27",
   "10.1038/d41586-026-03285-8": "2026-10-27",
   "10.1038/d41586-026-03288-5": "2026-10-29",
@@ -450,7 +452,9 @@
   "10.1038/d41586-026-03486-1": "2026-10-29",
   "10.1038/d41586-026-03488-z": "2026-10-29",
   "10.1038/d41586-026-03502-4": "2026-10-31",
+  "10.1038/d41586-026-03503-3": "2026-11-04",
   "10.1038/d41586-026-03504-2": "2026-11-03",
+  "10.1038/d41586-026-03505-1": "2026-11-04",
   "10.1038/d41586-026-03506-0": "2026-11-03",
   "10.1038/d41586-026-03507-z": "2026-11-03",
   "10.1038/d41586-026-03508-y": "2026-11-03",
@@ -459,9 +463,14 @@
   "10.1038/d41586-026-03511-3": "2026-11-03",
   "10.1038/d41586-026-03512-2": "2026-10-31",
   "10.1038/d41586-026-03531-z": "2026-10-29",
+  "10.1038/d41586-026-03538-6": "2026-11-04",
+  "10.1038/d41586-026-03540-y": "2026-11-04",
   "10.1038/d41586-026-03543-9": "2026-10-31",
+  "10.1038/d41586-026-03544-8": "2026-11-04",
+  "10.1038/d41586-026-03545-7": "2026-11-04",
   "10.1038/d41586-026-03548-4": "2026-10-31",
   "10.1038/d41586-026-03553-7": "2026-10-31",
+  "10.1038/d41586-026-03554-6": "2026-11-04",
   "10.1038/d41586-026-03556-4": "2026-11-03",
   "10.1038/d41586-026-03559-1": "2026-11-03",
   "10.1038/d41586-026-03560-8": "2026-11-03",
@@ -562,6 +571,7 @@
   "10.1038/s41587-026-03369-w": "2026-10-27",
   "10.1038/s41587-026-03377-w": "2026-11-03",
   "10.1038/s41592-026-03242-3": "2026-10-27",
+  "10.1038/s41592-026-03250-3": "2026-11-04",
   "10.1038/s41592-026-03251-2": "2026-10-28",
   "10.1038/s41592-026-03257-w": "2026-10-27",
   "10.1038/s41592-026-03258-9": "2026-10-27",
@@ -579,11 +589,13 @@
   "10.1038/s41592-026-03276-7": "2026-10-27",
   "10.1038/s41592-026-03277-6": "2026-11-03",
   "10.1038/s41592-026-03278-5": "2026-10-29",
+  "10.1038/s41592-026-03280-x": "2026-11-04",
   "10.1038/s41592-026-03281-w": "2026-11-03",
   "10.1038/s41592-026-03284-7": "2026-10-28",
   "10.1038/s41592-026-03285-6": "2026-10-31",
   "10.1038/s41592-026-03289-2": "2026-10-30",
   "10.1038/s41592-026-03290-9": "2026-10-28",
+  "10.1038/s41592-026-03297-2": "2026-11-04",
   "10.1038/s41592-026-03301-9": "2026-11-03",
   "10.1038/s41592-026-03305-5": "2026-10-28",
   "10.1038/s41592-026-03325-1": "2026-10-29",
@@ -11851,15 +11863,41 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag769",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Pragmatic analysis analogy between natural language processing and biological sequence analysis.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728851.1/btag769f1.webp"
+    },
+    {
+     "caption": "The enzyme microenvironment database and MPA-EC framework.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728851.1/btag769f2.webp"
+    },
+    {
+     "caption": "The enzyme EC number annotation performance.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728851.1/btag769f3.webp"
+    },
+    {
+     "caption": "Enzyme function reasoning in cold-start and zero-shot conditions.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728851.1/btag769f4.webp"
+    },
+    {
+     "caption": "Enzyme microenvironment parameter prediction.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728851.1/btag769f5.webp"
+    }
+   ],
+   "figures_added": "2026-11-04",
    "first_seen": "2026-10-13",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag769",
-   "pmcid": null,
+   "pmcid": "PMC13728851",
    "pmid": "42870402",
    "preview": null,
    "preview_tried": true,
@@ -12588,15 +12626,36 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag793",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Key challenges in Ab-Ag binding affinity prediction.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728850.1/btag793f1.webp"
+    },
+    {
+     "caption": "The overall framework of AbLWR.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728850.1/btag793f2.webp"
+    },
+    {
+     "caption": "Visualization of ranking predictions on 18 sampled lists.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728850.1/btag793f3.webp"
+    },
+    {
+     "caption": "Case studies on FNI17 antibody mechanism and candidates screening for IL-33 antigen.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13728850.1/btag793f4.webp"
+    }
+   ],
+   "figures_added": "2026-11-04",
    "first_seen": "2026-10-23",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag793",
-   "pmcid": null,
+   "pmcid": "PMC13728850",
    "pmid": "42925410",
    "preview": null,
    "preview_tried": true,
