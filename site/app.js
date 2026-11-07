@@ -168,6 +168,7 @@
     const savedTab = $('[data-tab="saved"]');
     const nKept = Object.keys(kept).length;
     savedTab.innerHTML = "Saved" + (nKept ? `<span class="n">${nKept}</span>` : "");
+    document.body.classList.toggle("no-filters", tab === "journals");
     if (!feed) return;
 
     if (tab === "week") {
@@ -186,7 +187,28 @@
         + list(papers, { hidePassed: false, emptyText: "Store a paper (or swipe it right) and it stays here." });
     } else if (tab === "earlier") {
       renderEarlier();
+    } else if (tab === "journals") {
+      main.innerHTML = journalsHtml();
     }
+  }
+
+  // When each journal last had a paper added, longest gap first, so one that has gone
+  // quiet stands out. Days count to today, not the build, so a stopped build shows too.
+  function journalsHtml() {
+    if (feed.journals.some((j) => j.last_added === undefined)) {
+      return `<p class="empty">This list appears after the next feed update.</p>`;
+    }
+    const today = new Date().toISOString().slice(0, 10);
+    const days = (j) => (Date.parse(today) - Date.parse(j.last_added)) / 864e5;
+    const rows = [...feed.journals]
+      .sort((a, b) => (a.last_added || "").localeCompare(b.last_added || "") || a.name.localeCompare(b.name))
+      .map((j) => {
+        const gap = !j.last_added ? "—" : days(j) < 1 ? "today" : days(j) < 2 ? "1 day" : `${days(j)} days`;
+        return `<tr><td><span class="dot" style="background:${esc(j.colour)}"></span>${esc(j.name)}</td>`
+          + `<td>${j.last_added ? fmtDate(j.last_added) : "None yet"}</td><td>${gap}</td></tr>`;
+      }).join("");
+    return `<table class="gaps"><thead><tr><th>Journal</th><th>Last added</th><th>Gap</th></tr></thead>`
+      + `<tbody>${rows}</tbody></table>`;
   }
 
   async function renderEarlier() {
@@ -412,6 +434,11 @@
     if (search.hidden) {
       if (q.value) { q.value = ""; terms = []; render(); }
     } else q.focus();
+  });
+
+  $("#journalsBtn").addEventListener("click", () => {
+    tab = "journals"; openWeek = null; store.set("tab", tab);
+    showMenu(false); render(); window.scrollTo(0, 0);
   });
 
   let qTimer = null;

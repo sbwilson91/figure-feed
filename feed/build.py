@@ -337,6 +337,15 @@ def _order(p: dict) -> tuple:
     return (p["week"], -rank, p["published"] or "", p["doi"])
 
 
+def last_added(state: dict) -> dict[str, str]:
+    """The latest day each journal had a paper added, by journal. A backfilled paper counts
+    from the day it went online, as the daily run would have had it."""
+    latest: dict[str, str] = {}
+    for p in state["papers"].values():
+        latest[p["journal"]] = max(latest.get(p["journal"], ""), p["first_seen"])
+    return latest
+
+
 def write_site(config: dict, state: dict, today: date) -> dict:
     rows = sorted((public(p) for p in state["papers"].values()), key=_order, reverse=True)
     weeks = sorted({r["week"] for r in rows}, reverse=True)
@@ -348,11 +357,13 @@ def write_site(config: dict, state: dict, today: date) -> dict:
             f.unlink()
     for w in older:
         save_json(weeks_dir / f"{w}.json", [r for r in rows if r["week"] == w], compact=True)
+    latest = last_added(state)
     feed = {
         "generated": datetime.now(timezone.utc).isoformat(timespec="minutes"),
         "today": today.isoformat(),
         "journals": [{"name": j["name"], "short": j.get("short", j["name"]),
-                      "colour": j.get("colour", "#334155")} for j in config["journals"]],
+                      "colour": j.get("colour", "#334155"),
+                      "last_added": latest.get(j["name"])} for j in config["journals"]],
         "weeks": weeks,
         "archived": older,
         "papers": [r for r in rows if r["week"] in recent],

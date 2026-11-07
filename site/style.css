@@ -116,6 +116,12 @@ mark { background: none; color: var(--accent); font-weight: 700; }
 .week-head { font-family: var(--ui-font); font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 18px 2px 8px; }
 .week-head:first-child { margin-top: 4px; }
 .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+.no-filters .filters { display: none; }
+.gaps { width: 100%; border-collapse: collapse; font-size: 14px; color: var(--ink); }
+.gaps th { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; text-align: left; padding: 4px 8px 6px 0; }
+.gaps td { padding: 9px 8px 9px 0; border-top: 1px solid var(--line); }
+.gaps th:nth-child(n+2), .gaps td:nth-child(n+2) { text-align: right; white-space: nowrap; padding-right: 0; padding-left: 10px; font-variant-numeric: tabular-nums; }
+.gaps .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
 
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: 12px;

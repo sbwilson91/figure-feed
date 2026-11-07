@@ -20,6 +20,7 @@ Conceptualisation and fine tuning performed by me (Sean Wilson), majority of cod
 - Search by keyword (Menu → Search): titles and summaries matching every word (or "quoted phrase") stay, with the words highlighted
 - Previous 6 weeks stored in Earlier tab
 - Search for topics of interest (eg. "kidney", "CRISPR screen")
+- Menu → Journals: when each journal last had a paper added, longest gap first
 
 ## Install on your phone
 

@@ -1,7 +1,7 @@
 // The app shell works offline; the feed is fetched fresh when there is a network and
 // served from cache when there is not. Figures stay on their publishers' servers.
 // Only successful responses are cached, so a 404 or 500 during a deploy never sticks.
-const SHELL = "ff-shell-v7";
+const SHELL = "ff-shell-v8";
 const DATA = "ff-data";
 const FILES = ["./", "index.html", "style.css", "app.js", "viewer.js", "manifest.webmanifest", "icons/ff.svg", "icons/ff-192.png"];
 

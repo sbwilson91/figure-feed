@@ -325,6 +325,13 @@ class Build(unittest.TestCase):
         build.poll(fetch, {**CONFIG, "journals": [self.NATURE]}, state, date(2026, 11, 4))
         return state
 
+    def test_last_added_is_each_journals_latest(self):
+        state = {"papers": {
+            "a": {"journal": "A", "first_seen": "2026-11-01"},
+            "b": {"journal": "A", "first_seen": "2026-11-05"},
+            "c": {"journal": "B", "first_seen": "2026-10-20"}}}
+        self.assertEqual(build.last_added(state), {"A": "2026-11-05", "B": "2026-10-20"})
+
     def test_poll_block_page_is_not_a_verdict(self):
         """The bug that emptied the feed: a page with no type filed research as other."""
         with self.assertLogs("feed", "WARNING") as logs:
