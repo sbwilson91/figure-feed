@@ -125,21 +125,36 @@ mark { background: none; color: var(--accent); font-weight: 700; }
 .card.gone.keep { transform: translateX(110%) rotate(4deg); opacity: 0; }
 .card.gone.pass { transform: translateX(-110%) rotate(-4deg); opacity: 0; }
 
+/* Every figure sits whole in a frame of one size: 5:4, the middle of real figures' range.
+   Nothing is measured or cropped, so a card never changes height as figures load or swipe.
+   Tapping a frame opens the full-screen viewer. */
+.figs-wrap { position: relative; }
 .figs {
-  display: flex; align-items: flex-start; overflow-x: auto; overflow-y: hidden;
-  transition: height .2s ease; scroll-snap-type: x mandatory;
+  display: flex; overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
   background: #fff; scrollbar-width: none;
 }
 .figs::-webkit-scrollbar { display: none; }
-.fig { flex: 0 0 100%; scroll-snap-align: start; }
-.fig img { display: block; width: 100%; max-height: 62vh; object-fit: contain; background: #fff; }
+.fig { flex: 0 0 100%; margin: 0; scroll-snap-align: start; scroll-snap-stop: always; display: flex; flex-direction: column; min-width: 0; }
+.fig-frame {
+  display: block; position: relative; width: 100%; aspect-ratio: 5 / 4; max-height: 62vh; max-height: 62svh;
+  padding: 0; border: 0; background: #fff; cursor: zoom-in; flex: none;
+}
+.fig-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .fig-tag {
-  background: rgba(43, 19, 11, .92); color: #fde7de; font-size: 11px; line-height: 1.35;
+  flex: 1; background: rgb(43, 19, 11); color: #fde7de; font-size: 11px; line-height: 1.35;
   padding: 4px 10px; cursor: pointer;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .fig-tag.open { white-space: normal; }
-.preview .fig img { max-height: 40vh; object-fit: cover; }
+/* Touch swipes the strip; a mouse has no swipe, so it gets arrows. */
+.fig-nav {
+  display: none; position: absolute; top: 40%; width: 34px; height: 34px; padding: 0 0 3px; border: 0; border-radius: 50%;
+  background: rgba(43, 19, 11, .72); color: #fde7de; font-size: 22px; line-height: 1;
+}
+.fig-nav.prev { left: 8px; }
+.fig-nav.next { right: 8px; }
+@media (hover: hover) and (pointer: fine) { .fig-nav { display: block; } }
 
 .band { height: 6px; }
 
@@ -185,6 +200,38 @@ mark { background: none; color: var(--accent); font-weight: 700; }
 }
 .toast[hidden] { display: none; }
 .toast button { background: none; border: 0; color: var(--toast-act); font-weight: 700; padding: 4px 8px; }
+
+/* The full-screen viewer: bar, figure, caption, one under the other, so text never lies on
+   the figure. Gestures on the stage are handled in viewer.js. */
+.viewer {
+  width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: rgb(16, 8, 5); color: #fde7de; touch-action: none; overflow: hidden;
+}
+.viewer[open] { display: flex; flex-direction: column; }
+.viewer::backdrop { background: rgb(16, 8, 5); }
+.v-bar { display: flex; align-items: center; gap: 14px; flex: none; min-height: 44px;
+  padding: calc(4px + env(safe-area-inset-top)) 6px 4px 14px; font-size: 13px; }
+.v-count { font-variant-numeric: tabular-nums; opacity: .8; }
+.v-bar a { margin-left: auto; color: #F0997B; font-weight: 600; text-decoration: none; }
+.v-close { border: 0; background: none; color: inherit; font-size: 26px; line-height: 1; width: 40px; height: 40px; }
+.v-stage { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center;
+  overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; opacity: var(--fade, 1); cursor: zoom-in; }
+.zoomed .v-stage { cursor: grab; }
+.v-stage img { display: block; flex: none; background: #fff; will-change: transform; -webkit-user-drag: none; }
+.v-stage img.anim { transition: transform .16s ease-out; }
+.v-status { position: absolute; font-size: 13px; opacity: .75; padding: 0 24px; text-align: center; pointer-events: none; }
+.viewer[data-state="ready"] .v-status { display: none; }
+.viewer:not([data-state="ready"]) .v-stage img { visibility: hidden; }
+.v-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: 44px; height: 44px; padding: 0 0 4px; border: 0; border-radius: 50%;
+  background: rgba(43, 19, 11, .72); color: #fde7de; font-size: 28px; line-height: 1; display: none; }
+.v-nav.prev { left: 12px; }
+.v-nav.next { right: 12px; }
+@media (hover: hover) and (pointer: fine) { .v-nav:not([hidden]) { display: block; } }
+.v-text { flex: none; max-height: 28vh; overflow-y: auto; touch-action: pan-y; overscroll-behavior: contain;
+  padding: 8px 14px calc(10px + env(safe-area-inset-bottom)); font-size: 13px; line-height: 1.4; }
+.v-title { font-weight: 650; color: #fbe9e1; margin: 0 0 3px; }
+.v-cap { margin: 0; color: #e8c4b6; }
+@media (prefers-reduced-motion: reduce) { .v-stage img.anim, .card { transition: none; } }
 
 .foot { max-width: 600px; margin: 0 auto; padding: 0 16px 40px; font-size: 11px; color: var(--muted); }
 .foot a { color: inherit; }

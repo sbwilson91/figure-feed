@@ -2,7 +2,9 @@
 #
 #   type_from: field   a field of the RSS item names the type ("section", "type")
 #   type_from: doi     a DOI fragment marks research (NEJM: /NEJMoa)
-#   type_from: page    the feed says nothing; the article page's citation_article_type does
+#   type_from: page    the feed says nothing; the article page's citation_article_type does,
+#                      or PubMed when the page states no type. `not_research_doi` marks
+#                      DOIs that are never research (Nature's news and comment), unread.
 #   type_from: all     everything the source lists is research
 #
 # `source: crossref` reads the journal's new works from Crossref by ISSN instead of RSS,
@@ -25,6 +27,7 @@ journals:
     colour: "#c8102e"
     rss: https://www.nature.com/nature.rss
     type_from: page
+    not_research_doi: ["/d41586-"]
     research: [Article, Letter, Resource, Analysis]
 
   - name: Science
@@ -69,6 +72,7 @@ journals:
     colour: "#6a3d9a"
     rss: https://www.nature.com/nbt.rss
     type_from: page
+    not_research_doi: ["/d41587-"]
     research: [Article, Letter, Resource, Analysis, Brief Communication]
 
   - name: Nature Methods
@@ -77,6 +81,7 @@ journals:
     colour: "#b15928"
     rss: https://www.nature.com/nmeth.rss
     type_from: page
+    not_research_doi: ["/d41592-"]
     research: [Article, Letter, Resource, Analysis, Brief Communication]
 
   - name: Nature Materials
@@ -85,6 +90,7 @@ journals:
     colour: "#1f78b4"
     rss: https://www.nature.com/nmat.rss
     type_from: page
+    not_research_doi: ["/d41563-"]
     research: [Article, Letter, Resource, Analysis]
 
   - name: Bioinformatics

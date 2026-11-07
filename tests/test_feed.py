@@ -86,7 +86,14 @@ class Sources(unittest.TestCase):
         cfg = {"research": ["Article"], "commentary": ["News & Views"]}
         page = '<meta name="citation_article_type" content="News &amp; Views">'
         self.assertEqual(sources.kind_from_page(page, cfg), ("News & Views", sources.COMMENTARY))
-        self.assertEqual(sources.kind_from_page("", cfg), (None, sources.OTHER))
+        self.assertEqual(sources.kind_from_page("", cfg), (None, None))     # silence decides nothing
+
+    def test_page_rule_magazine_doi(self):
+        cfg = {"name": "Nature", "type_from": "page", "not_research_doi": ["/d41586-"]}
+        xml = ("<rss><channel><item><title>News</title><link>https://www.nature.com/articles/d41586-026-1</link>"
+               "<guid>10.1038/d41586-026-1</guid></item><item><title>Paper</title>"
+               "<guid>10.1038/s41586-026-1</guid></item></channel></rss>")
+        self.assertEqual([i.kind for i in sources.parse_feed(xml, cfg, CONFIG)], [sources.OTHER, None])
 
     def test_crossref(self):
         payload = {"message": {"items": [
@@ -296,6 +303,71 @@ class Build(unittest.TestCase):
         self.assertNotIn("10.1126/new", state["not_research"])                 # left for the feed
         self.assertEqual(filed, {"10.1126/r", "10.1126/held", "10.1093/b"})
         self.assertFalse(any("No ISSN" in u for u in fetch.calls))
+
+    NATURE = {"name": "Nature", "issn": "1476-4687", "type_from": "page", "research": ["Article"],
+              "rss": "https://www.nature.com/nature.rss"}
+    NATURE_RSS = ("<rss><channel><item><title>Paper</title><guid>10.1038/s41586-026-00001-1</guid>"
+                  "<link>https://www.nature.com/articles/s41586-026-00001-1</link></item></channel></rss>")
+    DOI = "10.1038/s41586-026-00001-1"
+
+    def efetch(self, words=100, types=""):
+        abstract = f"<Abstract><AbstractText>{'Text. ' * words}</AbstractText></Abstract>" if words else ""
+        return (f"<PubmedArticleSet><PubmedArticle><MedlineCitation><PMID>1</PMID><Article>{abstract}"
+                f"<PublicationTypeList><PublicationType>Journal Article</PublicationType>{types}"
+                f"</PublicationTypeList></Article></MedlineCitation><PubmedData><ArticleIdList>"
+                f'<ArticleId IdType="doi">{self.DOI}</ArticleId></ArticleIdList></PubmedData>'
+                f"</PubmedArticle></PubmedArticleSet>")
+
+    def poll_nature(self, routes):
+        fetch = fake({"nature.rss": (200, "xml", self.NATURE_RSS),
+                      "esearch": (200, "json", json.dumps({"esearchresult": {"idlist": ["1"]}})), **routes})
+        state = {"papers": {}, "not_research": {}}
+        build.poll(fetch, {**CONFIG, "journals": [self.NATURE]}, state, date(2026, 11, 4))
+        return state
+
+    def test_poll_block_page_is_not_a_verdict(self):
+        """The bug that emptied the feed: a page with no type filed research as other."""
+        with self.assertLogs("feed", "WARNING") as logs:
+            state = self.poll_nature({"/articles/": (200, "html", "<title>Client Challenge</title>")})
+        self.assertEqual(state, {"papers": {}, "not_research": {}})         # asked again next run
+        self.assertIn("Client Challenge", logs.output[0])
+
+    def test_poll_block_page_falls_back_to_pubmed(self):
+        with self.assertLogs("feed", "WARNING"):
+            state = self.poll_nature({"/articles/": (200, "html", "<html></html>"),
+                                      "efetch": (200, "xml", self.efetch())})
+        self.assertIn(self.DOI, state["papers"])
+        self.assertIsNone(state["papers"][self.DOI]["preview"])
+
+    def test_poll_block_page_pubmed_says_not_research(self):
+        with self.assertLogs("feed", "WARNING"):
+            state = self.poll_nature({"/articles/": (403, "html", ""),
+                                      "efetch": (200, "xml", self.efetch(types="<PublicationType>Review</PublicationType>"))})
+        self.assertIn(self.DOI, state["not_research"])
+
+    def test_poll_pubmed_without_abstract_stays_undecided(self):
+        with self.assertLogs("feed", "WARNING"):
+            state = self.poll_nature({"/articles/": (200, "html", ""), "efetch": (200, "xml", self.efetch(words=0))})
+        self.assertEqual(state, {"papers": {}, "not_research": {}})
+
+    def test_poll_page_with_type_decides(self):
+        page = '<meta name="citation_article_type" content="%s"><meta property="og:image" content="https://x.org/f.png">'
+        state = self.poll_nature({"/articles/": (200, "html", page % "Article")})
+        self.assertEqual(state["papers"][self.DOI]["preview"], "https://x.org/f.png")
+        state = self.poll_nature({"/articles/": (200, "html", page % "News & Views")})
+        self.assertIn(self.DOI, state["not_research"])
+
+    def test_backfill_rereads_set_aside_page_items(self):
+        today = date(2026, 11, 6)
+        works = {"message": {"items": [{"DOI": self.DOI, "title": ["Paper"], "URL": "https://www.nature.com/articles/x",
+                                        "created": {"date-parts": [[2026, 10, 29]]}}]}}
+        fetch = fake({"journals/1476-4687": (200, "json", json.dumps(works)),
+                      "/articles/x": (200, "html", '<meta name="citation_article_type" content="Article">')})
+        state = {"papers": {}, "not_research": {self.DOI: "2026-10-29"}}
+        filed = build.backfill(fetch, {**CONFIG, "journals": [self.NATURE]}, state, today, 14)
+        self.assertEqual(filed, {self.DOI})
+        self.assertEqual(state["papers"][self.DOI]["first_seen"], "2026-10-29")
+        self.assertEqual(state["not_research"], {})
 
     def test_public_and_prune(self):
         today = date(2026, 10, 28)

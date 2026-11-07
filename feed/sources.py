@@ -7,8 +7,10 @@ What comes out is the same for all of them: a DOI (lowercased), a title, a link,
 publication date, and a kind: `research`, `commentary` or `other`.
 
 Nature and its sister journals carry no type in the feed, so their items come back with
-`kind=None`; the build reads the article page once, when the item is first seen, and
-`kind_from_page` decides from its `citation_article_type` meta tag.
+`kind=None`, unless the DOI alone marks them as magazine content (`not_research_doi`).
+The build reads the article page when the item is first seen, and `kind_from_page`
+decides from its `citation_article_type` meta tag. A page that states no type decides
+nothing: it may be a block page rather than the article, so PubMed is asked instead.
 """
 
 import html
@@ -132,7 +134,7 @@ def parse_feed(xml, journal_cfg: dict, config: dict) -> list[Item]:
         elif rule == "all":
             kind = RESEARCH
         elif rule == "page":
-            kind = None
+            kind = _page_rule_kind(doi, journal_cfg)
         else:
             raise ValueError(f"{journal_cfg['name']}: unknown type_from {rule!r}")
         out.append(Item(journal=journal_cfg["name"], doi=doi, title=title, link=link,
@@ -146,10 +148,16 @@ def page_type(page_html: str) -> Optional[str]:
     return html.unescape(m.group(1)).strip() if m else None
 
 
-def kind_from_page(page_html: str, journal_cfg: dict) -> tuple[Optional[str], str]:
-    """(label, kind) for a `type_from: page` journal, from its article page."""
+def kind_from_page(page_html: str, journal_cfg: dict) -> tuple[Optional[str], Optional[str]]:
+    """(label, kind) for a `type_from: page` journal, from its article page; (None, None)
+    when the page states no type, which says nothing about the article."""
     label = page_type(page_html)
-    return label, classify(label, journal_cfg)
+    return (label, classify(label, journal_cfg)) if label else (None, None)
+
+
+def _page_rule_kind(doi: str, journal_cfg: dict) -> Optional[str]:
+    """`other` for a DOI the journal marks as magazine content, else None: read the page."""
+    return OTHER if any(p in doi for p in journal_cfg.get("not_research_doi", [])) else None
 
 
 # ── Crossref, for journals whose RSS is too short ────────────────────────────
@@ -185,7 +193,7 @@ def parse_crossref(payload: dict, journal_cfg: dict, config: dict, backfill: boo
             hit = lambda key: any(x.lower() in doi for x in journal_cfg.get(key, []))
             kind = RESEARCH if hit("research") else COMMENTARY if hit("commentary") else OTHER
         elif rule == "page":
-            kind = None
+            kind = _page_rule_kind(doi, journal_cfg)
         else:
             kind = PUBMED
         out.append(Item(journal=journal_cfg["name"], doi=doi, title=title,

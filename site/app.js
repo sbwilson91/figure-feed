@@ -108,14 +108,21 @@
     const n = figures.length;
     const slides = figures.map((f, i) => {
       const tag = p.figure_kind === "preview" ? "Preview"
-        : `${esc(f.label)}${n > 1 ? ` · ${i + 1}/${n}` : ""}${f.caption ? " — " + esc(f.caption) : ""}`;
-      return `<figure class="fig" style="margin:0">
-        <img src="${esc(safeUrl(f.url))}" alt="${esc(f.label + (f.caption ? ": " + f.caption : ""))}"
-             loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        : `${esc(f.label)}<span class="fig-n">${figNumber(i, n)}</span>${f.caption ? " — " + esc(f.caption) : ""}`;
+      return `<figure class="fig">
+        <button class="fig-frame" data-view aria-label="View ${esc(f.label)} full screen">
+          <img src="${esc(cardSrc(safeUrl(f.url)))}" data-full="${esc(safeUrl(f.url))}" alt="${esc(f.label + (f.caption ? ": " + f.caption : ""))}"
+               loading="lazy" decoding="async" referrerpolicy="no-referrer"></button>
         <figcaption class="fig-tag">${tag}</figcaption></figure>`;
     }).join("");
-    return `<div class="figs">${slides}</div>`;
+    const arrows = n > 1 ? `<button class="fig-nav prev" data-nav="-1" aria-label="Previous figure">‹</button>`
+      + `<button class="fig-nav next" data-nav="1" aria-label="Next figure">›</button>` : "";
+    return `<div class="figs-wrap"><div class="figs">${slides}</div>${arrows}</div>`;
   }
+  const figNumber = (i, n) => (n > 1 ? ` · ${i + 1}/${n}` : "");
+  // Springer's full figures run to 2 MB; the same path serves a 685-pixel one at a sixth of
+  // that, plenty for a card. The viewer shows it at once and fetches the full one behind it.
+  const cardSrc = (url) => url.replace("//media.springernature.com/full/", "//media.springernature.com/lw685/");
 
   function cardHtml(p) {
     const isKept = !!kept[p.doi];
@@ -263,23 +270,17 @@
     store.set("place", { tab, week: openWeek, y: Math.round(window.scrollY),
       doi: card ? card.dataset.doi : null, off: card ? Math.round(card.getBoundingClientRect().top - top) : 0 });
   }
-  let anchorUntil = 0, anchor = null;
-  function applyAnchor() {
-    if (!anchor) return;
-    const card = anchor.doi && main.querySelector(`.card[data-doi="${CSS.escape(anchor.doi)}"]`);
-    if (card) window.scrollTo(0, window.scrollY + card.getBoundingClientRect().top - headerH() - anchor.off);
-    else window.scrollTo(0, anchor.y);
-  }
+  // Figure frames hold their size before the image loads, so this one scroll stays right.
   function restorePlace() {
     if (!place) return;
     if (place.tab !== tab || (place.week || null) !== openWeek) { place = null; return; }
     if (tab === "earlier" && feed.archived.includes(openWeek) && !weekCache[openWeek]) return;   // still loading
-    anchor = place; place = null;
-    anchorUntil = Date.now() + 3000;                  // figures above may still be loading
-    applyAnchor();
+    const { doi, off, y } = place;
+    place = null;
+    const card = doi && main.querySelector(`.card[data-doi="${CSS.escape(doi)}"]`);
+    if (card) window.scrollTo(0, window.scrollY + card.getBoundingClientRect().top - headerH() - off);
+    else window.scrollTo(0, y);
   }
-  const letGo = () => { anchor = null; };
-  ["touchstart", "wheel", "keydown"].forEach((ev) => window.addEventListener(ev, letGo, { passive: true }));
   let placeTimer = null;
   window.addEventListener("scroll", () => { clearTimeout(placeTimer); placeTimer = setTimeout(savePlace, 400); }, { passive: true });
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") savePlace(); });
@@ -352,9 +353,31 @@
     if (t.closest("[data-back]")) { openWeek = null; render(); return; }
     if (t.closest("[data-backup]")) { backup(); return; }
     if (t.closest("[data-restore]")) { picker.click(); return; }
+    const nav = t.closest("[data-nav]");
+    if (nav) {
+      const strip = nav.parentElement.querySelector(".figs");
+      strip.scrollBy({ left: Number(nav.dataset.nav) * strip.clientWidth, behavior: "smooth" });
+      return;
+    }
+    const frame = t.closest("[data-view]");
+    if (frame) { openViewer(frame); return; }
     const tag = t.closest(".fig-tag");
-    if (tag) { tag.classList.toggle("open"); fitStrip(tag.closest(".figs")); return; }
+    if (tag) { tag.classList.toggle("open"); return; }
   });
+
+  // Opens the viewer on the slides still in the strip; broken links have dropped out.
+  // Coming back, the strip shows the figure the reader ended on.
+  function openViewer(frame) {
+    const strip = frame.closest(".figs");
+    const p = findPaper(frame.closest(".card").dataset.doi);
+    if (!p) return;
+    const shown = [...strip.querySelectorAll("img")].map((im) => im.dataset.full);
+    const figures = p.figures.filter((f) => shown.includes(safeUrl(f.url)))
+      .map((f) => ({ url: safeUrl(f.url), small: cardSrc(safeUrl(f.url)), label: f.label, caption: f.caption }));
+    const start = shown.indexOf(frame.querySelector("img").dataset.full);
+    FigureViewer.open(figures, start, { title: p.title, link: safeUrl(p.link) || doiUrl(p.doi) },
+      (i) => strip.scrollTo({ left: i * strip.clientWidth, behavior: "instant" }));
+  }
   // Looks: technical (default), dark, light — the Plexus palette.
   const LOOKS = ["technical", "dark", "light"];
   const BARS = { technical: "#2b130b", dark: "#1a1210", light: "#993C1D" };
@@ -421,38 +444,24 @@
     if (Math.abs(dx) > 80 && Math.abs(dx) > 2 * Math.abs(dy)) act(card, dx > 0 ? "keep" : "pass");
   });
 
-  // A strip is as tall as the figure on screen (image + caption), not its tallest figure.
-  function fitStrip(strip) {
-    const i = Math.round(strip.scrollLeft / (strip.clientWidth || 1));
-    const fig = strip.children[i], img = fig && fig.querySelector("img");
-    if (img && img.complete && img.naturalWidth) strip.style.height = fig.offsetHeight + "px";
-  }
-  main.addEventListener("load", (e) => {
-    if (e.target.tagName !== "IMG") return;
-    const strip = e.target.closest(".figs");
-    if (strip) fitStrip(strip);
-    if (anchor && Date.now() < anchorUntil) applyAnchor();
-  }, true);
-  let fitTimer = null;
-  main.addEventListener("scroll", (e) => {
-    const strip = e.target.classList && e.target.classList.contains("figs") ? e.target : null;
-    if (!strip) return;
-    clearTimeout(fitTimer);
-    fitTimer = setTimeout(() => fitStrip(strip), 80);
-  }, true);
-
   // Broken figure links: drop the slide; a card with none left becomes a text card.
   main.addEventListener("error", (e) => {
     if (e.target.tagName !== "IMG") return;
     const strip = e.target.closest(".figs");
+    if (!strip) return;
+    if (e.target.getAttribute("src") !== e.target.dataset.full) { e.target.src = e.target.dataset.full; return; }
     e.target.closest(".fig").remove();
-    if (strip && strip.children.length) fitStrip(strip);
-    if (strip && !strip.children.length) {
+    const n = strip.children.length;
+    const wrap = strip.parentElement;
+    if (!n) {
       const card = strip.closest(".card");
       const p = findPaper(card.dataset.doi);
-      strip.outerHTML = `<div class="band" style="background:${esc(colours[p && p.journal] || "#334155")}"></div>`;
+      wrap.outerHTML = `<div class="band" style="background:${esc(colours[p && p.journal] || "#334155")}"></div>`;
       card.classList.add("text-only");
+      return;
     }
+    strip.querySelectorAll(".fig-n").forEach((el, i) => { el.textContent = figNumber(i, n); });
+    if (n === 1) wrap.querySelectorAll(".fig-nav").forEach((b) => b.remove());
   }, true);
 
   // ── Load ────────────────────────────────────────────────────────────────

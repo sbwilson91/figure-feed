@@ -65,11 +65,30 @@
 
 <div class="toast" id="toast" hidden><span id="toastMsg"></span><button id="undo">Undo</button></div>
 
+<dialog class="viewer" id="viewer" aria-label="Figure viewer">
+  <div class="v-bar">
+    <span class="v-count" id="vCount"></span>
+    <a id="vLink" target="_blank" rel="noopener">Open paper ↗</a>
+    <button class="v-close" id="vClose" aria-label="Close" autofocus>×</button>
+  </div>
+  <div class="v-stage" id="vStage">
+    <img id="vImg" alt="" referrerpolicy="no-referrer" draggable="false">
+    <div class="v-status" id="vStatus" role="status"></div>
+    <button class="v-nav prev" id="vPrev" aria-label="Previous figure">‹</button>
+    <button class="v-nav next" id="vNext" aria-label="Next figure">›</button>
+  </div>
+  <div class="v-text">
+    <p class="v-title" id="vTitle"></p>
+    <p class="v-cap" id="vCap"></p>
+  </div>
+</dialog>
+
 <footer class="foot">
   Papers from the journals' own feeds; summaries from PubMed abstracts. Full figures are
   shown only for papers published under a Creative Commons licence and link to their source.
 </footer>
 
+<script src="viewer.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

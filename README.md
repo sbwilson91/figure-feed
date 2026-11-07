@@ -15,7 +15,7 @@ Conceptualisation and fine tuning performed by me (Sean Wilson), majority of cod
 - Can ignore a paper to remove from feed, store a paper to come back to later, open the paper at its source
 - Memory for where you last scrolled to
 - Back up and restore stored papers as a file (Saved tab)
-- Swipe on figures to show all available in paper
+- Swipe on figures to show all available in paper; tap one to view it full screen, where you can pinch or double-tap to zoom
 - Filter by journal
 - Search by keyword (Menu → Search): titles and summaries matching every word (or "quoted phrase") stay, with the words highlighted
 - Previous 6 weeks stored in Earlier tab
@@ -66,7 +66,7 @@ store copies. As such, papers locked behind a paywall remain so, and isn't that 
 
 | Route | Which papers | When |
 |---|---|---|
-| Springer Nature | CC-licensed Nature-family papers | the day they're published |
+| Springer Nature | CC-licensed Nature-family papers | when the paper enters the feed: the day it's published, or a few days later if the article page can't be read and PubMed has to type it |
 | PubMed Central | any paper in PMC's open-access subset with a CC licence | usually 2–5 weeks after publication |
 | Link preview | any other paper whose publisher offers a preview image | first sighting |
 | Text card | everything else (most Science, NEJM and Cell papers) | — |

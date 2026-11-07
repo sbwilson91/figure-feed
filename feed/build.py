@@ -21,6 +21,7 @@ the site shows it again under "New figures".
 import argparse
 import json
 import logging
+import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -39,6 +40,7 @@ FEED_WEEKS = 6          # weeks in feed.json; older weeks go to weeks/<monday>.j
 OTHER_MEMORY_DAYS = 60  # remember non-research DOIs this long, so pages are read once
 
 log = logging.getLogger("feed")
+_TITLE = re.compile(r"<title[^>]*>(.*?)</title>", re.I | re.S)
 
 
 def monday(d: date) -> date:
@@ -80,26 +82,60 @@ def _new_paper(it: sources.Item, first_seen: date, page: str | None) -> dict:
     }
 
 
-def _take(fetch, it: sources.Item, jcfg: dict, state: dict, today: date,
+def _held(doi: str, state: dict) -> bool:
+    return doi in state["papers"] or doi in state["not_research"]
+
+
+def read_pages(fetch, items: list[sources.Item], jcfg: dict, state: dict) -> dict[str, str]:
+    """Type the new `kind=None` items from their article pages. Returns the pages that
+    stated a type, by DOI. A page that could not be read or states no type (a block page
+    answers 200 too) decides nothing: the item goes to PubMed, and is warned about, since
+    a whole journal of these means the publisher is refusing this run's address."""
+    pages, silent = {}, []
+    for it in items:
+        if it.kind is not None or _held(it.doi, state):
+            continue
+        page = net.text(fetch, it.link)
+        it.article_type, it.kind = sources.kind_from_page(page or "", jcfg)
+        if it.kind:
+            pages[it.doi] = page
+        else:
+            it.kind = sources.PUBMED
+            silent.append(page)
+    if silent:
+        title = _TITLE.search(silent[0] or "")
+        log.warning("::warning::%s: %d article pages stated no type, first: %d bytes, title %.80r",
+                    jcfg["name"], len(silent), len(silent[0] or ""),
+                    " ".join(title.group(1).split()) if title else None)
+    return pages
+
+
+def ask_pubmed(fetch, items: list[sources.Item], state: dict) -> int:
+    """Settle the new `pubmed` items by PubMed's record. One PubMed lacks, or holds no
+    abstract for yet, stays undecided and is asked again while its source lists it.
+    Returns how many stayed undecided."""
+    ask = [it for it in items if it.kind == sources.PUBMED and not _held(it.doi, state)]
+    records = abstracts.lookup_many(fetch, [it.doi for it in ask]) if ask else {}
+    unknown = 0
+    for it in ask:
+        rec = records.get(it.doi)
+        if rec is None or not rec["abstract"]:
+            unknown += 1
+        else:
+            it.kind = sources.RESEARCH if abstracts.is_research(rec) else sources.OTHER
+    return unknown
+
+
+def _take(it: sources.Item, pages: dict[str, str], state: dict, today: date,
           first_seen: date) -> bool:
     """Add one listed item if it is a new research paper. Non-research DOIs are
-    remembered, so a Nature page is read once."""
-    papers, other = state["papers"], state["not_research"]
-    if it.doi in papers or it.doi in other:
+    remembered, so a Nature page is read once; undecided items are left for next run."""
+    if _held(it.doi, state) or it.kind == sources.PUBMED:
         return False
-    if it.kind in (sources.COMMENTARY, sources.OTHER):
-        other[it.doi] = today.isoformat()
+    if it.kind != sources.RESEARCH:
+        state["not_research"][it.doi] = today.isoformat()
         return False
-    page = None
-    if it.kind is None:                           # Nature family: the page says
-        page = net.text(fetch, it.link)
-        if page is None:
-            return False                          # try again next run
-        it.article_type, it.kind = sources.kind_from_page(page, jcfg)
-        if it.kind != sources.RESEARCH:
-            other[it.doi] = today.isoformat()
-            return False
-    papers[it.doi] = _new_paper(it, first_seen, page)
+    state["papers"][it.doi] = _new_paper(it, first_seen, pages.get(it.doi))
     return True
 
 
@@ -108,8 +144,12 @@ def poll(fetch, config: dict, state: dict, today: date) -> int:
     added = 0
     for jcfg in config["journals"]:
         items = sources.items_for(fetch, jcfg, config, today)
-        log.info("%-32s %3d items", jcfg["name"], len(items))
-        added += sum(_take(fetch, it, jcfg, state, today, today) for it in items)
+        pages = read_pages(fetch, items, jcfg, state)
+        unknown = ask_pubmed(fetch, items, state)
+        n = sum(_take(it, pages, state, today, today) for it in items)
+        added += n
+        log.info("%-32s %3d items, %3d added%s", jcfg["name"], len(items), n,
+                 f", {unknown} undecided" if unknown else "")
     return added
 
 
@@ -123,8 +163,10 @@ def _dated(it_published: date | None, today: date, since: date) -> date:
 def backfill(fetch, config: dict, state: dict, today: date, days: int) -> set[str]:
     """Fill the last `days` days as if the daily run had been going all along: every
     research paper the journals put online in that time, filed under the week it went
-    online. Papers already held are re-filed the same way. Returns the DOIs filed, so
-    figures found for them now are not shown again as "New figures".
+    online. Papers already held are re-filed the same way, and articles of `type_from:
+    page` journals set aside in that time are read again, in case a block page misled
+    the run that did it. Returns the DOIs filed, so figures found for them now are not
+    shown again as "New figures".
 
     The feeds only hold the latest items, so the backfill lists works from Crossref by
     ISSN. Crossref carries no section, so `type_from: field` journals are typed by
@@ -143,20 +185,14 @@ def backfill(fetch, config: dict, state: dict, today: date, days: int) -> set[st
         if not jcfg.get("issn"):
             continue
         items = sources.crossref_items(fetch, jcfg, config, today, days=days, backfill=True)
-        ask = [it for it in items if it.kind == sources.PUBMED
-               and it.doi not in papers and it.doi not in other]
-        records = abstracts.lookup_many(fetch, [it.doi for it in ask]) if ask else {}
-        added = unknown = 0
         for it in items:
-            if it.kind == sources.PUBMED:
-                if it.doi in papers or it.doi in other:
-                    continue
-                rec = records.get(it.doi)
-                if rec is None:
-                    unknown += 1
-                    continue
-                it.kind = sources.RESEARCH if abstracts.is_research(rec) else sources.OTHER
-            if _take(fetch, it, jcfg, state, today, _dated(it.published, today, since)):
+            if it.kind is None and other.get(it.doi, "") >= since.isoformat():
+                del other[it.doi]
+        pages = read_pages(fetch, items, jcfg, state)
+        unknown = ask_pubmed(fetch, items, state)
+        added = 0
+        for it in items:
+            if _take(it, pages, state, today, _dated(it.published, today, since)):
                 filed.add(it.doi)
                 added += 1
         log.info("%-32s %3d works, %3d added%s", jcfg["name"], len(items), added,
