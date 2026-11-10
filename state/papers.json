@@ -204,6 +204,7 @@
   "10.1038/d41586-026-02863-0": "2026-10-27",
   "10.1038/d41586-026-02864-z": "2026-10-27",
   "10.1038/d41586-026-02894-7": "2026-10-27",
+  "10.1038/d41586-026-02903-9": "2026-11-10",
   "10.1038/d41586-026-02909-3": "2026-10-27",
   "10.1038/d41586-026-02921-7": "2026-10-27",
   "10.1038/d41586-026-02934-2": "2026-10-27",
@@ -230,9 +231,11 @@
   "10.1038/d41586-026-02983-7": "2026-10-27",
   "10.1038/d41586-026-02985-5": "2026-10-27",
   "10.1038/d41586-026-02991-7": "2026-10-27",
+  "10.1038/d41586-026-02998-0": "2026-11-10",
   "10.1038/d41586-026-02999-z": "2026-10-27",
   "10.1038/d41586-026-03004-3": "2026-10-27",
   "10.1038/d41586-026-03015-0": "2026-10-27",
+  "10.1038/d41586-026-03017-y": "2026-11-10",
   "10.1038/d41586-026-03033-y": "2026-10-27",
   "10.1038/d41586-026-03035-w": "2026-10-27",
   "10.1038/d41586-026-03036-9": "2026-10-27",
@@ -543,6 +546,7 @@
   "10.1038/d41586-026-03568-0": "2026-11-07",
   "10.1038/d41586-026-03571-5": "2026-11-03",
   "10.1038/d41586-026-03576-0": "2026-11-07",
+  "10.1038/d41586-026-03578-y": "2026-11-10",
   "10.1038/d41586-026-03579-x": "2026-11-07",
   "10.1038/d41586-026-03580-4": "2026-11-07",
   "10.1038/d41586-026-03581-3": "2026-11-07",
@@ -550,17 +554,26 @@
   "10.1038/d41586-026-03585-z": "2026-11-07",
   "10.1038/d41586-026-03586-y": "2026-11-07",
   "10.1038/d41586-026-03587-x": "2026-11-07",
+  "10.1038/d41586-026-03588-w": "2026-11-10",
+  "10.1038/d41586-026-03589-9": "2026-11-10",
   "10.1038/d41586-026-03593-z": "2026-11-07",
   "10.1038/d41586-026-03595-x": "2026-11-07",
   "10.1038/d41586-026-03596-w": "2026-11-07",
   "10.1038/d41586-026-03622-x": "2026-11-07",
+  "10.1038/d41586-026-03623-w": "2026-11-10",
+  "10.1038/d41586-026-03625-8": "2026-11-10",
   "10.1038/d41586-026-03626-7": "2026-11-09",
   "10.1038/d41586-026-03627-6": "2026-11-09",
   "10.1038/d41586-026-03628-5": "2026-11-09",
+  "10.1038/d41586-026-03629-4": "2026-11-10",
   "10.1038/d41586-026-03630-x": "2026-11-07",
   "10.1038/d41586-026-03631-w": "2026-11-09",
   "10.1038/d41586-026-03632-9": "2026-11-07",
+  "10.1038/d41586-026-03643-6": "2026-11-10",
+  "10.1038/d41586-026-03644-5": "2026-11-10",
+  "10.1038/d41586-026-03645-4": "2026-11-10",
   "10.1038/d41586-026-03648-1": "2026-11-09",
+  "10.1038/d41586-026-03654-3": "2026-11-10",
   "10.1038/s41563-026-02758-5": "2026-11-07",
   "10.1038/s41563-026-02760-x": "2026-10-27",
   "10.1038/s41563-026-02761-w": "2026-10-27",
@@ -578,6 +591,7 @@
   "10.1038/s41563-026-02788-z": "2026-11-07",
   "10.1038/s41563-026-02790-5": "2026-11-09",
   "10.1038/s41563-026-02794-1": "2026-11-07",
+  "10.1038/s41563-026-02797-y": "2026-11-10",
   "10.1038/s41586-026-10955-0": "2026-10-27",
   "10.1038/s41586-026-10966-x": "2026-11-07",
   "10.1038/s41586-026-11038-w": "2026-10-27",
@@ -598,6 +612,7 @@
   "10.1038/s41586-026-11303-y": "2026-10-27",
   "10.1038/s41586-026-11337-2": "2026-10-31",
   "10.1038/s41586-026-11350-5": "2026-11-03",
+  "10.1038/s41586-026-11375-w": "2026-11-10",
   "10.1038/s41587-026-03297-9": "2026-10-27",
   "10.1038/s41587-026-03317-8": "2026-10-27",
   "10.1038/s41587-026-03324-9": "2026-10-27",
@@ -2423,7 +2438,7 @@
    "licence": null,
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01183-9?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13747713",
    "pmid": "42880283",
    "preview": null,
    "preview_tried": true,
@@ -2682,15 +2697,41 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.cell.2026.09.057",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Quantifying phenotypic heterogeneity among mouse gastruloids derived from single cells.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746981.1/nihms-2216708-f0001.webp"
+    },
+    {
+     "caption": "DNA Typewriter-based reconstruction of the cell lineage histories of eight monoclonal gastruloids.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746981.1/nihms-2216708-f0002.webp"
+    },
+    {
+     "caption": "Cell lineage histories suggest fate biases prior to induction.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746981.1/nihms-2216708-f0003.webp"
+    },
+    {
+     "caption": "The cell type compositions of monoclonal gastruloids are informed by the relatedness of their founders.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746981.1/nihms-2216708-f0004.webp"
+    },
+    {
+     "caption": "Cryptic differences within nominally homogeneous mESCs are predictive of their gastruloid fate biases.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746981.1/nihms-2216708-f0005.webp"
+    }
+   ],
+   "figures_added": "2026-11-10",
    "first_seen": "2026-10-08",
    "journal": "Cell",
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01203-1?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13746981",
    "pmid": "42849438",
    "preview": null,
    "preview_tried": true,
@@ -3055,6 +3096,27 @@
    "summary": "Here, we generate multivariate data from the Global Microbiome Conservancy cohort, including gut microbiome, immunoglobulin A (IgA) sequencing, host genotyping, diet, lifestyle, and fecal biomarker profiles, to investigate host-microbiome interactions across gradients of industrialization and…",
    "summary_source": "abstract",
    "title": "Industrialization drives convergent microbiome and host physiological shifts in the human metaorganism"
+  },
+  "10.1016/j.cell.2026.10.018": {
+   "abstract": null,
+   "article_type": "Resource",
+   "doi": "10.1016/j.cell.2026.10.018",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-10",
+   "journal": "Cell",
+   "licence": null,
+   "licence_checked": "2026-11-10",
+   "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01268-7?rss=yes",
+   "pmcid": null,
+   "pmid": "43003088",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-09",
+   "summary": "Here, we present scSLIDE (single-cell sample-level inference using density estimation), a framework that transforms each sample's single-cell data into a compact profile describing where its cells are distributed in high-dimensional space.",
+   "summary_source": "abstract",
+   "title": "Reconstructing developmental and disease progression with sample-level embeddings"
   },
   "10.1016/j.stem.2026.09.005": {
    "abstract": null,
@@ -11535,6 +11597,48 @@
    "summary_source": "abstract",
    "title": "Spatial single-cell mapping of transcriptional differences across genetic backgrounds in mouse brains"
   },
+  "10.1038/s41592-026-03296-3": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41592-026-03296-3",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03296-3/MediaObjects/41592_2026_3296_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03296-3/MediaObjects/41592_2026_3296_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03296-3/MediaObjects/41592_2026_3296_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03296-3/MediaObjects/41592_2026_3296_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-10",
+   "journal": "Nature Methods",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-10",
+   "link": "https://www.nature.com/articles/s41592-026-03296-3",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03296-3/MediaObjects/41592_2026_3296_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-10",
+   "summary": null,
+   "summary_source": null,
+   "title": "In situ profiling of plasma cell clonality with image-based single-cell transcriptomics"
+  },
   "10.1038/s41592-026-03299-0": {
    "abstract": null,
    "article_type": "Article",
@@ -11816,12 +11920,12 @@
    "licence_checked": "2026-11-08",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2602919?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001740",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-07",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Among patients who were 50 years of age or younger with out-of-hospital cardiac arrest, incorporating ECPR into HEMS was associated with improved survival until hospital discharge, as compared with conventional care.",
+   "summary_source": "abstract",
    "title": "Prehospital Extracorporeal Life Support in Refractory Out-of-Hospital Cardiac Arrest"
   },
   "10.1056/nejmoa2603021": {
@@ -11984,12 +12088,12 @@
    "licence_checked": "2026-11-08",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2606634?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001742",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-07",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Among older adults with at least two chronic conditions but no known cardiovascular disease, discontinuation of statin therapy was noninferior to continuation with respect to major cardiovascular events or death from any cause at 2 years.",
+   "summary_source": "abstract",
    "title": "Discontinuing Statins in Older Adults without Cardiovascular Disease"
   },
   "10.1056/nejmoa2606924": {
@@ -12530,12 +12634,12 @@
    "licence_checked": "2026-11-08",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610159?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001734",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-07",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Pelacarsen did not result in a lower risk of major adverse cardiovascular events than placebo at a median follow-up of 4.7 years.",
+   "summary_source": "abstract",
    "title": "Pelacarsen and Cardiovascular Outcomes in Patients with High Lipoprotein(a)"
   },
   "10.1056/nejmoa2610229": {
@@ -12593,12 +12697,12 @@
    "licence_checked": "2026-11-09",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610676?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001755",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-08",
-   "summary": null,
-   "summary_source": null,
+   "summary": "In participants with painful knee osteoarthritis and obesity, treatment with retatrutide resulted in significantly greater reductions in both the WOMAC pain score and body weight than placebo.",
+   "summary_source": "abstract",
    "title": "Retatrutide Once Weekly in Adults with Knee Osteoarthritis Pain and Obesity"
   },
   "10.1056/nejmoa2610771": {
@@ -12698,13 +12802,34 @@
    "licence_checked": "2026-11-08",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2612126?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001751",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-07",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Among patients with atherosclerotic cardiovascular disease, chronic kidney disease, and cardiovascular inflammation, a strategy of lowering interleukin-6 levels with ziltivekimab did not result in a lower risk of cardiovascular events than placebo.",
+   "summary_source": "abstract",
    "title": "Interleukin-6 Inhibition with Ziltivekimab for Atherosclerotic Disease"
+  },
+  "10.1056/nejmoa2612463": {
+   "abstract": null,
+   "article_type": null,
+   "doi": "10.1056/nejmoa2612463",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-10",
+   "journal": "New England Journal of Medicine",
+   "licence": null,
+   "licence_checked": "2026-11-10",
+   "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2612463?af=R&rss=currentIssue",
+   "pmcid": null,
+   "pmid": "43002172",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-09",
+   "summary": "Inhibition of ANGPTL4 with MAR001 significantly reduced fasting triglyceride levels at 12 weeks.",
+   "summary_source": "abstract",
+   "title": "ANGPTL4 Inhibition in Adults with Elevated Triglyceride Levels"
   },
   "10.1056/nejmoa2612757": {
    "abstract": null,
@@ -12719,12 +12844,12 @@
    "licence_checked": "2026-11-09",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2612757?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001758",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-08",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Among adults with out-of-hospital cardiac arrest, implementation of a multifaceted strategy involving the community and EMS did not result in a greater percentage of patients who survived to hospital discharge with a favorable neurologic outcome than usual care.",
+   "summary_source": "abstract",
    "title": "Community and EMS Interventions to Improve Survival in Cardiac Arrest"
   },
   "10.1056/nejmoa2612922": {
@@ -12740,12 +12865,12 @@
    "licence_checked": "2026-11-08",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2612922?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001746",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-07",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Among patients with type 2 diabetes, targeting a systolic blood pressure of less than 120 mm Hg, as compared with less than 140 mm Hg, did not reduce the occurrence of major cardiovascular events.",
+   "summary_source": "abstract",
    "title": "Intensive Blood-Pressure Lowering in Patients with Type 2 Diabetes"
   },
   "10.1056/nejmoa2612924": {
@@ -12761,12 +12886,12 @@
    "licence_checked": "2026-11-08",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2612924?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001741",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-07",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Among participants with previous ischemic stroke or transient ischemic attack, targeting a systolic blood pressure of less than 120 mm Hg resulted in a lower incidence of major cardiovascular events than targeting a systolic blood pressure of less than 140 mm Hg.",
+   "summary_source": "abstract",
    "title": "Intensive Blood-Pressure Control in Patients with Previous Ischemic Stroke"
   },
   "10.1056/nejmoa2612972": {
@@ -12782,12 +12907,12 @@
    "licence_checked": "2026-11-09",
    "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2612972?af=R&rss=currentIssue",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43001763",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-08",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Among patients with atrioventricular block, left bundle-branch pacing was superior to right ventricular pacing in reducing the risk of a composite of death from any cause, hospitalization for heart failure, or pacing-induced cardiomyopathy.",
+   "summary_source": "abstract",
    "title": "Left Bundle-Branch Pacing versus Right Ventricular Pacing for Atrioventricular Block"
   },
   "10.1093/bioinformatics/btag572": {
@@ -16610,15 +16735,46 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag805",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "The overview of the proposed TRACER.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746605.1/btag805f1.webp"
+    },
+    {
+     "caption": "Spatial domain identification performance of TRACER on complex brain tissue datasets.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746605.1/btag805f2.webp"
+    },
+    {
+     "caption": "TRACER accurately delineates laminar and anatomical structures in mouse brain tissues.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746605.1/btag805f3.webp"
+    },
+    {
+     "caption": "TRACER resolves rare spatial domains in the mouse somatosensory cortex.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746605.1/btag805f4.webp"
+    },
+    {
+     "caption": "TRACER identifies small spatial domains with distinct functional programs in human breast cancer tissue.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746605.1/btag805f5.webp"
+    },
+    {
+     "caption": "Robustness and ablation analysis of TRACER.",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13746605.1/btag805f6.webp"
+    }
+   ],
+   "figures_added": "2026-11-10",
    "first_seen": "2026-10-30",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-02",
    "link": "https://doi.org/10.1093/bioinformatics/btag805",
-   "pmcid": null,
+   "pmcid": "PMC13746605",
    "pmid": "42968373",
    "preview": null,
    "preview_tried": true,
