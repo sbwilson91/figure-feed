@@ -635,11 +635,14 @@
   "10.1038/d41586-026-03664-1": "2026-11-11",
   "10.1038/d41586-026-03665-0": "2026-11-13",
   "10.1038/d41586-026-03666-z": "2026-11-13",
+  "10.1038/d41586-026-03668-x": "2026-11-14",
   "10.1038/d41586-026-03669-w": "2026-11-12",
   "10.1038/d41586-026-03671-2": "2026-11-12",
   "10.1038/d41586-026-03673-0": "2026-11-12",
   "10.1038/d41586-026-03675-y": "2026-11-12",
+  "10.1038/d41586-026-03679-8": "2026-11-14",
   "10.1038/d41586-026-03705-9": "2026-11-13",
+  "10.1038/d41586-026-03716-6": "2026-11-14",
   "10.1038/s41563-026-02758-5": "2026-11-07",
   "10.1038/s41563-026-02760-x": "2026-10-27",
   "10.1038/s41563-026-02761-w": "2026-10-27",
@@ -18027,15 +18030,21 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag801",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Starlng workflow and results.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13760217.1/btag801f1.webp"
+    }
+   ],
+   "figures_added": "2026-11-14",
    "first_seen": "2026-10-28",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-29",
    "link": "https://doi.org/10.1093/bioinformatics/btag801",
-   "pmcid": null,
+   "pmcid": "PMC13760217",
    "pmid": "42949909",
    "preview": null,
    "preview_tried": true,
@@ -18048,15 +18057,31 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag802",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of the proposed cross-domain PRI prediction framework.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13767756.1/btag802f1.webp"
+    },
+    {
+     "caption": "Computational evaluation of generated RNA aptamers.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13767756.1/btag802f2.webp"
+    },
+    {
+     "caption": "Nucleotide-level interpretability analysis of PRIDA.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13767756.1/btag802f3.webp"
+    }
+   ],
+   "figures_added": "2026-11-14",
    "first_seen": "2026-10-29",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-30",
    "link": "https://doi.org/10.1093/bioinformatics/btag802",
-   "pmcid": null,
+   "pmcid": "PMC13767756",
    "pmid": "42954309",
    "preview": null,
    "preview_tried": true,
@@ -18096,15 +18121,31 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag804",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Our MIL framework for EC number prediction consists of three components: (i) Converting the input protein sequence into a bag of domain embeddings, (ii) generating a bag-level embedding using an MIL attention layer, and…",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13760209.1/btag804f1.webp"
+    },
+    {
+     "caption": "Distributions of protein length (left) and domain count per enzyme (right) for all proteins in the training set.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13760209.1/btag804f2.webp"
+    },
+    {
+     "caption": "Examples of MIL-BC predictions and domain-level contributions to the predictions based on SHAP values.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13760209.1/btag804f3.webp"
+    }
+   ],
+   "figures_added": "2026-11-14",
    "first_seen": "2026-10-30",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-02",
    "link": "https://doi.org/10.1093/bioinformatics/btag804",
-   "pmcid": null,
+   "pmcid": "PMC13760209",
    "pmid": "42968374",
    "preview": null,
    "preview_tried": true,
@@ -18388,12 +18429,12 @@
    "licence_checked": "2026-11-13",
    "link": "https://doi.org/10.1093/bioinformatics/btag816",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43023426",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-13",
-   "summary": null,
-   "summary_source": null,
+   "summary": "By combining fixed amino acid embeddings derived from a pretrained protein language model with mRNA-derived features, the proposed model integrates complementary protein-level and nucleotide-level information for more accurate prediction of translation efficiency.",
+   "summary_source": "abstract",
    "title": "Leveraging amino acid embeddings for accurate translation efficiency prediction"
   },
   "10.1093/bioinformatics/btag817": {
@@ -18451,12 +18492,12 @@
    "licence_checked": "2026-11-13",
    "link": "https://doi.org/10.1093/bioinformatics/btag821",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43023421",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-13",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Here, we present a read-based likelihood framework for identifying reference and non-reference CpG loci with high precision and sensitivity in single-molecule long-read sequencing data from Nanopore and PacBio platforms.",
+   "summary_source": "abstract",
    "title": "Analyzing epigenetic modifications at sample-specific CpG loci in long-read data using a likelihood-based framework in bsseq"
   },
   "10.1093/bioinformatics/btag822": {
@@ -18619,12 +18660,12 @@
    "licence_checked": "2026-11-13",
    "link": "https://doi.org/10.1093/bioinformatics/btag834",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43023412",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-13",
-   "summary": null,
-   "summary_source": null,
+   "summary": "We also apply these methods to predict EC numbers from drug metabolism reactions, highlighting their potential to improve functional annotation of uncharacterized metabolic pathways.",
+   "summary_source": "abstract",
    "title": "A systematic review of EC number prediction algorithms based on reaction chemical structures"
   },
   "10.1093/bioinformatics/btag835": {
@@ -18640,12 +18681,12 @@
    "licence_checked": "2026-11-13",
    "link": "https://doi.org/10.1093/bioinformatics/btag835",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43023420",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-13",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Although processing remains slower than specialized codecs, SigComp offers an excellent trade-off for long-term cold archival storage, particularly when scaled via multi-GPU environments.",
+   "summary_source": "abstract",
    "title": "Integer quantized multilayer perceptron neural network for lossless compression of nanopore signal"
   },
   "10.1126/science.adq6530": {
