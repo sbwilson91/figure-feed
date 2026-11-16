@@ -641,7 +641,11 @@
   "10.1038/d41586-026-03673-0": "2026-11-12",
   "10.1038/d41586-026-03675-y": "2026-11-12",
   "10.1038/d41586-026-03679-8": "2026-11-14",
+  "10.1038/d41586-026-03684-x": "2026-11-16",
   "10.1038/d41586-026-03705-9": "2026-11-13",
+  "10.1038/d41586-026-03712-w": "2026-11-16",
+  "10.1038/d41586-026-03713-9": "2026-11-16",
+  "10.1038/d41586-026-03715-7": "2026-11-16",
   "10.1038/d41586-026-03716-6": "2026-11-14",
   "10.1038/s41563-026-02758-5": "2026-11-07",
   "10.1038/s41563-026-02760-x": "2026-10-27",
@@ -732,6 +736,7 @@
   "10.1038/s41592-026-03285-6": "2026-11-07",
   "10.1038/s41592-026-03288-3": "2026-11-07",
   "10.1038/s41592-026-03290-9": "2026-11-07",
+  "10.1038/s41592-026-03291-8": "2026-11-16",
   "10.1038/s41592-026-03297-2": "2026-11-07",
   "10.1038/s41592-026-03298-1": "2026-11-07",
   "10.1038/s41592-026-03305-5": "2026-11-07",
@@ -5042,6 +5047,27 @@
    "summary_source": "abstract",
    "title": "Breaking symmetry in nanoparticle superlattices via spontaneous valency"
   },
+  "10.1038/s41563-026-02789-y": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41563-026-02789-y",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-16",
+   "journal": "Nature Materials",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-16",
+   "link": "https://www.nature.com/articles/s41563-026-02789-y",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41563-026-02789-y/MediaObjects/41563_2026_2789_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-16",
+   "summary": null,
+   "summary_source": null,
+   "title": "Controlling the flow of information in optical metrology"
+  },
   "10.1038/s41563-026-02792-3": {
    "abstract": null,
    "article_type": "Article",
@@ -5104,6 +5130,27 @@
    "summary": "Here we introduce adapt-ring networks (ARNs) that establish a general design principle for adaptive polymer materials.",
    "summary_source": "abstract",
    "title": "Mechanical adaptation drives out-of-equilibrium network reorganization and self-strengthening in adapt-ring networks"
+  },
+  "10.1038/s41563-026-02799-w": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41563-026-02799-w",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-16",
+   "journal": "Nature Materials",
+   "licence": null,
+   "licence_checked": "2026-11-16",
+   "link": "https://www.nature.com/articles/s41563-026-02799-w",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41563-026-02799-w/MediaObjects/41563_2026_2799_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-16",
+   "summary": null,
+   "summary_source": null,
+   "title": "Two-dimensional material membranes with precisely tunable interlayer spacing from nanometre to submillimetre"
   },
   "10.1038/s41563-026-02800-6": {
    "abstract": null,
@@ -11643,6 +11690,58 @@
    "summary_source": "abstract",
    "title": "An mRNA–lipid nanoparticle vaccine against H5N1 influenza virus protects lactating dairy cows from infection"
   },
+  "10.1038/s41587-026-03344-5": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41587-026-03344-5",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03344-5/MediaObjects/41587_2026_3344_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03344-5/MediaObjects/41587_2026_3344_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03344-5/MediaObjects/41587_2026_3344_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03344-5/MediaObjects/41587_2026_3344_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03344-5/MediaObjects/41587_2026_3344_Fig5_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 6",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03344-5/MediaObjects/41587_2026_3344_Fig6_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-16",
+   "journal": "Nature Biotechnology",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-16",
+   "link": "https://www.nature.com/articles/s41587-026-03344-5",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41587-026-03344-5/MediaObjects/41587_2026_3344_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-16",
+   "summary": null,
+   "summary_source": null,
+   "title": "A CD7-targeted AAV variant enables efficient T and NK cell engineering in vivo"
+  },
   "10.1038/s41587-026-03348-1": {
    "abstract": null,
    "article_type": "Article",
@@ -12671,6 +12770,58 @@
    "summary_source": "abstract",
    "title": "Enhanced cfDNA methylation profiling by detection and correction of jagged ends"
   },
+  "10.1038/s41592-026-03279-4": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41592-026-03279-4",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03279-4/MediaObjects/41592_2026_3279_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03279-4/MediaObjects/41592_2026_3279_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03279-4/MediaObjects/41592_2026_3279_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03279-4/MediaObjects/41592_2026_3279_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03279-4/MediaObjects/41592_2026_3279_Fig5_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 6",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03279-4/MediaObjects/41592_2026_3279_Fig6_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-16",
+   "journal": "Nature Methods",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-16",
+   "link": "https://www.nature.com/articles/s41592-026-03279-4",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03279-4/MediaObjects/41592_2026_3279_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-16",
+   "summary": null,
+   "summary_source": null,
+   "title": "Echidna: a Bayesian framework for integrative inference of copy number alterations impacting phenotypic plasticity"
+  },
   "10.1038/s41592-026-03281-w": {
    "abstract": null,
    "article_type": "Article",
@@ -12989,6 +13140,27 @@
    "summary": "Here we present Gene SPatial Optimal Transport (GeneSPOT), a gene-centric computational framework for characterizing the spatial relationships among genes and quantifying their reorganization across biological conditions.",
    "summary_source": "abstract",
    "title": "Deciphering the gene-centric spatial dynamics across tissue and time with GeneSPOT"
+  },
+  "10.1038/s41592-026-03319-z": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41592-026-03319-z",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-16",
+   "journal": "Nature Methods",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-16",
+   "link": "https://www.nature.com/articles/s41592-026-03319-z",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03319-z/MediaObjects/41592_2026_3319_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-16",
+   "summary": null,
+   "summary_source": null,
+   "title": "Joint single-cell capture of Cas9 edits and transcriptomes reveals on- and off-target effects on gene expression"
   },
   "10.1056/nejmoa2506756": {
    "abstract": null,
@@ -18692,6 +18864,48 @@
    "summary": "Although processing remains slower than specialized codecs, SigComp offers an excellent trade-off for long-term cold archival storage, particularly when scaled via multi-GPU environments.",
    "summary_source": "abstract",
    "title": "Integer quantized multilayer perceptron neural network for lossless compression of nanopore signal"
+  },
+  "10.1093/bioinformatics/btag837": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag837",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-16",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-16",
+   "link": "https://doi.org/10.1093/bioinformatics/btag837",
+   "pmcid": null,
+   "pmid": null,
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-16",
+   "summary": null,
+   "summary_source": null,
+   "title": "Data-Driven Modeling of Promoter Affection to 5’ Untranslated Region Design for Rational Predictive Translational Engineering"
+  },
+  "10.1093/bioinformatics/btag838": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag838",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-16",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-16",
+   "link": "https://doi.org/10.1093/bioinformatics/btag838",
+   "pmcid": null,
+   "pmid": null,
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-16",
+   "summary": null,
+   "summary_source": null,
+   "title": "ReMoD-Mol: Reliability-Aware Multimodal Learning with Descriptor-Guided Knowledge Distillation for Molecular Property Prediction"
   },
   "10.1093/bioinformatics/btag839": {
    "abstract": null,
