@@ -36,6 +36,7 @@
   "10.1016/j.stem.2026.10.010": "2026-11-04",
   "10.1016/j.stem.2026.10.012": "2026-11-07",
   "10.1016/j.stem.2026.10.013": "2026-11-07",
+  "10.1016/j.stem.2026.10.019": "2026-11-19",
   "10.1016/j.stem.2026.11.010": "2026-11-17",
   "10.1016/j.stemcr.2026.103110": "2026-10-27",
   "10.1016/j.stemcr.2026.103116": "2026-10-27",
@@ -424,6 +425,7 @@
   "10.1038/d41586-026-03270-1": "2026-11-07",
   "10.1038/d41586-026-03271-0": "2026-11-07",
   "10.1038/d41586-026-03272-z": "2026-11-12",
+  "10.1038/d41586-026-03273-y": "2026-11-19",
   "10.1038/d41586-026-03274-x": "2026-11-12",
   "10.1038/d41586-026-03275-w": "2026-10-27",
   "10.1038/d41586-026-03276-9": "2026-10-27",
@@ -488,6 +490,8 @@
   "10.1038/d41586-026-03374-8": "2026-10-27",
   "10.1038/d41586-026-03375-7": "2026-10-27",
   "10.1038/d41586-026-03376-6": "2026-10-27",
+  "10.1038/d41586-026-03377-5": "2026-11-19",
+  "10.1038/d41586-026-03378-4": "2026-11-19",
   "10.1038/d41586-026-03383-7": "2026-10-27",
   "10.1038/d41586-026-03384-6": "2026-10-27",
   "10.1038/d41586-026-03385-5": "2026-10-28",
@@ -524,6 +528,7 @@
   "10.1038/d41586-026-03423-2": "2026-11-07",
   "10.1038/d41586-026-03425-0": "2026-11-12",
   "10.1038/d41586-026-03428-x": "2026-11-12",
+  "10.1038/d41586-026-03436-x": "2026-11-19",
   "10.1038/d41586-026-03438-9": "2026-10-27",
   "10.1038/d41586-026-03440-1": "2026-10-27",
   "10.1038/d41586-026-03441-0": "2026-11-12",
@@ -550,6 +555,7 @@
   "10.1038/d41586-026-03487-0": "2026-11-07",
   "10.1038/d41586-026-03488-z": "2026-10-29",
   "10.1038/d41586-026-03489-y": "2026-11-12",
+  "10.1038/d41586-026-03490-5": "2026-11-19",
   "10.1038/d41586-026-03496-z": "2026-11-12",
   "10.1038/d41586-026-03499-w": "2026-11-12",
   "10.1038/d41586-026-03502-4": "2026-10-31",
@@ -565,6 +571,7 @@
   "10.1038/d41586-026-03512-2": "2026-10-31",
   "10.1038/d41586-026-03515-z": "2026-11-12",
   "10.1038/d41586-026-03516-y": "2026-11-13",
+  "10.1038/d41586-026-03517-x": "2026-11-19",
   "10.1038/d41586-026-03531-z": "2026-10-29",
   "10.1038/d41586-026-03536-8": "2026-11-12",
   "10.1038/d41586-026-03537-7": "2026-11-07",
@@ -605,6 +612,9 @@
   "10.1038/d41586-026-03593-z": "2026-11-07",
   "10.1038/d41586-026-03595-x": "2026-11-07",
   "10.1038/d41586-026-03596-w": "2026-11-07",
+  "10.1038/d41586-026-03599-7": "2026-11-19",
+  "10.1038/d41586-026-03602-1": "2026-11-19",
+  "10.1038/d41586-026-03606-x": "2026-11-19",
   "10.1038/d41586-026-03620-z": "2026-11-11",
   "10.1038/d41586-026-03621-y": "2026-11-11",
   "10.1038/d41586-026-03622-x": "2026-11-07",
@@ -644,8 +654,10 @@
   "10.1038/d41586-026-03672-1": "2026-11-18",
   "10.1038/d41586-026-03673-0": "2026-11-12",
   "10.1038/d41586-026-03675-y": "2026-11-12",
+  "10.1038/d41586-026-03678-9": "2026-11-19",
   "10.1038/d41586-026-03679-8": "2026-11-14",
   "10.1038/d41586-026-03684-x": "2026-11-16",
+  "10.1038/d41586-026-03689-6": "2026-11-19",
   "10.1038/d41586-026-03705-9": "2026-11-13",
   "10.1038/d41586-026-03706-8": "2026-11-17",
   "10.1038/d41586-026-03707-7": "2026-11-17",
@@ -658,6 +670,7 @@
   "10.1038/d41586-026-03714-8": "2026-11-17",
   "10.1038/d41586-026-03715-7": "2026-11-16",
   "10.1038/d41586-026-03716-6": "2026-11-14",
+  "10.1038/d41586-026-03717-5": "2026-11-19",
   "10.1038/d41586-026-03742-4": "2026-11-17",
   "10.1038/d41586-026-03743-3": "2026-11-17",
   "10.1038/d41586-026-03744-2": "2026-11-17",
@@ -665,14 +678,23 @@
   "10.1038/d41586-026-03749-x": "2026-11-18",
   "10.1038/d41586-026-03750-4": "2026-11-18",
   "10.1038/d41586-026-03752-2": "2026-11-17",
+  "10.1038/d41586-026-03753-1": "2026-11-19",
   "10.1038/d41586-026-03757-x": "2026-11-18",
   "10.1038/d41586-026-03760-2": "2026-11-17",
   "10.1038/d41586-026-03762-0": "2026-11-17",
   "10.1038/d41586-026-03763-z": "2026-11-17",
   "10.1038/d41586-026-03765-x": "2026-11-17",
+  "10.1038/d41586-026-03766-w": "2026-11-19",
   "10.1038/d41586-026-03769-7": "2026-11-18",
   "10.1038/d41586-026-03770-0": "2026-11-18",
   "10.1038/d41586-026-03772-y": "2026-11-18",
+  "10.1038/d41586-026-03774-w": "2026-11-19",
+  "10.1038/d41586-026-03775-9": "2026-11-19",
+  "10.1038/d41586-026-03777-7": "2026-11-19",
+  "10.1038/d41586-026-03780-y": "2026-11-19",
+  "10.1038/d41586-026-03784-8": "2026-11-19",
+  "10.1038/d41586-026-03791-9": "2026-11-19",
+  "10.1038/s41563-026-02742-z": "2026-11-19",
   "10.1038/s41563-026-02758-5": "2026-11-07",
   "10.1038/s41563-026-02760-x": "2026-10-27",
   "10.1038/s41563-026-02761-w": "2026-10-27",
@@ -698,6 +720,7 @@
   "10.1038/s41586-026-11070-w": "2026-10-27",
   "10.1038/s41586-026-11083-5": "2026-10-27",
   "10.1038/s41586-026-11096-0": "2026-10-27",
+  "10.1038/s41586-026-11100-7": "2026-11-19",
   "10.1038/s41586-026-11133-y": "2026-11-07",
   "10.1038/s41586-026-11149-4": "2026-10-27",
   "10.1038/s41586-026-11244-6": "2026-10-27",
@@ -713,7 +736,10 @@
   "10.1038/s41586-026-11337-2": "2026-10-31",
   "10.1038/s41586-026-11350-5": "2026-11-03",
   "10.1038/s41586-026-11375-w": "2026-11-10",
+  "10.1038/s41586-026-11388-5": "2026-11-19",
   "10.1038/s41586-026-11409-3": "2026-11-12",
+  "10.1038/s41586-026-11421-7": "2026-11-19",
+  "10.1038/s41586-026-11436-0": "2026-11-19",
   "10.1038/s41587-026-03297-9": "2026-10-27",
   "10.1038/s41587-026-03317-8": "2026-10-27",
   "10.1038/s41587-026-03324-9": "2026-10-27",
@@ -776,6 +802,7 @@
   "10.1038/s41592-026-03346-w": "2026-10-30",
   "10.1056/nejmc2514812": "2026-10-29",
   "10.1056/nejmc2516395": "2026-10-27",
+  "10.1056/nejmc2517823": "2026-11-19",
   "10.1056/nejmc2518656": "2026-10-29",
   "10.1056/nejmc2603129": "2026-11-05",
   "10.1056/nejmc2603650": "2026-10-27",
@@ -800,6 +827,7 @@
   "10.1056/nejmc2610744": "2026-10-27",
   "10.1056/nejmc2610854": "2026-10-27",
   "10.1056/nejmc2610855": "2026-10-27",
+  "10.1056/nejmc2610895": "2026-11-19",
   "10.1056/nejmc2610994": "2026-10-27",
   "10.1056/nejmc2611022": "2026-10-27",
   "10.1056/nejmc2611023": "2026-10-27",
@@ -807,6 +835,7 @@
   "10.1056/nejmc2611265": "2026-11-08",
   "10.1056/nejmc2611338": "2026-11-12",
   "10.1056/nejmc2611462": "2026-10-29",
+  "10.1056/nejmc2611609": "2026-11-19",
   "10.1056/nejmc2611610": "2026-10-29",
   "10.1056/nejmc2611613": "2026-11-12",
   "10.1056/nejmc2612608": "2026-11-01",
@@ -820,6 +849,7 @@
   "10.1056/nejmcpc2603183": "2026-10-27",
   "10.1056/nejmcpc2603184": "2026-10-27",
   "10.1056/nejmcpc2603185": "2026-10-29",
+  "10.1056/nejmcpc2603186": "2026-11-19",
   "10.1056/nejmcps2600385": "2026-10-27",
   "10.1056/nejmcps2606356": "2026-11-05",
   "10.1056/nejme2608188": "2026-10-27",
@@ -838,6 +868,7 @@
   "10.1056/nejme2612352": "2026-10-27",
   "10.1056/nejme2612392": "2026-11-12",
   "10.1056/nejme2612403": "2026-11-05",
+  "10.1056/nejme2612576": "2026-11-19",
   "10.1056/nejme2612650": "2026-11-08",
   "10.1056/nejme2612692": "2026-10-27",
   "10.1056/nejme2612910": "2026-10-27",
@@ -856,6 +887,7 @@
   "10.1056/nejmicm2607906": "2026-11-12",
   "10.1056/nejmicm2607953": "2026-10-27",
   "10.1056/nejmicm2608021": "2026-11-15",
+  "10.1056/nejmicm2608816": "2026-11-19",
   "10.1056/nejmicm2609683": "2026-10-27",
   "10.1056/nejmicm2609770": "2026-10-29",
   "10.1056/nejmimc2600356": "2026-10-29",
@@ -863,6 +895,7 @@
   "10.1056/nejmms2607021": "2026-10-27",
   "10.1056/nejmms2608116": "2026-10-27",
   "10.1056/nejmp2414537": "2026-10-27",
+  "10.1056/nejmp2516854": "2026-11-19",
   "10.1056/nejmp2603604": "2026-10-27",
   "10.1056/nejmp2603758": "2026-10-27",
   "10.1056/nejmp2604584": "2026-10-27",
@@ -893,6 +926,8 @@
   "10.1056/nejmra2506114": "2026-10-29",
   "10.1056/nejmra2508563": "2026-11-12",
   "10.1056/nejmra2519017": "2026-11-05",
+  "10.1056/nejmra2601172": "2026-11-19",
+  "10.1056/nejmsr2607321": "2026-11-19",
   "10.1056/nejmvcm2517207": "2026-11-12",
   "10.1093/bioinformatics/btag734": "2026-10-27",
   "10.1093/bioinformatics/btag770": "2026-10-27",
@@ -3670,6 +3705,27 @@
    "summary_source": "abstract",
    "title": "A spatiotemporal atlas of maturation and aging of the male monkey hypothalamic-pituitary-testicular axis"
   },
+  "10.1016/j.stem.2026.10.015": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1016/j.stem.2026.10.015",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Cell Stem Cell",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(26)00396-6?rss=yes",
+   "pmcid": null,
+   "pmid": "43051155",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "We developed induced pluripotent stem cell (iPSC)-derived CAR macrophages (CAR-iMac) targeting glypican-3 (GPC3) for hepatocellular carcinoma (HCC), incorporating ID3 endowment and TGFBR2 deletion.",
+   "summary_source": "abstract",
+   "title": "ID3 endowment and TGFBR2 deletion enhance iPSC-derived CAR macrophage immunotherapy for hepatocellular carcinoma"
+  },
   "10.1016/j.stemcr.2026.103079": {
    "abstract": null,
    "article_type": null,
@@ -3763,15 +3819,31 @@
    "abstract": null,
    "article_type": "Report",
    "doi": "10.1016/j.stemcr.2026.103112",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Detection of structural variants in KOLF2.1J",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781559.1/gr1.webp"
+    },
+    {
+     "caption": "Cell-type composition across FOs derived from different iPSC lines",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781559.1/gr2.webp"
+    },
+    {
+     "caption": "Differential gene expression analysis and PPI network of KOLF2.1J DEGs",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781559.1/gr3.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-08",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00323-1?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781559",
    "pmid": "42849453",
    "preview": null,
    "preview_tried": true,
@@ -3784,15 +3856,36 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103114",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Oligodendrocyte lineage in hiPSC-derived hSpO and assembloids",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781598.1/gr1.webp"
+    },
+    {
+     "caption": "Functional integration of oligodendrocyte lineage cells in hiPSC-derived organoids",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781598.1/gr2.webp"
+    },
+    {
+     "caption": "Cytokine-induced oligodendrocyte lineage disruption",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781598.1/gr3.webp"
+    },
+    {
+     "caption": "Disease-associated signatures in cytokine-treated hSpO oligodendrocyte lineage cells",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781598.1/gr4.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-08",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00325-5?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781598",
    "pmid": "42849452",
    "preview": null,
    "preview_tried": true,
@@ -3805,15 +3898,51 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103115",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781597.1/ga1.webp"
+    },
+    {
+     "caption": "LSD1 inhibition induces glycolytic shift and broad metabolic remodeling in human neural stem cells",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781597.1/gr1.webp"
+    },
+    {
+     "caption": "Metabolic perturbation by LSD1 inhibition affects the stemness of human neural stem cells",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781597.1/gr2.webp"
+    },
+    {
+     "caption": "Elastic Net-based transcriptomic analysis identifies candidate metabolic effectors downstream of LSD1",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781597.1/gr3.webp"
+    },
+    {
+     "caption": "PLPP2 and CPT1A differentially mediate LSD1 inhibition-induced metabolic and lineage effects in hfNSCs",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781597.1/gr4.webp"
+    },
+    {
+     "caption": "LSD1 directly regulates metabolic gene expression via H3K4me2 demethylation",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781597.1/gr5.webp"
+    },
+    {
+     "caption": "LSD1 suppresses metabolism-related genes through CoREST-mediated chromatin repression",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781597.1/gr6.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-08",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00326-7?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781597",
    "pmid": "42849451",
    "preview": null,
    "preview_tried": true,
@@ -3826,15 +3955,51 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103117",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781587.1/ga1.webp"
+    },
+    {
+     "caption": "Atg4 in gut stem and progenitor cells is required to maintain epithelial barrier function and normal lifespan",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781587.1/gr1.webp"
+    },
+    {
+     "caption": "Atg4 deficiency induces a broader stress response",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781587.1/gr2.webp"
+    },
+    {
+     "caption": "Depletion of the microbiome restores Atg4-induced intestinal function and organismal health",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781587.1/gr3.webp"
+    },
+    {
+     "caption": "Dietary SCFA supplementation can rescue the antibiotic-induced intestinal phenotype in Atg4-deficient flies",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781587.1/gr4.webp"
+    },
+    {
+     "caption": "The cytoplasmic acetyl-CoA pool modulates protein acetylation for midgut homeostasis",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781587.1/gr5.webp"
+    },
+    {
+     "caption": "Inhibition of protein acetylation restores excessive lipid accumulation",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781587.1/gr6.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-15",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00328-0?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781587",
    "pmid": "42880241",
    "preview": null,
    "preview_tried": true,
@@ -3847,15 +4012,56 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103118",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/ga1.webp"
+    },
+    {
+     "caption": "Perinatal nicotine exposure alters HSC number and liver niche in newborn pups",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/gr1.webp"
+    },
+    {
+     "caption": "Perinatal nicotine exposure permanently reduces BM HSC numbers",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/gr2.webp"
+    },
+    {
+     "caption": "Perinatal nicotine exposure does not affect mature cell numbers in the peripheral blood",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/gr3.webp"
+    },
+    {
+     "caption": "Perinatal nicotine exposure results in decreased macrophages in the adult lung",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/gr4.webp"
+    },
+    {
+     "caption": "Perinatal nicotine exposure alters immune response to secondary challenge with LPS",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/gr5.webp"
+    },
+    {
+     "caption": "Perinatal nicotine exposure leads to increased disease severity upon influenza virus infection",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/gr6.webp"
+    },
+    {
+     "caption": "Perinatal nicotine exposure durably reprograms adult HSPC transcriptional states associated with altered immune regulation",
+     "label": "Figure 7",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781554.1/gr7.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-15",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00329-2?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781554",
    "pmid": "42880243",
    "preview": null,
    "preview_tried": true,
@@ -3868,15 +4074,41 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103119",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Characterization of NHP iPSC-derived myogenic progenitors",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781583.1/gr1.webp"
+    },
+    {
+     "caption": "Autologous transplantation of 22BP9 and 23CP14 iPSC-derived myogenic progenitors demonstrates engraftment across clones and injection sites",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781583.1/gr2.webp"
+    },
+    {
+     "caption": "Allogeneic transplantation of 22BP9 and 23CP14 myogenic progenitors reveals engraftment across MHC haplotypes",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781583.1/gr3.webp"
+    },
+    {
+     "caption": "Donor-specific humoral and cellular immune response pre- and post-transplantation",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781583.1/gr4.webp"
+    },
+    {
+     "caption": "RNA sequencing of transplanted NHP myogenic progenitors reveals differential expression of genes that may underlie the difference in engraftment efficiency",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781583.1/gr5.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-15",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00330-9?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781583",
    "pmid": "42880242",
    "preview": null,
    "preview_tried": true,
@@ -3889,15 +4121,51 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103120",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781600.1/ga1.webp"
+    },
+    {
+     "caption": "RNA-seq reveals that XCI erosion in female iPSC lines is preserved during induced neuron differentiation",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781600.1/gr1.webp"
+    },
+    {
+     "caption": "Transcriptomic effects of XIST erosion in iPSCs",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781600.1/gr2.webp"
+    },
+    {
+     "caption": "Allelic imbalance of gene expression caused by XCI erosion in female iPSC lines",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781600.1/gr3.webp"
+    },
+    {
+     "caption": "Transcriptomic effects of XCI erosion in female iPSC-derived neurons",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781600.1/gr4.webp"
+    },
+    {
+     "caption": "Allelic imbalance of gene expression caused by XCI erosion in female iPSC-derived neurons",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781600.1/gr5.webp"
+    },
+    {
+     "caption": "Impact of neuronal XIST expression on transcriptome-wide differential expression analysis",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781600.1/gr6.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-15",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00331-0?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781600",
    "pmid": "42880244",
    "preview": null,
    "preview_tried": true,
@@ -3910,15 +4178,46 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103121",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "An integrated cell atlas of human embryo mandibles at different developmental stages",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781591.1/gr1.webp"
+    },
+    {
+     "caption": "Spatial transcriptomic analysis of human tooth germs and identification of odontogenic markers",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781591.1/gr2.webp"
+    },
+    {
+     "caption": "Distribution and functional characterization of SLITRK6+ cells derived from embryonic human mandibles",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781591.1/gr3.webp"
+    },
+    {
+     "caption": "Distribution and functional characterization of SLITRK6+ cells in postnatal apical papilla",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781591.1/gr4.webp"
+    },
+    {
+     "caption": "Distribution and functional characterization of SLITRK6+ cells in postnatal dental follicle",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781591.1/gr5.webp"
+    },
+    {
+     "caption": "SLITRK6 identifies TGESCs and contributes to their odontogenic differentiation",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781591.1/gr6.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-22",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00332-2?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781591",
    "pmid": "42913636",
    "preview": null,
    "preview_tried": true,
@@ -3931,15 +4230,56 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.stemcr.2026.103123",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/ga1.webp"
+    },
+    {
+     "caption": "Cross-platform validation of marker genes for early hiPSC differentiation states",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/gr1.webp"
+    },
+    {
+     "caption": "Hierarchical clustering of early human cell fates by validated marker genes",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/gr2.webp"
+    },
+    {
+     "caption": "Hierarchical clustering of early human pluripotent stem cell-derived germ layer differentiation states",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/gr3.webp"
+    },
+    {
+     "caption": "Hierarchically clustered correlation heatmap of early human pluripotent stem cell-derived germ layer differentiation states",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/gr4.webp"
+    },
+    {
+     "caption": "Analysis of validated marker genes in human and macaque embryonic transcriptomic reference datasets",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/gr5.webp"
+    },
+    {
+     "caption": "Proteome profiling of undifferentiated and trilineage-differentiated hiPSCs by MS",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/gr6.webp"
+    },
+    {
+     "caption": "Rapid assessment and linkage of gene expression and protein levels using DeepDiff",
+     "label": "Figure 7",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781592.1/gr7.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-22",
    "journal": "Stem Cell Reports",
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00334-6?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13781592",
    "pmid": "42913637",
    "preview": null,
    "preview_tried": true,
@@ -5067,12 +5407,12 @@
    "licence_checked": "2026-11-18",
    "link": "https://www.nature.com/articles/s41563-026-02779-0",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43052364",
    "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41563-026-02779-0/MediaObjects/41563_2026_2779_Fig1_HTML.png",
    "preview_tried": true,
    "published": "2026-11-18",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Here we demonstrate that precisely designed broken symmetries in nematic vortex crystal lattices give rise to exponential configurational complexity exceeding the configurational entropy of conventional atomic crystals, and arising from the manifold ways in which surface-anchored nematic defect…",
+   "summary_source": "abstract",
    "title": "Designed broken symmetries facilitate configurational complexity in nematic vortex crystals"
   },
   "10.1038/s41563-026-02780-7": {
@@ -5095,6 +5435,27 @@
    "summary": "These results establish a viable design principle that utilizes interfacial-electrostatics-induced photocarrier spatial separation and asymmetric-barriers-modulated carrier transport to realize in-sensor computing.",
    "summary_source": "abstract",
    "title": "III-nitride-based in-sensor computing enabled by interfacial polarization effects"
+  },
+  "10.1038/s41563-026-02781-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41563-026-02781-6",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature Materials",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41563-026-02781-6",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41563-026-02781-6/MediaObjects/41563_2026_2781_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-19",
+   "summary": null,
+   "summary_source": null,
+   "title": "The retention of nanoparticles in solid tumours"
   },
   "10.1038/s41563-026-02782-5": {
    "abstract": null,
@@ -7865,6 +8226,43 @@
    "summary_source": "abstract",
    "title": "Educational intervention can rewire village social networks"
   },
+  "10.1038/s41586-026-11155-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11155-6",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11155-6/MediaObjects/41586_2026_11155_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11155-6/MediaObjects/41586_2026_11155_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11155-6/MediaObjects/41586_2026_11155_Fig3_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11155-6",
+   "pmcid": null,
+   "pmid": "43052437",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11155-6/MediaObjects/41586_2026_11155_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we present a rich temporal and environmental context for nine hominin teeth, eight of which were morphologically and genetically identified as H. erectus5, found in two sister caves in Guangxi province, southern China.",
+   "summary_source": "abstract",
+   "title": "Rainforest adaptation in late Homo erectus from southern China"
+  },
   "10.1038/s41586-026-11156-5": {
    "abstract": null,
    "article_type": "Article",
@@ -9962,6 +10360,27 @@
    "summary_source": "abstract",
    "title": "Microbiome-wide PheWAS links gut microbial SNVs to health and exposures"
   },
+  "10.1038/s41586-026-11221-z": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11221-z",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11221-z",
+   "pmcid": null,
+   "pmid": "43052471",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11221-z/MediaObjects/41586_2026_11221_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we present observations of AT 2025abao, a transient eruption in the Andromeda Galaxy, which originates from the CEE of an approximately 7M⊙ asymptotic giant branch (AGB) star with its companion.",
+   "summary_source": "abstract",
+   "title": "An inspiral of a star inside a common envelope with its giant companion"
+  },
   "10.1038/s41586-026-11222-y": {
    "abstract": null,
    "article_type": "Article",
@@ -10255,6 +10674,48 @@
    "summary": "Here we generated a deep single-cell and spatial multi-omic atlas of human glioblastoma that pairs transcriptomic, epigenomic and genomic profiling of 12 tumours across many regions.",
    "summary_source": "abstract",
    "title": "A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"
+  },
+  "10.1038/s41586-026-11235-7": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11235-7",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11235-7/MediaObjects/41586_2026_11235_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11235-7/MediaObjects/41586_2026_11235_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11235-7/MediaObjects/41586_2026_11235_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11235-7/MediaObjects/41586_2026_11235_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11235-7",
+   "pmcid": null,
+   "pmid": "43052438",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11235-7/MediaObjects/41586_2026_11235_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we establish a systematic, cell-type-specific circuit-mapping method, combining an anterograde trans-neuronal fluorescent tracer (mWGA-mCherry)6 with spatial transcriptomics (multiplexed error-robust fluorescence in situ hybridization (MERFISH))7,8 to establish TransA-MERFISH.",
+   "summary_source": "abstract",
+   "title": "TransA-MERFISH reveals divergent post-retinal direction-selective circuits"
   },
   "10.1038/s41586-026-11236-6": {
    "abstract": null,
@@ -10560,6 +11021,27 @@
    "summary_source": "abstract",
    "title": "Hard X-ray attosecond metrology"
   },
+  "10.1038/s41586-026-11247-3": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11247-3",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11247-3",
+   "pmcid": null,
+   "pmid": "43052433",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11247-3/MediaObjects/41586_2026_11247_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we introduce and experimentally demonstrate the Bell-test quantum position verification protocol for device-independent quantum position verification that guarantees security with only observed correlations from a loophole-free Bell test23-25 across a quantum network.",
+   "summary_source": "abstract",
+   "title": "Quantum position verification with remote untrusted devices"
+  },
   "10.1038/s41586-026-11248-2": {
    "abstract": null,
    "article_type": "Article",
@@ -10622,6 +11104,74 @@
    "summary": "Here we identify a new antiviral defense system, DRT10, that associates with a noncoding RNA (ncRNA) to catalyze processive, protein-primed synthesis of tandem-repeat DNA.",
    "summary_source": "abstract",
    "title": "Antiviral immunity via telomerase-like reverse transcription in bacteria"
+  },
+  "10.1038/s41586-026-11251-7": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11251-7",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11251-7",
+   "pmcid": null,
+   "pmid": "43052470",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11251-7/MediaObjects/41586_2026_11251_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we report an artificial neuroimmune axis (NeuroAxis) as a closed-loop immunomodulatory therapy for treating metabolic diseases.",
+   "summary_source": "abstract",
+   "title": "A glucose-powered artificial neuroimmune axis for metabolic control"
+  },
+  "10.1038/s41586-026-11254-4": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11254-4",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11254-4/MediaObjects/41586_2026_11254_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11254-4/MediaObjects/41586_2026_11254_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11254-4/MediaObjects/41586_2026_11254_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11254-4/MediaObjects/41586_2026_11254_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11254-4/MediaObjects/41586_2026_11254_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11254-4",
+   "pmcid": null,
+   "pmid": "43052450",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11254-4/MediaObjects/41586_2026_11254_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we report a dynamical heterostructure in which monolayer graphene is doubly aligned to bulk hexagonal boron nitride (hBN) and monolayer hexagonal boron nitride (mhBN) on either side.",
+   "summary_source": "abstract",
+   "title": "Flat-band-induced integer doping and phase transition in monolayer graphene"
   },
   "10.1038/s41586-026-11255-3": {
    "abstract": null,
@@ -10885,6 +11435,27 @@
    "summary_source": "abstract",
    "title": "Severe drought and warming increase the extinction risk of cacti"
   },
+  "10.1038/s41586-026-11268-y": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11268-y",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11268-y",
+   "pmcid": null,
+   "pmid": "43052473",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11268-y/MediaObjects/41586_2026_11268_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we realize analogue simulation of massive relativistic quantum fields in 2 + 1 dimensions (two spatial dimensions and time), using two coherently coupled spin components4,5 in a uniform two-dimensional atomic Bose-Einstein condensate6,7.",
+   "summary_source": "abstract",
+   "title": "Analogue simulation of massive relativistic quantum fields in 2 + 1 dimensions"
+  },
   "10.1038/s41586-026-11269-x": {
    "abstract": null,
    "article_type": "Article",
@@ -10931,6 +11502,95 @@
    "summary": "Here we exploit a unique collection of serial blood samples3, collected annually for up to a decade and beginning as early as 15 years before diagnosis of acute myeloid leukaemia, to provide a quantitative description of pre-cancerous evolutionary dynamics.",
    "summary_source": "abstract",
    "title": "Evolutionary dynamics in the years preceding acute myeloid leukaemia"
+  },
+  "10.1038/s41586-026-11270-4": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11270-4",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11270-4/MediaObjects/41586_2026_11270_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11270-4/MediaObjects/41586_2026_11270_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11270-4/MediaObjects/41586_2026_11270_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11270-4/MediaObjects/41586_2026_11270_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11270-4/MediaObjects/41586_2026_11270_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11270-4",
+   "pmcid": null,
+   "pmid": "43052431",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11270-4/MediaObjects/41586_2026_11270_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we conduct a comprehensive pan-cancer analysis by algorithmically screening thousands of publicly available single-cell transcriptomic datasets for stromal and immune signatures across species and tissue types.",
+   "summary_source": "abstract",
+   "title": "Conservation of the tumour microenvironment across organs and species"
+  },
+  "10.1038/s41586-026-11271-3": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11271-3",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11271-3/MediaObjects/41586_2026_11271_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11271-3/MediaObjects/41586_2026_11271_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11271-3/MediaObjects/41586_2026_11271_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11271-3/MediaObjects/41586_2026_11271_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11271-3",
+   "pmcid": null,
+   "pmid": "43052439",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11271-3/MediaObjects/41586_2026_11271_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we report nine newly discovered late Middle Pleistocene hominin teeth from the Naxian and Baxian caves at the Chongzuo study area, Guangxi Zhuang Autonomous Region, southern China, dated to around 324-184 thousand years ago12.",
+   "summary_source": "abstract",
+   "title": "Evidence for late Middle Pleistocene Homo erectus in mainland East Asia"
   },
   "10.1038/s41586-026-11272-2": {
    "abstract": null,
@@ -11121,6 +11781,48 @@
    "summary_source": "abstract",
    "title": "Non-halogen aqueous electrolytes for four-electron iodine conversion"
   },
+  "10.1038/s41586-026-11283-z": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11283-z",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11283-z",
+   "pmcid": null,
+   "pmid": "43052448",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11283-z/MediaObjects/41586_2026_11283_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we present the discovery of a diversified group of DNA viruses with large linear genomes, dubbed egoviruses, that comprise a putative viral order most closely related to animal-infecting poxviruses.",
+   "summary_source": "abstract",
+   "title": "Closest relatives of poxviruses prevail in human and animal guts worldwide"
+  },
+  "10.1038/s41586-026-11284-y": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11284-y",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11284-y",
+   "pmcid": null,
+   "pmid": "43052430",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11284-y/MediaObjects/41586_2026_11284_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "These findings challenge the conventional view of Amazonian phenology, demonstrating that previously overlooked deciduousness influences Amazonian carbon dynamics.",
+   "summary_source": "abstract",
+   "title": "Widespread deciduousness reveals diverse Amazonian phenological strategies"
+  },
   "10.1038/s41586-026-11285-x": {
    "abstract": null,
    "article_type": "Article",
@@ -11153,6 +11855,48 @@
    "summary_source": "abstract",
    "title": "Human land use drives microplastic abundance in terrestrial wildlife"
   },
+  "10.1038/s41586-026-11289-7": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11289-7",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11289-7",
+   "pmcid": null,
+   "pmid": "43052447",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11289-7/MediaObjects/41586_2026_11289_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we investigate the non-equilibrium many-body dynamics of a driven spin ensemble coupled with an on-chip superconducting resonator and uncover a dynamical phase transition from continuous-wave to periodic pulsed superradiant emission.",
+   "summary_source": "abstract",
+   "title": "Observation of tunable superradiant frequency combs"
+  },
+  "10.1038/s41586-026-11292-y": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11292-y",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11292-y",
+   "pmcid": null,
+   "pmid": "43052451",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11292-y/MediaObjects/41586_2026_11292_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we developed engineered barrier models of the human small intestine and colon combining a multilineage epithelium, mucus layer, accessible microbial compartment and autologous tissue-resident immune cells.",
+   "summary_source": "abstract",
+   "title": "Host–microbe interactions in engineered immunocompetent human gut tissues"
+  },
   "10.1038/s41586-026-11293-x": {
    "abstract": null,
    "article_type": "Article",
@@ -11173,6 +11917,257 @@
    "summary": "Here, we present Airscope, a wireless mesoscope delivering 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz, weighing 1.0 gram.",
    "summary_source": "abstract",
    "title": "Cortex-wide imaging in naturally behaving mice with 1-gram wireless mesoscopes"
+  },
+  "10.1038/s41586-026-11294-w": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11294-w",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11294-w",
+   "pmcid": null,
+   "pmid": "43052440",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11294-w/MediaObjects/41586_2026_11294_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here, we use a defect-free unitary Fermi gas in a digitally programmable transport geometry to isolate geometric effects on superfluid dissipation and discover a paradox: in the crossover from one dimension to two dimensions, the resistance reaches a minimum.",
+   "summary_source": "abstract",
+   "title": "Quantum resistance paradox of low-dimensional superfluids"
+  },
+  "10.1038/s41586-026-11295-9": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11295-9",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11295-9/MediaObjects/41586_2026_11295_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11295-9/MediaObjects/41586_2026_11295_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11295-9/MediaObjects/41586_2026_11295_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11295-9/MediaObjects/41586_2026_11295_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11295-9/MediaObjects/41586_2026_11295_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11295-9",
+   "pmcid": null,
+   "pmid": "43052432",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11295-9/MediaObjects/41586_2026_11295_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we report angle-resolved photoemission spectroscopy (ARPES) and spin-ARPES evidence for p-wave magnetism in the near-Fermi-level electronic structure of stoichiometric metallic EuSi, supported by symmetry analysis, first-principles calculations and neutron scattering.",
+   "summary_source": "abstract",
+   "title": "Evidence for p-wave magnetism in electronic band structure of metallic EuSi"
+  },
+  "10.1038/s41586-026-11297-7": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11297-7",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11297-7/MediaObjects/41586_2026_11297_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11297-7/MediaObjects/41586_2026_11297_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11297-7/MediaObjects/41586_2026_11297_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11297-7/MediaObjects/41586_2026_11297_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11297-7/MediaObjects/41586_2026_11297_Fig5_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 6",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11297-7/MediaObjects/41586_2026_11297_Fig6_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11297-7",
+   "pmcid": null,
+   "pmid": "43052446",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11297-7/MediaObjects/41586_2026_11297_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we show that in Locusta migratoria, guaiacol, a volatile compound with augmented release after injury, attracts gregarious nymphs and induces cannibalistic behaviour.",
+   "summary_source": "abstract",
+   "title": "Injury-induced signalling coordinates immunity and cannibalism in locusts"
+  },
+  "10.1038/s41586-026-11298-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11298-6",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11298-6/MediaObjects/41586_2026_11298_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11298-6/MediaObjects/41586_2026_11298_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11298-6/MediaObjects/41586_2026_11298_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11298-6/MediaObjects/41586_2026_11298_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11298-6",
+   "pmcid": null,
+   "pmid": "43052441",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11298-6/MediaObjects/41586_2026_11298_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we provide an ecosystem-wide assessment of 24 taxonomic groups across all domains of life-encompassing 40,049 species-along a land-use intensification gradient from lowland forests to intensively managed smallholder cash-crop monocultures in Indonesian landscapes.",
+   "summary_source": "abstract",
+   "title": "Tropical land-use intensification restructures biodiversity"
+  },
+  "10.1038/s41586-026-11299-5": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11299-5",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11299-5/MediaObjects/41586_2026_11299_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11299-5/MediaObjects/41586_2026_11299_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11299-5/MediaObjects/41586_2026_11299_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11299-5/MediaObjects/41586_2026_11299_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11299-5/MediaObjects/41586_2026_11299_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11299-5",
+   "pmcid": null,
+   "pmid": "43052443",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11299-5/MediaObjects/41586_2026_11299_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we demonstrate a fully integrated perovskite polaritonic circuit that brings these functionalities together in a single-step-grown platform.",
+   "summary_source": "abstract",
+   "title": "Fully integrated perovskite active polaritonic circuits"
+  },
+  "10.1038/s41586-026-11300-1": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11300-1",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11300-1",
+   "pmcid": null,
+   "pmid": "43052442",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11300-1/MediaObjects/41586_2026_11300_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we show that their high density and low connectivity place them outside the scope of standard elastic network models for actin.",
+   "summary_source": "abstract",
+   "title": "Transient contacts between filaments impart its elasticity to branched actin"
+  },
+  "10.1038/s41586-026-11305-w": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11305-w",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11305-w",
+   "pmcid": null,
+   "pmid": "43052445",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11305-w/MediaObjects/41586_2026_11305_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we present HypoAD, an atlas of the human hypothalamus in ageing and AD, including high-resolution magnetic resonance imaging from 458 individuals and single-nucleus RNA sequencing of 614,403 nuclei from young participants, patients with AD and age-matched non-dementia control participants.",
+   "summary_source": "abstract",
+   "title": "Hypothalamic volume and cell-type changes in ageing and Alzheimer’s disease"
   },
   "10.1038/s41586-026-11308-7": {
    "abstract": null,
@@ -11263,6 +12258,58 @@
    "summary_source": "abstract",
    "title": "De novo design of enantioselective artificial metalloenzyme photocatalysts"
   },
+  "10.1038/s41586-026-11322-9": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11322-9",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11322-9/MediaObjects/41586_2026_11322_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11322-9/MediaObjects/41586_2026_11322_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11322-9/MediaObjects/41586_2026_11322_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11322-9/MediaObjects/41586_2026_11322_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11322-9/MediaObjects/41586_2026_11322_Fig5_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 6",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11322-9/MediaObjects/41586_2026_11322_Fig6_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11322-9",
+   "pmcid": null,
+   "pmid": "43052435",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11322-9/MediaObjects/41586_2026_11322_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we show that Bogong moths, tethered in a flight arena under a full-spectrum randomized starry night sky, navigate in their inherited migratory direction using the geomagnetic field alone.",
+   "summary_source": "abstract",
+   "title": "Bogong moths navigate with a light-dependent geomagnetic inclination compass"
+  },
   "10.1038/s41586-026-11324-7": {
    "abstract": null,
    "article_type": "Article",
@@ -11310,6 +12357,53 @@
    "summary_source": "abstract",
    "title": "NRF2 is a mechanosensitive checkpoint for NLRP3 inflammasome activation"
   },
+  "10.1038/s41586-026-11325-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11325-6",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11325-6/MediaObjects/41586_2026_11325_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11325-6/MediaObjects/41586_2026_11325_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11325-6/MediaObjects/41586_2026_11325_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11325-6/MediaObjects/41586_2026_11325_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11325-6/MediaObjects/41586_2026_11325_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11325-6",
+   "pmcid": null,
+   "pmid": "43052449",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11325-6/MediaObjects/41586_2026_11325_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we present a global checklist of island bees, recording 4,147 species across 305 islands.",
+   "summary_source": "abstract",
+   "title": "Global patterns and drivers of bee richness and endemism on islands"
+  },
   "10.1038/s41586-026-11328-3": {
    "abstract": null,
    "article_type": "Article",
@@ -11330,6 +12424,116 @@
    "summary": "Here, we present the first report of prespecified secondary endpoints of event-free survival (EFS) and circulating tumour DNA (ctDNA) clearance, and exploratory analyses of associations between ctDNA dynamics and clinical outcomes.",
    "summary_source": "abstract",
    "title": "ctDNA clearance and outcomes for resectable lung cancer from NeoCOAST-2"
+  },
+  "10.1038/s41586-026-11330-9": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11330-9",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11330-9",
+   "pmcid": null,
+   "pmid": "43052434",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11330-9/MediaObjects/41586_2026_11330_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we demonstrate that twisted freestanding SrTiO3 (STO) layers undergo interfacial reconstruction into a network of screw dislocations, accompanied by the emergence of in-plane topological vortices.",
+   "summary_source": "abstract",
+   "title": "Designing dislocation-driven polar vortex networks in twisted perovskites"
+  },
+  "10.1038/s41586-026-11332-7": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11332-7",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11332-7/MediaObjects/41586_2026_11332_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11332-7/MediaObjects/41586_2026_11332_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11332-7/MediaObjects/41586_2026_11332_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11332-7/MediaObjects/41586_2026_11332_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11332-7/MediaObjects/41586_2026_11332_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11332-7",
+   "pmcid": null,
+   "pmid": "43052436",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11332-7/MediaObjects/41586_2026_11332_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we generated a chromosome-scale comparative genomic resource comprising all recognized diploid Hordeum species together with representative polyploid lineages.",
+   "summary_source": "abstract",
+   "title": "Structural and regulatory evolution across the genus Hordeum"
+  },
+  "10.1038/s41586-026-11333-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11333-6",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11333-6/MediaObjects/41586_2026_11333_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11333-6/MediaObjects/41586_2026_11333_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11333-6/MediaObjects/41586_2026_11333_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11333-6/MediaObjects/41586_2026_11333_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11333-6",
+   "pmcid": null,
+   "pmid": "43052444",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11333-6/MediaObjects/41586_2026_11333_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we demonstrate that ferroptotic cancer cells activate a molecular program resulting in aberrant production of prostaglandin E2 (PGE2), which limits the stimulation of anticancer CD8+ T cell responses by type 1 conventional DCs (cDC1s), thereby promoting immune escape.",
+   "summary_source": "abstract",
+   "title": "Ferroptosis in cancer cells triggers PGE2 production for tumour immune escape"
   },
   "10.1038/s41586-026-11335-4": {
    "abstract": null,
@@ -11477,6 +12681,27 @@
    "summary": "Together, our findings establish a structural framework for understanding the organization and potential function of the poxvirus portal complex.",
    "summary_source": "abstract",
    "title": "Architecture of a portal complex embedded in the poxvirus core"
+  },
+  "10.1038/s41586-026-11427-1": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11427-1",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-19",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-19",
+   "link": "https://www.nature.com/articles/s41586-026-11427-1",
+   "pmcid": null,
+   "pmid": "43051294",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-18",
+   "summary": "Here we realize electronically coupled heterointerfaces by introducing a family of heteroatom-containing, fully conjugated formamidinium interfacial modulators, establishing band-edge-extending conjugated heterointerfaces that overcome the bottleneck of inefficient interfacial electron transfer.",
+   "summary_source": "abstract",
+   "title": "Band-Edge-Extended Heterointerfaces for Perovskite Solar Cells and Tandems"
   },
   "10.1038/s41587-026-03298-8": {
    "abstract": null,
@@ -12692,12 +13917,12 @@
    "licence_checked": "2026-11-18",
    "link": "https://www.nature.com/articles/s41592-026-03263-y",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43052455",
    "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03263-y/MediaObjects/41592_2026_3263_Fig1_HTML.png",
    "preview_tried": true,
    "published": "2026-11-18",
-   "summary": null,
-   "summary_source": null,
+   "summary": "We demonstrate that SpillOT surpasses existing zero-shot image restoration techniques and markedly improves the reliability and precision of downstream analyses on Imaging Mass Cytometry, Tissue Cyclic immunofluorescence and Opal multiplexed immunofluorescence datasets.",
+   "summary_source": "abstract",
    "title": "A zero-shot spillover denoiser for highly multiplexed images"
   },
   "10.1038/s41592-026-03264-x": {
@@ -17768,15 +18993,31 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag783",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "A visualization of the matrix chunking approach (left) and computation of the LD matrix (right).",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781455.1/btag783f1.webp"
+    },
+    {
+     "caption": "A visualization of variant chunk sizes for different GPU memory sizes from 0 to 64 GB for an arbitrary fixed sample size (50 000).",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781455.1/btag783f2.webp"
+    },
+    {
+     "caption": "A visualization of variant chunk sizes for different sample sizes from 500 to 500 000 for a fixed GPU memory (12 GB of VRAM, typical of many modern consumer-level GPUs).",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781455.1/btag783f3.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-10-19",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://doi.org/10.1093/bioinformatics/btag783",
-   "pmcid": null,
+   "pmcid": "PMC13781455",
    "pmid": "42895827",
    "preview": null,
    "preview_tried": true,
@@ -18781,15 +20022,56 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag813",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of the SeekRBP’s dynamic negative sampling pipeline.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f1.webp"
+    },
+    {
+     "caption": "Pipeline of the proposed model for phage RBP identification.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f2.webp"
+    },
+    {
+     "caption": "ROC curve comparison of the ablation study.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f3.webp"
+    },
+    {
+     "caption": "ROC curves evaluating the predictive performance of SeekRBP (denoted as “Ours”) alongside existing machine learning-based tools (PhANNs, PhageRBPdetection) and homology-based methods (BLASTp, Pharokka).",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f4.webp"
+    },
+    {
+     "caption": "PR curves comparing the predictive performance of SeekRBP (denoted as “Ours”) with existing machine learning-based tools (PhANNs and PhageRBPdetection) and homology-based methods (BLASTp and Pharokka).",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f5.webp"
+    },
+    {
+     "caption": "Bar chart evaluating the precision, recall, and F1-Score of SeekRBP (denoted as “Ours”) alongside existing machine learning-based tools (PhANNs, PhageRBPdetection) and homology-based methods (BLASTp, Pharokka).",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f6.webp"
+    },
+    {
+     "caption": "Comparison of the number of predicted RBPs and manually observed RBPs across individual Vibrio phages.",
+     "label": "Figure 7",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f7.webp"
+    },
+    {
+     "caption": "Docking quality (interface pLDDT) between RBPs and outer membrane proteins from host genomes estimated by AlphaFold3.",
+     "label": "Figure 8",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13781276.1/btag813f8.webp"
+    }
+   ],
+   "figures_added": "2026-11-19",
    "first_seen": "2026-11-11",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-11",
    "link": "https://doi.org/10.1093/bioinformatics/btag813",
-   "pmcid": null,
+   "pmcid": "PMC13781276",
    "pmid": "43009207",
    "preview": null,
    "preview_tried": true,
@@ -19252,12 +20534,12 @@
    "licence_checked": "2026-11-18",
    "link": "https://doi.org/10.1093/bioinformatics/btag843",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43049081",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-18",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Together, these results establish MGCA as an accurate, efficient, and interpretable framework for protein-ligand dissociation kinetics prediction.",
+   "summary_source": "abstract",
    "title": "Multi-Granularity Cross-Attention Mixture-of-Experts for Protein–Ligand Dissociation Kinetics Prediction"
   },
   "10.1126/science.adq6530": {
