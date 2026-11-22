@@ -736,6 +736,7 @@
   "10.1038/d41586-026-03791-9": "2026-11-19",
   "10.1038/d41586-026-03797-3": "2026-11-20",
   "10.1038/d41586-026-03799-1": "2026-11-21",
+  "10.1038/d41586-026-03803-8": "2026-11-22",
   "10.1038/d41586-026-03805-6": "2026-11-20",
   "10.1038/d41586-026-03806-5": "2026-11-21",
   "10.1038/d41586-026-03811-8": "2026-11-21",
@@ -941,6 +942,7 @@
   "10.1056/nejmicm2607953": "2026-10-27",
   "10.1056/nejmicm2608021": "2026-11-15",
   "10.1056/nejmicm2608816": "2026-11-19",
+  "10.1056/nejmicm2609236": "2026-11-22",
   "10.1056/nejmicm2609683": "2026-10-27",
   "10.1056/nejmicm2609770": "2026-10-29",
   "10.1056/nejmimc2600356": "2026-10-29",
@@ -955,6 +957,8 @@
   "10.1056/nejmp2605590": "2026-10-27",
   "10.1056/nejmp2605919": "2026-10-27",
   "10.1056/nejmp2606011": "2026-11-01",
+  "10.1056/nejmp2606018": "2026-11-22",
+  "10.1056/nejmp2606324": "2026-11-22",
   "10.1056/nejmp2606894": "2026-11-15",
   "10.1056/nejmp2607107": "2026-11-08",
   "10.1056/nejmp2607215": "2026-11-08",
@@ -968,6 +972,7 @@
   "10.1056/nejmp2609972": "2026-10-27",
   "10.1056/nejmp2610547": "2026-10-27",
   "10.1056/nejmp2610734": "2026-11-01",
+  "10.1056/nejmp2611049": "2026-11-22",
   "10.1056/nejmp2611160": "2026-11-15",
   "10.1056/nejmp2611224": "2026-11-08",
   "10.1056/nejmp2611270": "2026-11-01",
@@ -1849,15 +1854,46 @@
    "abstract": null,
    "article_type": "Article",
    "doi": "10.1016/j.cell.2026.08.046",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "MO modules according to subcortical projection patterns",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13788753.1/nihms-2220110-f0002.webp"
+    },
+    {
+     "caption": "MO modules exhibit specific and reciprocal interactions with SSp areas",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13788753.1/nihms-2220110-f0003.webp"
+    },
+    {
+     "caption": "MO modules exhibit specific and reciprocal interactions with other cortical domains",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13788753.1/nihms-2220110-f0004.webp"
+    },
+    {
+     "caption": "Cell-type composition of MO modules",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13788753.1/nihms-2220110-f0005.webp"
+    },
+    {
+     "caption": "Subcortical projection diversity of MO modules",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13788753.1/nihms-2220110-f0006.webp"
+    },
+    {
+     "caption": "Subcortical target-specific sensory-MO divergence and convergence rules",
+     "label": "Figure 6",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13788753.1/nihms-2220110-f0007.webp"
+    }
+   ],
+   "figures_added": "2026-11-22",
    "first_seen": "2026-10-27",
    "journal": "Cell",
    "licence": "http://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-10-27",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01019-6?rss=yes",
-   "pmcid": null,
+   "pmcid": "PMC13788753",
    "pmid": "42777707",
    "preview": null,
    "preview_tried": true,
