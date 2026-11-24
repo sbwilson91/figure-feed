@@ -520,6 +520,8 @@
   "10.1038/d41586-026-03377-5": "2026-11-19",
   "10.1038/d41586-026-03378-4": "2026-11-19",
   "10.1038/d41586-026-03379-3": "2026-11-20",
+  "10.1038/d41586-026-03380-w": "2026-11-24",
+  "10.1038/d41586-026-03381-9": "2026-11-24",
   "10.1038/d41586-026-03383-7": "2026-10-27",
   "10.1038/d41586-026-03384-6": "2026-10-27",
   "10.1038/d41586-026-03385-5": "2026-10-28",
@@ -608,6 +610,7 @@
   "10.1038/d41586-026-03538-6": "2026-11-04",
   "10.1038/d41586-026-03539-5": "2026-11-07",
   "10.1038/d41586-026-03540-y": "2026-11-04",
+  "10.1038/d41586-026-03542-w": "2026-11-24",
   "10.1038/d41586-026-03543-9": "2026-10-31",
   "10.1038/d41586-026-03544-8": "2026-11-04",
   "10.1038/d41586-026-03545-7": "2026-11-04",
@@ -679,6 +682,7 @@
   "10.1038/d41586-026-03664-1": "2026-11-11",
   "10.1038/d41586-026-03665-0": "2026-11-13",
   "10.1038/d41586-026-03666-z": "2026-11-13",
+  "10.1038/d41586-026-03667-y": "2026-11-24",
   "10.1038/d41586-026-03668-x": "2026-11-14",
   "10.1038/d41586-026-03669-w": "2026-11-12",
   "10.1038/d41586-026-03671-2": "2026-11-12",
@@ -703,9 +707,13 @@
   "10.1038/d41586-026-03715-7": "2026-11-16",
   "10.1038/d41586-026-03716-6": "2026-11-14",
   "10.1038/d41586-026-03717-5": "2026-11-19",
+  "10.1038/d41586-026-03719-3": "2026-11-24",
   "10.1038/d41586-026-03720-w": "2026-11-23",
   "10.1038/d41586-026-03721-9": "2026-11-23",
   "10.1038/d41586-026-03722-8": "2026-11-23",
+  "10.1038/d41586-026-03723-7": "2026-11-24",
+  "10.1038/d41586-026-03724-6": "2026-11-24",
+  "10.1038/d41586-026-03725-5": "2026-11-24",
   "10.1038/d41586-026-03742-4": "2026-11-17",
   "10.1038/d41586-026-03743-3": "2026-11-17",
   "10.1038/d41586-026-03744-2": "2026-11-17",
@@ -738,14 +746,26 @@
   "10.1038/d41586-026-03789-3": "2026-11-21",
   "10.1038/d41586-026-03790-w": "2026-11-20",
   "10.1038/d41586-026-03791-9": "2026-11-19",
+  "10.1038/d41586-026-03795-5": "2026-11-24",
   "10.1038/d41586-026-03797-3": "2026-11-20",
   "10.1038/d41586-026-03799-1": "2026-11-21",
   "10.1038/d41586-026-03803-8": "2026-11-22",
+  "10.1038/d41586-026-03804-7": "2026-11-24",
   "10.1038/d41586-026-03805-6": "2026-11-20",
   "10.1038/d41586-026-03806-5": "2026-11-21",
+  "10.1038/d41586-026-03808-3": "2026-11-24",
+  "10.1038/d41586-026-03810-9": "2026-11-24",
   "10.1038/d41586-026-03811-8": "2026-11-21",
   "10.1038/d41586-026-03812-7": "2026-11-21",
+  "10.1038/d41586-026-03816-3": "2026-11-24",
   "10.1038/d41586-026-03818-1": "2026-11-23",
+  "10.1038/d41586-026-03821-6": "2026-11-24",
+  "10.1038/d41586-026-03822-5": "2026-11-24",
+  "10.1038/d41586-026-03823-4": "2026-11-24",
+  "10.1038/d41586-026-03824-3": "2026-11-24",
+  "10.1038/d41586-026-03825-2": "2026-11-24",
+  "10.1038/d41586-026-03827-0": "2026-11-24",
+  "10.1038/d41586-026-03829-y": "2026-11-24",
   "10.1038/s41563-026-02742-z": "2026-11-19",
   "10.1038/s41563-026-02758-5": "2026-11-07",
   "10.1038/s41563-026-02760-x": "2026-10-27",
@@ -795,6 +815,7 @@
   "10.1038/s41586-026-11409-3": "2026-11-12",
   "10.1038/s41586-026-11421-7": "2026-11-19",
   "10.1038/s41586-026-11436-0": "2026-11-19",
+  "10.1038/s41586-026-11474-8": "2026-11-24",
   "10.1038/s41587-026-03297-9": "2026-10-27",
   "10.1038/s41587-026-03317-8": "2026-10-27",
   "10.1038/s41587-026-03324-9": "2026-10-27",
@@ -859,6 +880,7 @@
   "10.1038/s41592-026-03338-w": "2026-11-07",
   "10.1038/s41592-026-03346-w": "2026-10-30",
   "10.1038/s41592-026-03406-1": "2026-11-23",
+  "10.1038/s41592-026-03416-z": "2026-11-24",
   "10.1056/nejmc2514812": "2026-10-29",
   "10.1056/nejmc2516395": "2026-10-27",
   "10.1056/nejmc2517823": "2026-11-19",
@@ -3604,12 +3626,12 @@
    "licence_checked": "2026-11-23",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01338-3?rss=yes",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43072371",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-23",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Thus, ongoing B cell-to-plasma cell differentiation, rather than plasma cell longevity, can sustain pathogenic antibody responses in lupus and provides a mechanistic framework for optimizing CAR-T therapies.",
+   "summary_source": "abstract",
    "title": "Autoantibody origins in lupus and upon recurrence post CAR-T therapy"
   },
   "10.1016/j.cell.2026.10.046": {
@@ -3709,13 +3731,34 @@
    "licence_checked": "2026-11-23",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01345-0?rss=yes",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43072370",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-23",
+   "summary": "We found a localized population of neurons analogous to face cells, which we term \"wasp cells,\" that selectively fire to front-facing wasp images.",
+   "summary_source": "abstract",
+   "title": "Neural correlates of facial recognition in a social wasp"
+  },
+  "10.1016/j.cell.2026.11.002": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1016/j.cell.2026.11.002",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Cell",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01347-4?rss=yes",
+   "pmcid": null,
+   "pmid": null,
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-24",
    "summary": null,
    "summary_source": null,
-   "title": "Neural correlates of facial recognition in a social wasp"
+   "title": "A shared interbacterial membrane underlies mycobacterial cording"
   },
   "10.1016/j.cell.2026.11.003": {
    "abstract": null,
@@ -3730,12 +3773,12 @@
    "licence_checked": "2026-11-23",
    "link": "https://www.cell.com/cell/fulltext/S0092-8674(26)01348-6?rss=yes",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43072372",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-23",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Here, we investigate how a field of limb progenitor mesenchyme transforms into distinct, adjacent cartilage and soft tissue compartments.",
+   "summary_source": "abstract",
    "title": "Fate patterns self-organize through the coupling of structures across cell and supracellular levels of organization"
   },
   "10.1016/j.stem.2026.09.005": {
@@ -13258,6 +13301,69 @@
    "summary_source": "abstract",
    "title": "Calcium catalysed nucleophilic fluorination"
   },
+  "10.1038/s41586-026-11448-w": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11448-w",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://www.nature.com/articles/s41586-026-11448-w",
+   "pmcid": null,
+   "pmid": "43072754",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-23",
+   "summary": "Overall, continuous NCPS has the potential to transform peptide manufacturing.",
+   "summary_source": "abstract",
+   "title": "Continuous N-to-C Peptide Synthesis"
+  },
+  "10.1038/s41586-026-11449-9": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11449-9",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://www.nature.com/articles/s41586-026-11449-9",
+   "pmcid": null,
+   "pmid": "43072753",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-23",
+   "summary": "Notably, the use of enantiopure allenes unlocks a new route to enantioenriched multi-substituted biaryls through our benzannulation occurring with \"memory of chirality\".",
+   "summary_source": "abstract",
+   "title": "Hexa-substituted benzene synthesis with non-classical carbocations"
+  },
+  "10.1038/s41586-026-11458-8": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11458-8",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://www.nature.com/articles/s41586-026-11458-8",
+   "pmcid": null,
+   "pmid": "43072752",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-23",
+   "summary": "Together, these structures provide a comprehensive architectural blueprint of important components of the poxvirus core and open new structural and functional avenues for investigating poxvirus genome packaging, transcription activation, and mRNA extrusion.",
+   "summary_source": "abstract",
+   "title": "Architecture of the poxvirus early-transcription machinery and portal complex"
+  },
   "10.1038/s41587-026-03284-0": {
    "abstract": null,
    "article_type": "Article",
@@ -13302,12 +13408,12 @@
    "licence_checked": "2026-11-23",
    "link": "https://www.nature.com/articles/s41587-026-03284-0",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43073517",
    "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41587-026-03284-0/MediaObjects/41587_2026_3284_Fig1_HTML.png",
    "preview_tried": true,
    "published": "2026-11-23",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Here we introduce spotGLM, a mixture-aware generalized linear modeling framework for cell-type-specific differential testing across spatial modalities, and SPARROW, a power-preserving data distillation strategy for scalable inference.",
+   "summary_source": "abstract",
    "title": "A unified framework for scalable differential testing for spatial omics"
   },
   "10.1038/s41587-026-03298-8": {
@@ -13805,6 +13911,38 @@
    "summary": "Here we present DynaVelo, a generative neural ordinary differential equation model that learns the joint dynamics of gene expression and transcription factor (TF) motif activity from single-cell multiome data.",
    "summary_source": "abstract",
    "title": "Deep dynamical models of single-cell multiomic velocities predict loss-of-function and rescue perturbations in B cells"
+  },
+  "10.1038/s41587-026-03351-6": {
+   "abstract": null,
+   "article_type": "Brief Communication",
+   "doi": "10.1038/s41587-026-03351-6",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03351-6/MediaObjects/41587_2026_3351_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-026-03351-6/MediaObjects/41587_2026_3351_Fig2_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Nature Biotechnology",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-24",
+   "link": "https://www.nature.com/articles/s41587-026-03351-6",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41587-026-03351-6/MediaObjects/41587_2026_3351_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-24",
+   "summary": null,
+   "summary_source": null,
+   "title": "Modular mRNA-encoded helper proteins enhance DNA delivery"
   },
   "10.1038/s41587-026-03352-5": {
    "abstract": null,
@@ -15152,6 +15290,58 @@
    "summary": "Here we benchmark eight state-of-the-art models on three publicly available proteomics datasets, comparing performance using established metrics and quantifying inter-model agreement.",
    "summary_source": "abstract",
    "title": "Limitations of de novo peptide sequencing in resolving sequence ambiguity"
+  },
+  "10.1038/s41592-026-03302-8": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41592-026-03302-8",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03302-8/MediaObjects/41592_2026_3302_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03302-8/MediaObjects/41592_2026_3302_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03302-8/MediaObjects/41592_2026_3302_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03302-8/MediaObjects/41592_2026_3302_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03302-8/MediaObjects/41592_2026_3302_Fig5_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 6",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03302-8/MediaObjects/41592_2026_3302_Fig6_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Nature Methods",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-24",
+   "link": "https://www.nature.com/articles/s41592-026-03302-8",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03302-8/MediaObjects/41592_2026_3302_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-24",
+   "summary": null,
+   "summary_source": null,
+   "title": "ISOMPRA enables the disambiguation of transcriptional and post-transcriptional effects of genetic variants"
   },
   "10.1038/s41592-026-03303-7": {
    "abstract": null,
@@ -20696,15 +20886,41 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag806",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of the SurvXAI pipeline.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792268.1/btag806f1.webp"
+    },
+    {
+     "caption": "Global feature importance and local explanation summary for the METABRIC_U dataset.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792268.1/btag806f2.webp"
+    },
+    {
+     "caption": "Blind evaluation of narrative quality across LLMs (1 = poor, 5 = excellent): panel (a) shows the pooled MM and METABRIC_U scores, (b) the MM overall scores, and (c) the METABRIC_U overall scores.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792268.1/btag806f3.webp"
+    },
+    {
+     "caption": "Feature value distributions in the METABRIC_U dataset, showing the top-5 features ranked by absolute SHAP value.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792268.1/btag806f4.webp"
+    },
+    {
+     "caption": "Feature value distributions in the multiple myeloma dataset, showing the top-5 features ranked by absolute SHAP value.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792268.1/btag806f5.webp"
+    }
+   ],
+   "figures_added": "2026-11-24",
    "first_seen": "2026-10-30",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-02",
    "link": "https://doi.org/10.1093/bioinformatics/btag806",
-   "pmcid": null,
+   "pmcid": "PMC13792268",
    "pmid": "42968393",
    "preview": null,
    "preview_tried": true,
@@ -20848,15 +21064,21 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag811",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of the PFM training and sampling workflow.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792785.1/btag811f1.webp"
+    }
+   ],
+   "figures_added": "2026-11-24",
    "first_seen": "2026-11-11",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-11",
    "link": "https://doi.org/10.1093/bioinformatics/btag811",
-   "pmcid": null,
+   "pmcid": "PMC13792785",
    "pmid": "43006909",
    "preview": null,
    "preview_tried": true,
@@ -20869,15 +21091,41 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag812",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Problem-aware framework overview.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792837.1/btag812f1.webp"
+    },
+    {
+     "caption": "CHEMBL_ASSAY benchmark and distribution shifts.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792837.1/btag812f2.webp"
+    },
+    {
+     "caption": "Main performance under the fixed full-model protocol.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792837.1/btag812f3.webp"
+    },
+    {
+     "caption": "Reliability and calibration analysis under the final gate-and-anchor policy.",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792837.1/btag812f4.webp"
+    },
+    {
+     "caption": "Conflict-stratified evidence arbitration under the final gate-and-anchor policy.",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792837.1/btag812f5.webp"
+    }
+   ],
+   "figures_added": "2026-11-24",
    "first_seen": "2026-11-11",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-11",
    "link": "https://doi.org/10.1093/bioinformatics/btag812",
-   "pmcid": null,
+   "pmcid": "PMC13792837",
    "pmid": "43006892",
    "preview": null,
    "preview_tried": true,
@@ -20979,15 +21227,46 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag815",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Graphical Abstract",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792836.1/btag815f6.webp"
+    },
+    {
+     "caption": "Overview of data flow in the BIOREDIS system.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792836.1/btag815f1.webp"
+    },
+    {
+     "caption": "Vector construction workflow in BIOREDIS illustrated through a representative use case.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792836.1/btag815f2.webp"
+    },
+    {
+     "caption": "Benchmark comparison of BIOREDIS capabilities against state-of-the-art systems: features of codon optimization (A) and RNAi sequence prediction algorithms (B) implemented in the compared systems, the functional scope of…",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792836.1/btag815f3.webp"
+    },
+    {
+     "caption": "Comparison of codon optimization algorithms based on 30 human genes grouped by sequence length and GC content: (A) codon usage frequency; (B) GC content; (C) iCodon score; (D) MFE; (E) mean homopolymeric repeat length;…",
+     "label": "Figure 4",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792836.1/btag815f4.webp"
+    },
+    {
+     "caption": "Comparison of top-predicted RNAi sequences (19 and 21 nucleotides in length) for six randomly selected genes with varying sequence lengths and GC content: (A) DSIR-corrected score; (B) iSCORE; (C) BIOREDIS score; (D) GC…",
+     "label": "Figure 5",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792836.1/btag815f5.webp"
+    }
+   ],
+   "figures_added": "2026-11-24",
    "first_seen": "2026-11-11",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-11",
    "link": "https://doi.org/10.1093/bioinformatics/btag815",
-   "pmcid": null,
+   "pmcid": "PMC13792836",
    "pmid": "43009219",
    "preview": null,
    "preview_tried": true,
@@ -21125,15 +21404,21 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag822",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Examples of RSMViewer’s applications.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792784.1/btag822f1.webp"
+    }
+   ],
+   "figures_added": "2026-11-24",
    "first_seen": "2026-11-11",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-11",
    "link": "https://doi.org/10.1093/bioinformatics/btag822",
-   "pmcid": null,
+   "pmcid": "PMC13792784",
    "pmid": "43010733",
    "preview": null,
    "preview_tried": true,
@@ -21272,15 +21557,31 @@
    "abstract": null,
    "article_type": "journal-article",
    "doi": "10.1093/bioinformatics/btag829",
-   "figure_source": null,
-   "figures": [],
-   "figures_added": null,
+   "figure_source": "pmc",
+   "figures": [
+    {
+     "caption": "Overview of CroSP.",
+     "label": "Figure 1",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792273.1/btag829f1.webp"
+    },
+    {
+     "caption": "Spatial domain identification in human DLPFC and mouse brain.",
+     "label": "Figure 2",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792273.1/btag829f2.webp"
+    },
+    {
+     "caption": "Spatial heterogeneity and cell–cell communication in human breast cancer.",
+     "label": "Figure 3",
+     "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13792273.1/btag829f3.webp"
+    }
+   ],
+   "figures_added": "2026-11-24",
    "first_seen": "2026-11-12",
    "journal": "Bioinformatics",
-   "licence": null,
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
    "licence_checked": "2026-11-12",
    "link": "https://doi.org/10.1093/bioinformatics/btag829",
-   "pmcid": null,
+   "pmcid": "PMC13792273",
    "pmid": "43016319",
    "preview": null,
    "preview_tried": true,
@@ -21288,6 +21589,27 @@
    "summary": "These results support the use of CroSP for spatial biological analysis in healthy and diseased tissues.",
    "summary_source": "abstract",
    "title": "Deep learning-based enhancing spatial biological context parsing"
+  },
+  "10.1093/bioinformatics/btag830": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag830",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://doi.org/10.1093/bioinformatics/btag830",
+   "pmcid": null,
+   "pmid": null,
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-24",
+   "summary": null,
+   "summary_source": null,
+   "title": "Bridging Graph and Pairwise Learning for Gene Regulatory Network Inference from scRNA-seq Data"
   },
   "10.1093/bioinformatics/btag832": {
    "abstract": null,
@@ -21604,6 +21926,27 @@
    "summary_source": "abstract",
    "title": "Met4All: a dockerised Shiny application for DNA methylation array analysis, visualization and reporting"
   },
+  "10.1093/bioinformatics/btag851": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag851",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://doi.org/10.1093/bioinformatics/btag851",
+   "pmcid": null,
+   "pmid": "43074186",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-23",
+   "summary": "We present SpatialMuSC, a robust spatial multi-omics integration framework centering on spatial graph-conditioned diffusion refinement and perturbation-invariant fusion consistency.",
+   "summary_source": "abstract",
+   "title": "SpatialMuSC: Spatial Graph-Conditioned Diffusion Refinement for Robust Spatial Multi-Omics Integration"
+  },
   "10.1093/bioinformatics/btag853": {
    "abstract": null,
    "article_type": "journal-article",
@@ -21617,12 +21960,12 @@
    "licence_checked": "2026-11-23",
    "link": "https://doi.org/10.1093/bioinformatics/btag853",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43070671",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-23",
-   "summary": null,
-   "summary_source": null,
+   "summary": "We present BioBatchNet, a dual-encoder framework utilising adversarial training to explicitly disentangle batch-specific and biological signals.",
+   "summary_source": "abstract",
    "title": "BioBatchNet: A Dual-Encoder Framework for Robust Batch Effect Correction in Imaging Mass Cytometry"
   },
   "10.1093/bioinformatics/btag854": {
@@ -21638,13 +21981,55 @@
    "licence_checked": "2026-11-23",
    "link": "https://doi.org/10.1093/bioinformatics/btag854",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43070636",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-23",
+   "summary": "We demonstrate that GSP reliably identifies models with comparable overall deviations, while maintaining strong agreement with global measures.",
+   "summary_source": "abstract",
+   "title": "GSP: a multi-scale metric for evaluation of 3D RNA structure predictions"
+  },
+  "10.1093/bioinformatics/btag856": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag856",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://doi.org/10.1093/bioinformatics/btag856",
+   "pmcid": null,
+   "pmid": null,
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-24",
    "summary": null,
    "summary_source": null,
-   "title": "GSP: a multi-scale metric for evaluation of 3D RNA structure predictions"
+   "title": "Fast genomic read alignment with minibwa"
+  },
+  "10.1093/bioinformatics/btag857": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag857",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-24",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-24",
+   "link": "https://doi.org/10.1093/bioinformatics/btag857",
+   "pmcid": null,
+   "pmid": "43074184",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-23",
+   "summary": "We present GLAND, a deep learning framework with a hybrid attention mechanism designed to capture multi-scale spatial dependencies.",
+   "summary_source": "abstract",
+   "title": "GLAND: Resolving small and non-continuous tissue domains via a hybrid attention mechanism"
   },
   "10.1126/science.adq6530": {
    "abstract": null,
