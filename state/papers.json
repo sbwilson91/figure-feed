@@ -242,6 +242,7 @@
   "10.1038/d41586-026-02645-8": "2026-10-27",
   "10.1038/d41586-026-02670-7": "2026-10-29",
   "10.1038/d41586-026-02715-x": "2026-10-27",
+  "10.1038/d41586-026-02752-6": "2026-11-26",
   "10.1038/d41586-026-02759-z": "2026-10-27",
   "10.1038/d41586-026-02769-x": "2026-10-27",
   "10.1038/d41586-026-02770-4": "2026-10-27",
@@ -524,6 +525,7 @@
   "10.1038/d41586-026-03379-3": "2026-11-20",
   "10.1038/d41586-026-03380-w": "2026-11-24",
   "10.1038/d41586-026-03381-9": "2026-11-24",
+  "10.1038/d41586-026-03382-8": "2026-11-26",
   "10.1038/d41586-026-03383-7": "2026-10-27",
   "10.1038/d41586-026-03384-6": "2026-10-27",
   "10.1038/d41586-026-03385-5": "2026-10-28",
@@ -587,6 +589,7 @@
   "10.1038/d41586-026-03472-7": "2026-11-25",
   "10.1038/d41586-026-03473-6": "2026-11-25",
   "10.1038/d41586-026-03474-5": "2026-11-25",
+  "10.1038/d41586-026-03475-4": "2026-11-26",
   "10.1038/d41586-026-03476-3": "2026-10-29",
   "10.1038/d41586-026-03479-0": "2026-10-30",
   "10.1038/d41586-026-03480-7": "2026-11-03",
@@ -598,6 +601,9 @@
   "10.1038/d41586-026-03488-z": "2026-10-29",
   "10.1038/d41586-026-03489-y": "2026-11-12",
   "10.1038/d41586-026-03490-5": "2026-11-19",
+  "10.1038/d41586-026-03491-4": "2026-11-26",
+  "10.1038/d41586-026-03492-3": "2026-11-26",
+  "10.1038/d41586-026-03494-1": "2026-11-26",
   "10.1038/d41586-026-03496-z": "2026-11-12",
   "10.1038/d41586-026-03499-w": "2026-11-12",
   "10.1038/d41586-026-03502-4": "2026-10-31",
@@ -707,6 +713,7 @@
   "10.1038/d41586-026-03680-1": "2026-11-20",
   "10.1038/d41586-026-03684-x": "2026-11-16",
   "10.1038/d41586-026-03689-6": "2026-11-19",
+  "10.1038/d41586-026-03693-w": "2026-11-26",
   "10.1038/d41586-026-03705-9": "2026-11-13",
   "10.1038/d41586-026-03706-8": "2026-11-17",
   "10.1038/d41586-026-03707-7": "2026-11-17",
@@ -773,6 +780,7 @@
   "10.1038/d41586-026-03810-9": "2026-11-24",
   "10.1038/d41586-026-03811-8": "2026-11-21",
   "10.1038/d41586-026-03812-7": "2026-11-21",
+  "10.1038/d41586-026-03813-6": "2026-11-26",
   "10.1038/d41586-026-03816-3": "2026-11-24",
   "10.1038/d41586-026-03818-1": "2026-11-23",
   "10.1038/d41586-026-03821-6": "2026-11-24",
@@ -781,11 +789,16 @@
   "10.1038/d41586-026-03824-3": "2026-11-24",
   "10.1038/d41586-026-03825-2": "2026-11-24",
   "10.1038/d41586-026-03827-0": "2026-11-24",
+  "10.1038/d41586-026-03828-z": "2026-11-26",
   "10.1038/d41586-026-03829-y": "2026-11-24",
   "10.1038/d41586-026-03835-0": "2026-11-25",
   "10.1038/d41586-026-03836-z": "2026-11-25",
   "10.1038/d41586-026-03837-y": "2026-11-25",
+  "10.1038/d41586-026-03841-2": "2026-11-26",
   "10.1038/d41586-026-03847-w": "2026-11-25",
+  "10.1038/d41586-026-03853-y": "2026-11-26",
+  "10.1038/d41586-026-03854-x": "2026-11-26",
+  "10.1038/d41586-026-03872-9": "2026-11-26",
   "10.1038/s41563-026-02742-z": "2026-11-19",
   "10.1038/s41563-026-02758-5": "2026-11-07",
   "10.1038/s41563-026-02760-x": "2026-10-27",
@@ -820,7 +833,9 @@
   "10.1038/s41586-026-11096-0": "2026-10-27",
   "10.1038/s41586-026-11100-7": "2026-11-19",
   "10.1038/s41586-026-11133-y": "2026-11-07",
+  "10.1038/s41586-026-11146-7": "2026-11-26",
   "10.1038/s41586-026-11149-4": "2026-10-27",
+  "10.1038/s41586-026-11231-x": "2026-11-26",
   "10.1038/s41586-026-11244-6": "2026-10-27",
   "10.1038/s41586-026-11246-4": "2026-10-27",
   "10.1038/s41586-026-11252-6": "2026-10-27",
@@ -896,6 +911,7 @@
   "10.1038/s41592-026-03304-6": "2026-11-18",
   "10.1038/s41592-026-03305-5": "2026-11-07",
   "10.1038/s41592-026-03309-1": "2026-11-20",
+  "10.1038/s41592-026-03317-1": "2026-11-26",
   "10.1038/s41592-026-03320-6": "2026-11-11",
   "10.1038/s41592-026-03325-1": "2026-11-07",
   "10.1038/s41592-026-03327-z": "2026-11-20",
@@ -918,16 +934,19 @@
   "10.1056/nejmc2607457": "2026-10-27",
   "10.1056/nejmc2607927": "2026-10-27",
   "10.1056/nejmc2608446": "2026-11-12",
+  "10.1056/nejmc2608489": "2026-11-26",
   "10.1056/nejmc2609242": "2026-10-27",
   "10.1056/nejmc2609433": "2026-10-27",
   "10.1056/nejmc2609517": "2026-11-12",
   "10.1056/nejmc2609576": "2026-10-27",
   "10.1056/nejmc2609764": "2026-10-29",
+  "10.1056/nejmc2609919": "2026-11-26",
   "10.1056/nejmc2609920": "2026-10-27",
   "10.1056/nejmc2610062": "2026-10-27",
   "10.1056/nejmc2610073": "2026-10-27",
   "10.1056/nejmc2610113": "2026-11-05",
   "10.1056/nejmc2610348": "2026-10-29",
+  "10.1056/nejmc2610406": "2026-11-26",
   "10.1056/nejmc2610539": "2026-10-27",
   "10.1056/nejmc2610744": "2026-10-27",
   "10.1056/nejmc2610854": "2026-10-27",
@@ -939,17 +958,21 @@
   "10.1056/nejmc2611171": "2026-11-05",
   "10.1056/nejmc2611265": "2026-11-08",
   "10.1056/nejmc2611338": "2026-11-12",
+  "10.1056/nejmc2611455": "2026-11-26",
   "10.1056/nejmc2611462": "2026-10-29",
   "10.1056/nejmc2611609": "2026-11-19",
   "10.1056/nejmc2611610": "2026-10-29",
   "10.1056/nejmc2611613": "2026-11-12",
+  "10.1056/nejmc2612340": "2026-11-26",
   "10.1056/nejmc2612608": "2026-11-01",
   "10.1056/nejmc2612905": "2026-11-09",
+  "10.1056/nejmc2612930": "2026-11-26",
   "10.1056/nejmcibr2608873": "2026-10-27",
   "10.1056/nejmclde2518646": "2026-10-27",
   "10.1056/nejmclde2600746": "2026-11-05",
   "10.1056/nejmcp2516040": "2026-10-27",
   "10.1056/nejmcpc2301034": "2026-11-12",
+  "10.1056/nejmcpc2603177": "2026-11-26",
   "10.1056/nejmcpc2603182": "2026-10-27",
   "10.1056/nejmcpc2603183": "2026-10-27",
   "10.1056/nejmcpc2603184": "2026-10-27",
@@ -967,6 +990,7 @@
   "10.1056/nejme2611127": "2026-10-27",
   "10.1056/nejme2611466": "2026-10-27",
   "10.1056/nejme2611648": "2026-10-27",
+  "10.1056/nejme2612033": "2026-11-26",
   "10.1056/nejme2612237": "2026-11-05",
   "10.1056/nejme2612343": "2026-10-27",
   "10.1056/nejme2612346": "2026-10-29",
@@ -978,6 +1002,7 @@
   "10.1056/nejme2612692": "2026-10-27",
   "10.1056/nejme2612910": "2026-10-27",
   "10.1056/nejme2613108": "2026-11-05",
+  "10.1056/nejme2613377": "2026-11-26",
   "10.1056/nejme2613400": "2026-11-03",
   "10.1056/nejme2614041": "2026-11-12",
   "10.1056/nejme2614653": "2026-11-20",
@@ -997,7 +1022,9 @@
   "10.1056/nejmicm2609236": "2026-11-22",
   "10.1056/nejmicm2609683": "2026-10-27",
   "10.1056/nejmicm2609770": "2026-10-29",
+  "10.1056/nejmicm2609779": "2026-11-26",
   "10.1056/nejmimc2600356": "2026-10-29",
+  "10.1056/nejmms2606881": "2026-11-26",
   "10.1056/nejmms2607020": "2026-10-27",
   "10.1056/nejmms2607021": "2026-10-27",
   "10.1056/nejmms2608116": "2026-10-27",
@@ -1031,12 +1058,15 @@
   "10.1056/nejmp2611665": "2026-11-15",
   "10.1056/nejmp2611801": "2026-10-27",
   "10.1056/nejmp2612470": "2026-10-27",
+  "10.1056/nejmpv2518710": "2026-11-26",
+  "10.1056/nejmpv2605959": "2026-11-26",
   "10.1056/nejmra2414530": "2026-10-27",
   "10.1056/nejmra2500695": "2026-10-27",
   "10.1056/nejmra2506114": "2026-10-29",
   "10.1056/nejmra2508563": "2026-11-12",
   "10.1056/nejmra2519017": "2026-11-05",
   "10.1056/nejmra2601172": "2026-11-19",
+  "10.1056/nejmra2605238": "2026-11-26",
   "10.1056/nejmsr2607321": "2026-11-19",
   "10.1056/nejmvcm2517207": "2026-11-12",
   "10.1093/bioinformatics/btag734": "2026-10-27",
@@ -4947,12 +4977,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00361-9?rss=yes",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43085349",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-25",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Together, these findings identify glucose as a critical regulator of kidney organoid development and position metabolic substrate composition as a tunable determinant of organoid fidelity and reproducibility.",
+   "summary_source": "abstract",
    "title": "Metabolic substrate availability regulates nephron lineage expansion in human kidney organoids"
   },
   "10.1016/j.stemcr.2026.103152": {
@@ -4968,12 +4998,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00363-2?rss=yes",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43085350",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-25",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Here, we investigated the effects of four neurotropic viruses (HSV2, HCMV, COXB5, and CHIKV-R) on human neocortical neuroepithelial stem cells and induced pluripotent stem cell (iPSC)-derived NPCs.",
+   "summary_source": "abstract",
    "title": "Neurotropic viruses derange FOXG1 and pTBK1 localization in human neural progenitors"
   },
   "10.1016/s0140-6736(26)00754-3": {
@@ -6233,6 +6263,27 @@
    "summary": "This work highlights the power of interfacial control within composite cathodes, and demonstrates another approach for designing high-energy-density all-solid-state lithium-sulfur batteries for next-generation energy storage.",
    "summary_source": "abstract",
    "title": "High-loading all-solid-state lithium–sulfur batteries enabled by tailored sulfur–sulfide and sulfur–carbon interfaces"
+  },
+  "10.1038/s41563-026-02815-z": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41563-026-02815-z",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature Materials",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41563-026-02815-z",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41563-026-02815-z/MediaObjects/41563_2026_2815_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-26",
+   "summary": null,
+   "summary_source": null,
+   "title": "Tunable diffusive memristor arrays for neuromorphic temporal computing"
   },
   "10.1038/s41586-025-09064-1": {
    "abstract": null,
@@ -8672,6 +8723,27 @@
    "summary_source": "abstract",
    "title": "Divergent genomic evolution in astrocytomas and oligodendrogliomas"
   },
+  "10.1038/s41586-026-11151-w": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11151-w",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11151-w",
+   "pmcid": null,
+   "pmid": "43086429",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11151-w/MediaObjects/41586_2026_11151_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we show that heterologous expression of EpTFIIAγ, a gene encoding a transcription factor induced by osmotic stress in an extremophile lichen mycobiont, partially decouples trade-offs between stress resistance and grain production, enhancing plot yields of five wheat cultivars under water…",
+   "summary_source": "abstract",
+   "title": "An extremophile transgene improves drought resistance and yield in cereals"
+  },
   "10.1038/s41586-026-11152-9": {
    "abstract": null,
    "article_type": "Article",
@@ -10101,6 +10173,53 @@
    "summary": "Our results reveal the cellular identity and synaptic structure of a putative CPG circuit for walking and other rhythmic leg movements in flies.",
    "summary_source": "abstract",
    "title": "Connectome simulations identify a central pattern generator for fly walking"
+  },
+  "10.1038/s41586-026-11196-x": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11196-x",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11196-x/MediaObjects/41586_2026_11196_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11196-x/MediaObjects/41586_2026_11196_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11196-x/MediaObjects/41586_2026_11196_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11196-x/MediaObjects/41586_2026_11196_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11196-x/MediaObjects/41586_2026_11196_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11196-x",
+   "pmcid": null,
+   "pmid": "43086443",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11196-x/MediaObjects/41586_2026_11196_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we perform structural analyses using cryogenic electron microscopy, validated by DNA transposition assays, to visualize the PseCAST system in a series of functional states that define the stepwise mechanism of RNA-guided DNA integration.",
+   "summary_source": "abstract",
+   "title": "Structural basis of RNA-guided DNA integration by type I CAST systems"
   },
   "10.1038/s41586-026-11197-w": {
    "abstract": null,
@@ -12278,6 +12397,27 @@
    "summary_source": "abstract",
    "title": "Twist-angle-dependent quantum phase diagrams in moiré bilayer MoTe2"
   },
+  "10.1038/s41586-026-11275-z": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11275-z",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11275-z",
+   "pmcid": null,
+   "pmid": "43086439",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11275-z/MediaObjects/41586_2026_11275_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we performed single-nucleus multi-omic profiling of gene expression and chromatin accessibility in human coronary arteries from 44 people to construct a genome-wide single-cell variant-to-enhancer-to-gene map.",
+   "summary_source": "abstract",
+   "title": "Single-cell variant-to-enhancer-to-gene map for coronary artery disease"
+  },
   "10.1038/s41586-026-11276-y": {
    "abstract": null,
    "article_type": "Article",
@@ -12381,6 +12521,53 @@
    "summary": "Here we present a reliable, passive alternative: flexible rubber blades featuring chordwise trailing-edge deformation.",
    "summary_source": "abstract",
    "title": "Flexible rubber blades for tidal turbines"
+  },
+  "10.1038/s41586-026-11279-9": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11279-9",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11279-9/MediaObjects/41586_2026_11279_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11279-9/MediaObjects/41586_2026_11279_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11279-9/MediaObjects/41586_2026_11279_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11279-9/MediaObjects/41586_2026_11279_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11279-9/MediaObjects/41586_2026_11279_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11279-9",
+   "pmcid": null,
+   "pmid": "43086440",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11279-9/MediaObjects/41586_2026_11279_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we demonstrate a spin-exchange-driven phototransport regime in manganese-doped quantum dot films that enables the generation, long-range transport and regeneration of hot carriers.",
+   "summary_source": "abstract",
+   "title": "Submillimetre hot-electron transport in manganese-doped quantum dot solids"
   },
   "10.1038/s41586-026-11280-2": {
    "abstract": null,
@@ -12518,6 +12705,74 @@
    "summary": "Here we pair in vivo microplastic measurements with high-resolution tracking data from lowland tapirs and giant anteaters across Brazil and show that the microplastic burdens carried by free-ranging mammals increase with both the magnitude of their human footprint exposure and their proximity to…",
    "summary_source": "abstract",
    "title": "Human land use drives microplastic abundance in terrestrial wildlife"
+  },
+  "10.1038/s41586-026-11287-9": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11287-9",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11287-9/MediaObjects/41586_2026_11287_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11287-9/MediaObjects/41586_2026_11287_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11287-9/MediaObjects/41586_2026_11287_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11287-9/MediaObjects/41586_2026_11287_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11287-9/MediaObjects/41586_2026_11287_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11287-9",
+   "pmcid": null,
+   "pmid": "43086436",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11287-9/MediaObjects/41586_2026_11287_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Our findings establish a general mechanistic framework for RNA-guided DNA integration and demonstrate that protein design is a powerful strategy for engineering highly active CAST systems.",
+   "summary_source": "abstract",
+   "title": "Licensing mechanisms during RNA-guided DNA integration by type I-F3 CAST"
+  },
+  "10.1038/s41586-026-11288-8": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11288-8",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11288-8",
+   "pmcid": null,
+   "pmid": "43086336",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11288-8/MediaObjects/41586_2026_11288_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Our findings advance the understanding of size-dependent transport and scaling in this class of semimetals, offering a platform for nanoscale wires and interconnects in future nanoelectronics.",
+   "summary_source": "abstract",
+   "title": "Unconventional resistivity reduction in NbP semimetal nanoribbons"
   },
   "10.1038/s41586-026-11289-7": {
    "abstract": null,
@@ -12812,6 +13067,74 @@
    "summary_source": "abstract",
    "title": "Transient contacts between filaments impart its elasticity to branched actin"
   },
+  "10.1038/s41586-026-11301-0": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11301-0",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11301-0/MediaObjects/41586_2026_11301_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11301-0/MediaObjects/41586_2026_11301_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11301-0/MediaObjects/41586_2026_11301_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11301-0/MediaObjects/41586_2026_11301_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11301-0/MediaObjects/41586_2026_11301_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11301-0",
+   "pmcid": null,
+   "pmid": "43086445",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11301-0/MediaObjects/41586_2026_11301_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we develop a deep-learning framework that quantifies colorectal cancer tissue architecture and nuclear morphology at subcellular resolution to predict patient outcome.",
+   "summary_source": "abstract",
+   "title": "Heterogeneity co-evolves with architecture to determine colon cancer outcome"
+  },
+  "10.1038/s41586-026-11304-x": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11304-x",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11304-x",
+   "pmcid": null,
+   "pmid": "43086427",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11304-x/MediaObjects/41586_2026_11304_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we propose enzymatic living polymerization, which enables the precision preparation of natural polysaccharides with molecular weights up to 660 kg mol-1 but polydispersity from low to less than 1.05.",
+   "summary_source": "abstract",
+   "title": "Enzymatic living polymerization for polysaccharide synthesis"
+  },
   "10.1038/s41586-026-11305-w": {
    "abstract": null,
    "article_type": "Article",
@@ -12880,6 +13203,48 @@
    "summary_source": "abstract",
    "title": "Bistable regulation of adipocyte heterogeneity governs thermogenesis"
   },
+  "10.1038/s41586-026-11309-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11309-6",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11309-6",
+   "pmcid": null,
+   "pmid": "43086435",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11309-6/MediaObjects/41586_2026_11309_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we demonstrate coherent time-resolved rotations between parity states encoded by four poor man's Majoranas in two coupled minimal Kitaev chains3,6-8.",
+   "summary_source": "abstract",
+   "title": "Coherent parity oscillations in coupled minimal Kitaev chains"
+  },
+  "10.1038/s41586-026-11311-y": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11311-y",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11311-y",
+   "pmcid": null,
+   "pmid": "43086444",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11311-y/MediaObjects/41586_2026_11311_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we address this question by interrogating the clustered protocadherin (Pcdh) locus, where subsets of genes are stochastically expressed while most remain silent8.",
+   "summary_source": "abstract",
+   "title": "Transcription from megabase-scale heterochromatin generates neural barcodes"
+  },
   "10.1038/s41586-026-11312-x": {
    "abstract": null,
    "article_type": "Article",
@@ -12901,6 +13266,48 @@
    "summary_source": "abstract",
    "title": "Current-Driven Molecular Machine with Rotation-Enhanced Conductance"
   },
+  "10.1038/s41586-026-11313-w": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11313-w",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11313-w",
+   "pmcid": null,
+   "pmid": "43086430",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11313-w/MediaObjects/41586_2026_11313_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "By coupling circular resource use with ultrafast electrified processing, our approach enables sustainable, low-cost cement production at scale.",
+   "summary_source": "abstract",
+   "title": "Sustainable cement production via a liquid-phase pathway"
+  },
+  "10.1038/s41586-026-11315-8": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11315-8",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11315-8",
+   "pmcid": null,
+   "pmid": "43086442",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11315-8/MediaObjects/41586_2026_11315_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we identify a gut-brain sensory-motor circuit that regulates sugar ingestion in flies.",
+   "summary_source": "abstract",
+   "title": "A gut–brain sensory-motor circuit regulates sugar ingestion in Drosophila"
+  },
   "10.1038/s41586-026-11317-6": {
    "abstract": null,
    "article_type": "Article",
@@ -12921,6 +13328,53 @@
    "summary": "These findings establish de novo protein design as a route to functional scaffolds for synthetic metal complexes that lack natural protein partners and provide a strategy for combining protein design and evolution to control non-natural catalytic chemistry.",
    "summary_source": "abstract",
    "title": "De novo design of enantioselective artificial metalloenzyme photocatalysts"
+  },
+  "10.1038/s41586-026-11318-5": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11318-5",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11318-5/MediaObjects/41586_2026_11318_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11318-5/MediaObjects/41586_2026_11318_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11318-5/MediaObjects/41586_2026_11318_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11318-5/MediaObjects/41586_2026_11318_Fig4_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 5",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11318-5/MediaObjects/41586_2026_11318_Fig5_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11318-5",
+   "pmcid": null,
+   "pmid": "43086432",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11318-5/MediaObjects/41586_2026_11318_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Together, our findings reveal that pathogenic responses to PIK3CAH1047R are dictated by endothelial differentiation state and fate trajectory, and demonstrate that arterial endothelium is intrinsically resistant to oncogenic PI3K signalling.",
+   "summary_source": "abstract",
+   "title": "Context-dependent response of endothelial cells to PIK3CA mutation"
   },
   "10.1038/s41586-026-11322-9": {
    "abstract": null,
@@ -13067,6 +13521,27 @@
    "summary": "Here we present a global checklist of island bees, recording 4,147 species across 305 islands.",
    "summary_source": "abstract",
    "title": "Global patterns and drivers of bee richness and endemism on islands"
+  },
+  "10.1038/s41586-026-11326-5": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11326-5",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11326-5",
+   "pmcid": null,
+   "pmid": "43086438",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11326-5/MediaObjects/41586_2026_11326_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we present a synthetic embryology platform for high-throughput, spatiotemporal delivery of morphogen signals to epithelial cysts derived from human pluripotent stem cells.",
+   "summary_source": "abstract",
+   "title": "Engineering signalling centres to trigger human trunk morphogenesis in vitro"
   },
   "10.1038/s41586-026-11328-3": {
    "abstract": null,
@@ -13241,6 +13716,132 @@
    "summary_source": "abstract",
    "title": "Opportunistically Detecting Signs of Hypertension on a Consumer Smartwatch"
   },
+  "10.1038/s41586-026-11338-1": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11338-1",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11338-1",
+   "pmcid": null,
+   "pmid": "43086428",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11338-1/MediaObjects/41586_2026_11338_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we present ORIDTP, an artificial intelligence platform that integrates single-target knowledge transfer and dual-target reinforcement to enable the rational design of high-potency peptides.",
+   "summary_source": "abstract",
+   "title": "De novo design of high-potency dual-target therapeutic peptides with ORIDTP"
+  },
+  "10.1038/s41586-026-11339-0": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11339-0",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11339-0",
+   "pmcid": null,
+   "pmid": "43086434",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11339-0/MediaObjects/41586_2026_11339_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we reconstructed the radiative forcing from worldwide peatland drainage over 1800-2020 by combining a new flux dataset, hydrologically driven models of CO2 and CH4 fluxes and a hindcast of drainage extent and intensity.",
+   "summary_source": "abstract",
+   "title": "An enduring climatic burden from past peatland drainage"
+  },
+  "10.1038/s41586-026-11341-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11341-6",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11341-6/MediaObjects/41586_2026_11341_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11341-6/MediaObjects/41586_2026_11341_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11341-6/MediaObjects/41586_2026_11341_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11341-6/MediaObjects/41586_2026_11341_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11341-6",
+   "pmcid": null,
+   "pmid": "43086437",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11341-6/MediaObjects/41586_2026_11341_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we report a set of newly discovered hominin fossils (4 isolated teeth; more than 100.8 thousand years ago and 104.5-42.6 thousand years ago, respectively) from 2 cave sites (Chuanshandong and Longchuandong) in Guangxi, southern China.",
+   "summary_source": "abstract",
+   "title": "Middle–Late Pleistocene Denisovans and unresolved Homo in southern China"
+  },
+  "10.1038/s41586-026-11345-2": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11345-2",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11345-2/MediaObjects/41586_2026_11345_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11345-2/MediaObjects/41586_2026_11345_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11345-2/MediaObjects/41586_2026_11345_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11345-2/MediaObjects/41586_2026_11345_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by-nc-nd/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11345-2",
+   "pmcid": null,
+   "pmid": "43086441",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11345-2/MediaObjects/41586_2026_11345_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Our large-scale sequencing study elucidates the genetic architecture and allelic heterogeneity of rare variants in height, providing unique insights into their large effects-often similar to or larger than recognized Mendelian syndromes-and their impact on trait prediction, clinical evaluation, and…",
+   "summary_source": "abstract",
+   "title": "Rare-variant genetic architecture of height in over 1.4 million individuals"
+  },
   "10.1038/s41586-026-11348-z": {
    "abstract": null,
    "article_type": "Article",
@@ -13282,6 +13883,69 @@
    "summary": "Here, we present cost-effective carbon-neutral transition pathways for entire energy economy of China emphasizing the significant role of hydrogen and derivatives as green energy carriers, considering high-resolution renewable deployments, hourly power system operations in 29 provincial regions…",
    "summary_source": "abstract",
    "title": "Hydrogen Derivatives Enable Cost-Effective Carbon Neutrality in China"
+  },
+  "10.1038/s41586-026-11353-2": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11353-2",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11353-2",
+   "pmcid": null,
+   "pmid": "43086431",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11353-2/MediaObjects/41586_2026_11353_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here, we introduce quantum confocal microscopy in Fock space that addresses these challenges for a Fock-like probe state with a tightly concentrated photon-number distribution.",
+   "summary_source": "abstract",
+   "title": "Quantum-enhanced sensing with 500 photons via Fock-space confocal focusing"
+  },
+  "10.1038/s41586-026-11354-1": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11354-1",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11354-1/MediaObjects/41586_2026_11354_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11354-1/MediaObjects/41586_2026_11354_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11354-1/MediaObjects/41586_2026_11354_Fig3_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 4",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-11354-1/MediaObjects/41586_2026_11354_Fig4_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11354-1",
+   "pmcid": null,
+   "pmid": "43086433",
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11354-1/MediaObjects/41586_2026_11354_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we analyse repeated measurements from 44,368 forest inventory plots spanning 1999-2025, with an average remeasurement interval of 10 years, to examine how climate and natural disturbances jointly influence the elevational redistribution of tree species across the western USA.",
+   "summary_source": "abstract",
+   "title": "Disturbances and climate drive tree elevational shifts"
   },
   "10.1038/s41586-026-11368-9": {
    "abstract": null,
@@ -13450,6 +14114,27 @@
    "summary": "Together, these structures provide a comprehensive architectural blueprint of important components of the poxvirus core and open new structural and functional avenues for investigating poxvirus genome packaging, transcription activation, and mRNA extrusion.",
    "summary_source": "abstract",
    "title": "Architecture of the poxvirus early-transcription machinery and portal complex"
+  },
+  "10.1038/s41586-026-11465-9": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41586-026-11465-9",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41586-026-11465-9",
+   "pmcid": null,
+   "pmid": "43085757",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Here we incorporate a redox-converted molecule of p-aminobenzohydrazide (ABH) into poly(3,4-ethylenedioxythiophene):polystyrene sulfonate (PEDOT:PSS) that neutralizes PSS acidity, heals Sn4+ defects, and generates a dipole passivation effect upon oxidation.",
+   "summary_source": "abstract",
+   "title": "An in situ redox-converted molecule for all-perovskite tandem solar cells"
   },
   "10.1038/s41587-026-03284-0": {
    "abstract": null,
@@ -15665,6 +16350,43 @@
    "summary_source": "abstract",
    "title": "Scalable electron tomography for connectomics"
   },
+  "10.1038/s41592-026-03382-6": {
+   "abstract": null,
+   "article_type": "Article",
+   "doi": "10.1038/s41592-026-03382-6",
+   "figure_source": "springer",
+   "figures": [
+    {
+     "caption": null,
+     "label": "Figure 1",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03382-6/MediaObjects/41592_2026_3382_Fig1_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 2",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03382-6/MediaObjects/41592_2026_3382_Fig2_HTML.png"
+    },
+    {
+     "caption": null,
+     "label": "Figure 3",
+     "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-026-03382-6/MediaObjects/41592_2026_3382_Fig3_HTML.png"
+    }
+   ],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Nature Methods",
+   "licence": "https://creativecommons.org/licenses/by/4.0",
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nature.com/articles/s41592-026-03382-6",
+   "pmcid": null,
+   "pmid": null,
+   "preview": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03382-6/MediaObjects/41592_2026_3382_Fig1_HTML.png",
+   "preview_tried": true,
+   "published": "2026-11-26",
+   "summary": null,
+   "summary_source": null,
+   "title": "Mitigating preferred orientation in cryo-EM with ultrasonic excitation during vitrification"
+  },
   "10.1056/nejmoa2506756": {
    "abstract": null,
    "article_type": null,
@@ -16180,6 +16902,27 @@
    "summary_source": "abstract",
    "title": "Ravulizumab in IgA Nephropathy — Interim Analysis of a Phase 3 Trial"
   },
+  "10.1056/nejmoa2607848": {
+   "abstract": null,
+   "article_type": null,
+   "doi": "10.1056/nejmoa2607848",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "New England Journal of Medicine",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2607848?af=R&rss=currentIssue",
+   "pmcid": null,
+   "pmid": "43084787",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "Blood-pressure lowering was associated with a decreased risk of major cardiovascular events across the risk spectrum, including a predicted 5-year risk below 4%.",
+   "summary_source": "abstract",
+   "title": "Blood-Pressure–Lowering Treatment across the Cardiovascular Risk Spectrum"
+  },
   "10.1056/nejmoa2607887": {
    "abstract": null,
    "article_type": null,
@@ -16326,6 +17069,27 @@
    "summary": "Among adults with type 2 diabetes that was not being treated with insulin and was being managed in a primary care setting, the use of CGM led to a greater reduction in the glycated hemoglobin level and to a lower risk of hyperglycemia than routine care.",
    "summary_source": "abstract",
    "title": "Continuous Glucose Monitoring in Non–Insulin-Treated Type 2 Diabetes"
+  },
+  "10.1056/nejmoa2608669": {
+   "abstract": null,
+   "article_type": null,
+   "doi": "10.1056/nejmoa2608669",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "New England Journal of Medicine",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://www.nejm.org/doi/full/10.1056/NEJMoa2608669?af=R&rss=currentIssue",
+   "pmcid": null,
+   "pmid": null,
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": null,
+   "summary_source": null,
+   "title": "Giredestrant in the Treatment of ER-Positive, HER2-Negative Early Breast Cancer"
   },
   "10.1056/nejmoa2608682": {
    "abstract": null,
@@ -22277,12 +23041,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag855",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081929",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "We present UniPanSurv, a model that shares a backbone across cancers and scores directed relations among retained, observed molecules.",
+   "summary_source": "abstract",
    "title": "UniPanSurv: zero- and few-shot pan-cancer survival analysis with multi-omics data"
   },
   "10.1093/bioinformatics/btag856": {
@@ -22340,12 +23104,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag858",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081946",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "GTalign thus provides a scalable solution for nucleic acid structure comparison and database search.",
+   "summary_source": "abstract",
    "title": "Nucleic acid 3D structure search and alignment with GTalign"
   },
   "10.1093/bioinformatics/btag859": {
@@ -22361,12 +23125,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag859",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081926",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Stratified, hard-case, and ablation analyses further support its robustness and component contributions.",
+   "summary_source": "abstract",
    "title": "HARP-RPA: Interface-Aware HeteroPairFormer for Protein-RNA Binding Affinity Prediction"
   },
   "10.1093/bioinformatics/btag860": {
@@ -22382,12 +23146,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag860",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081932",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Here, we introduce a pipeline (NovoTax) to identify well matching prokaryotic proteomes directly from bottom-up proteomics data.",
+   "summary_source": "abstract",
    "title": "NovoTax: sample-specific database construction for prokaryotic mass spectrometry-based proteomics"
   },
   "10.1093/bioinformatics/btag861": {
@@ -22403,12 +23167,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag861",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081918",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "Both cases demonstrate application of BFFG on two substantially larger phylogenetic trees with 850 and 696 nodes with higher resolution shape data (118 two-dimensional landmarks and 79 three-dimensional landmarks, specifically) than previously possible.",
+   "summary_source": "abstract",
    "title": "Hyperiax and Phylogenetic Inference from Shape Data"
   },
   "10.1093/bioinformatics/btag862": {
@@ -22424,12 +23188,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag862",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081922",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "A strong correlation was shown between actifpTM and reactifpTM for this dataset.",
+   "summary_source": "abstract",
    "title": "ReactifpTM: an accessible reimplementation of actifpTM"
   },
   "10.1093/bioinformatics/btag864": {
@@ -22445,12 +23209,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag864",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081947",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "In addition, analysis of the highest performing pathways and of attention scores computed from the learned parameters identified biologically relevant hormone receptor and signaling programs, supporting the interpretability of the proposed framework.",
+   "summary_source": "abstract",
    "title": "Pathway-Transformer: Integrating Transcript Variants and Biological Pathways for Cancer Phenotype Prediction"
   },
   "10.1093/bioinformatics/btag865": {
@@ -22466,12 +23230,12 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag865",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081916",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
-   "summary": null,
-   "summary_source": null,
+   "summary": "We propose scPriorDiff, a biological network prior-guided conditional latent diffusion model. scPriorDiff integrates diverse biological networks into a multimodal heterogeneous graph and employs a message-passing graph neural network (GNN) to learn biologically informed modality-specific…",
+   "summary_source": "abstract",
    "title": "scPriorDiff: Bridging Single-Cell Modalities through Biological Network Prior-Guided Latent Diffusion"
   },
   "10.1093/bioinformatics/btag866": {
@@ -22487,13 +23251,55 @@
    "licence_checked": "2026-11-25",
    "link": "https://doi.org/10.1093/bioinformatics/btag866",
    "pmcid": null,
-   "pmid": null,
+   "pmid": "43081942",
    "preview": null,
    "preview_tried": true,
    "published": "2026-11-24",
+   "summary": "Together, these results support transcriptional programs as an interpretable intermediate representation that complements gene-level connectivity in context-dependent therapeutic prioritization.",
+   "summary_source": "abstract",
+   "title": "ProReT: Context-dependent transcriptional program spaces for interpretable transcriptomic drug repurposing"
+  },
+  "10.1093/bioinformatics/btag871": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag871",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://doi.org/10.1093/bioinformatics/btag871",
+   "pmcid": null,
+   "pmid": null,
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-26",
    "summary": null,
    "summary_source": null,
-   "title": "ProReT: Context-dependent transcriptional program spaces for interpretable transcriptomic drug repurposing"
+   "title": "SPAMO: Spatial Multi-Omics Integration via Dual-Graph Encoding and Neighborhood-Constrained Cross-Modal Fusion"
+  },
+  "10.1093/bioinformatics/btag872": {
+   "abstract": null,
+   "article_type": "journal-article",
+   "doi": "10.1093/bioinformatics/btag872",
+   "figure_source": null,
+   "figures": [],
+   "figures_added": null,
+   "first_seen": "2026-11-26",
+   "journal": "Bioinformatics",
+   "licence": null,
+   "licence_checked": "2026-11-26",
+   "link": "https://doi.org/10.1093/bioinformatics/btag872",
+   "pmcid": null,
+   "pmid": "43087146",
+   "preview": null,
+   "preview_tried": true,
+   "published": "2026-11-25",
+   "summary": "pdb_cpp is an open-source C ++ library with Python bindings that unifies coordinate parsing, atom selection, hydrogen-bond detection, solvent-accessible surface area calculation, and DockQ and TM-score/US-align based structural comparison on one shared coordinate representation, enabling fast…",
+   "summary_source": "abstract",
+   "title": "pdb_cpp: a C ++ library with Python bindings for fast parsing, interface analysis and docking evaluation of macromolecular complexes"
   },
   "10.1126/science.adq6530": {
    "abstract": null,
